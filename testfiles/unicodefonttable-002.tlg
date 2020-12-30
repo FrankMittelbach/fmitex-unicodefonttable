@@ -1,0 +1,1916 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+Package fontspec Info: Could not resolve font "cmr10/BI" (it probably doesn't
+(fontspec)             exist).
+Package fontspec Info: Could not resolve font "cmr10/B" (it probably doesn't
+(fontspec)             exist).
+Package fontspec Info: Could not resolve font "cmr10/I" (it probably doesn't
+(fontspec)             exist).
+Package fontspec Info: Font family 'cmr10(0)' created for font 'cmr10' with
+(fontspec)             options [].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"cmr10:mode=node;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+Processing Basic Latin
+Completed box being shipped out [1]
+\vbox(633.0+0.0)x407.0, direction TLT
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0, direction TLT
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x345.0, direction TLT
+....\pdfcolorstack 0 push {0 g 0 G}
+....\hbox(0.0+0.0)x345.0, direction TLT
+....\pdfcolorstack 0 pop
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 411.55609fil, direction TLT
+...\glue(\topskip) 0.0
+...\vbox(130.0+0.0)x345.0, direction TLT
+....\write-{}
+....\glue(\topskip) 0.0
+....\vbox(30.39996+3.60004)x345.0, direction TLT
+.....\hbox(8.39996+13.60004)x345.0, glue set 4.80249fill, direction TLT
+......\glue(\tabskip) 0.0 plus 1.0fill
+......\hbox(8.39996+13.60004)x59.39479, glue set 167.69751fil, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\hbox(0.0+13.60004)x0.0, glue set - 172.5fill, direction TLT
+........\glue 0.0 minus 1.0fill
+........\vbox(0.0+13.60004)x345.0, direction TLT
+.........\pdfcolorstack 0 push {0 g 0 G}
+.........\glue -8.39996
+.........\glue 0.0
+.........\glue(\parskip) 0.0
+.........\hbox(8.39996+3.60004)x345.0, direction TLT
+..........\localpar
+...........\localinterlinepenalty=0
+...........\localbrokenpenalty=0
+...........\localleftbox=null
+...........\localrightbox=null
+..........\hbox(0.0+0.0)x0.0, direction TLT
+..........\glue 0.0
+..........\vbox(8.39996+3.60004)x345.0, direction TLT
+...........\hbox(8.39996+3.60004)x345.0, glue set 139.295fil, direction TLT
+............\glue(\leftskip) 0.0 plus 1.0fil
+............\localpar
+.............\localinterlinepenalty=0
+.............\localbrokenpenalty=0
+.............\localleftbox=null
+.............\localrightbox=null
+............\hbox(0.0+0.0)x0.0, direction TLT
+............\TU/lmr/m/n/10 T
+............\kern-0.83 (font)
+............\TU/lmr/m/n/10 a
+............\discretionary (penalty 50)
+.............< \TU/lmr/m/n/10 -
+............\TU/lmr/m/n/10 b
+............\TU/lmr/m/n/10 l
+............\TU/lmr/m/n/10 e
+............\penalty 10000
+............\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+............\TU/lmr/m/n/10 1
+............\TU/lmr/m/n/10 :
+............\glue(\spaceskip) 4.44 plus 3.32999 minus 0.555
+............\rule(8.39996+*)x0.0
+............\penalty 10000
+............\glue 0.0
+............\TU/lmr/m/n/10 c
+............\TU/lmr/m/n/10 m
+............\TU/lmr/m/n/10 r
+............\TU/lmr/m/n/10 1
+............\TU/lmr/m/n/10 0
+............\penalty 10000
+............\rule(0.0+3.60004)x0.0
+............\penalty 10000
+............\glue(\parfillskip) 0.0
+............\glue(\rightskip) 0.0 plus 1.0fil
+..........\penalty 10000
+..........\glue(\parfillskip) 0.0 plus 1.0fil
+..........\glue(\rightskip) 0.0
+.........\glue 10.0
+.........\rule(0.0+0.0)x*
+.........\pdfcolorstack 0 pop
+........\glue 0.0 minus 1.0fill
+.......\glue 0.0 plus 1.0fil
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\write1{\@writefile{lot}{\protect \contentsline {table}{\protect \number
+line \ETC.}
+.......\rule(0.0+9.60004)x0.0
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x12.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x18.00002, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(0.0+0.0)x12.00002, direction TLT
+......\glue(\tabskip) 0.0 plus 1.0fill
+.....\penalty 10000
+.....\glue(\lineskip) 0.0
+.....\hbox(8.39996+3.60004)x345.0, glue set 4.80249fill, direction TLT
+......\glue(\tabskip) 0.0 plus 1.0fill
+......\hbox(8.39996+3.60004)x59.39479, glue set 24.69739fil, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.0 plus 1.0fil
+.......\glue 10.00002
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x12.00002, glue set 1.14151fil, direction TLT
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 0
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 1
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 2
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 3
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 4
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 5
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 6
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 7
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 8
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 9
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 A
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 B
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 C
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 D
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x18.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 E
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+.......\glue 6.0
+......\glue(\tabskip) 0.0
+......\hbox(8.39996+3.60004)x12.00002, glue set 1.14151fil, direction TLT
+.......\glue 6.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+.......\TU/lmtt/m/n/7 F
+.......\glue 0.0 plus 1.0fil
+.......\pdfcolorstack 0 pop
+......\glue(\tabskip) 0.0 plus 1.0fill
+.....\penalty 10000
+....\penalty 10000
+....\hbox(8.39996+3.60004)x345.0, glue set 4.80249fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+3.60004)x59.39479, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+......\TU/lmtt/m/n/8 U
+......\TU/lmtt/m/n/8 +
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\kern1.33337
+......\TU/lmtt/m/n/8 -
+......\kern1.33337
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 F
+......\pdfcolorstack 0 pop
+......\glue 0.0 plus 1.0fil
+......\glue 10.00002
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.12502fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^@
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 1.16669fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^A
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.8889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^B
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.47223fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^C
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.33334fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^D
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.75002fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^E
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^F
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.8889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^G
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^H
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.8889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^I
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.08333fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^K
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.22221fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^L
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.22221fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set - 1.16669fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^N
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set - 1.16669fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^O
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\glue(\lineskip) 0.0
+....\hbox(8.39996+3.60004)x345.0, glue set 4.80249fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+3.60004)x59.39479, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+......\TU/lmtt/m/n/8 U
+......\TU/lmtt/m/n/8 +
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 1
+......\TU/lmtt/m/n/8 0
+......\kern1.33337
+......\TU/lmtt/m/n/8 -
+......\kern1.33337
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 1
+......\TU/lmtt/m/n/8 F
+......\pdfcolorstack 0 pop
+......\glue 0.0 plus 1.0fil
+......\glue 10.00002
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^P
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+1.94444)x6.0, glue set 1.47221fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^Q
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^R
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^S
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.28473+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^T
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^U
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(5.67776+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^V
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set - 0.75002fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^W
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(0.0+1.70137)x6.0, glue set 0.77779fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^X
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^Y
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set - 0.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^Z
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set - 0.8889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^[
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(5.27779+0.97223)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^\
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 1.5139fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^]
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 2.06946fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^^
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(7.31943+0.48611)x6.0, glue set - 0.8889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^_
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\glue(\lineskip) 0.0
+....\hbox(8.39996+3.60004)x345.0, glue set 4.80249fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+3.60004)x59.39479, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+......\TU/lmtt/m/n/8 U
+......\TU/lmtt/m/n/8 +
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 2
+......\TU/lmtt/m/n/8 0
+......\kern1.33337
+......\TU/lmtt/m/n/8 -
+......\kern1.33337
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 2
+......\TU/lmtt/m/n/8 F
+......\pdfcolorstack 0 pop
+......\glue 0.0 plus 1.0fil
+......\glue 10.00002
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10  
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 !
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 "
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+1.94443)x6.0, glue set - 1.16669fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 #
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(7.5+0.55554)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 $
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(7.5+0.55554)x6.0, glue set - 1.16669fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 %
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set - 0.8889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 &
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 '
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(7.5+2.5)x6.0, glue set 1.05556fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 (
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(7.5+2.5)x6.0, glue set 1.05556fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 )
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(7.5+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 *
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(5.83333+0.83333)x6.0, glue set - 0.8889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 +
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(1.05554+1.94444)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ,
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 1.33334fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 -
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(1.05554+0.0)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 .
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(7.5+2.5)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 /
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\glue(\lineskip) 0.0
+....\hbox(8.39996+3.60004)x345.0, glue set 4.80249fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+3.60004)x59.39479, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+......\TU/lmtt/m/n/8 U
+......\TU/lmtt/m/n/8 +
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 3
+......\TU/lmtt/m/n/8 0
+......\kern1.33337
+......\TU/lmtt/m/n/8 -
+......\kern1.33337
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 3
+......\TU/lmtt/m/n/8 F
+......\pdfcolorstack 0 pop
+......\glue 0.0 plus 1.0fil
+......\glue 10.00002
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.44444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.44444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 1
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.44444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 2
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.44444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 3
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.44444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 4
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.44444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 5
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.44444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 6
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.44444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 7
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.44444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 8
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.44444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 9
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 :
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+1.94444)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ;
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(5.0+1.94444)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 <
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(3.66875+0.0)x6.0, glue set - 0.8889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 =
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(5.0+1.94444)x6.0, glue set 0.63889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 >
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.63889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ?
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\glue(\lineskip) 0.0
+....\hbox(8.39996+3.60004)x345.0, glue set 4.80249fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+3.60004)x59.39479, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+......\TU/lmtt/m/n/8 U
+......\TU/lmtt/m/n/8 +
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 4
+......\TU/lmtt/m/n/8 0
+......\kern1.33337
+......\TU/lmtt/m/n/8 -
+......\kern1.33337
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 4
+......\TU/lmtt/m/n/8 F
+......\pdfcolorstack 0 pop
+......\glue 0.0 plus 1.0fil
+......\glue 10.00002
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set - 0.8889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 @
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.75002fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 A
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.54169fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 B
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 C
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.81946fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 D
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.40279fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 E
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.2639fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 F
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.92361fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 G
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.75002fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 H
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set 1.19444fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 I
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set 0.43056fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 J
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.8889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 K
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.12502fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 L
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 1.58334fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 M
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.75002fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 N
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.8889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 O
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\glue(\lineskip) 0.0
+....\hbox(8.39996+3.60004)x345.0, glue set 4.80249fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+3.60004)x59.39479, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+......\TU/lmtt/m/n/8 U
+......\TU/lmtt/m/n/8 +
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 5
+......\TU/lmtt/m/n/8 0
+......\kern1.33337
+......\TU/lmtt/m/n/8 -
+......\kern1.33337
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 5
+......\TU/lmtt/m/n/8 F
+......\pdfcolorstack 0 pop
+......\glue 0.0 plus 1.0fil
+......\glue 10.00002
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.40279fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 P
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+1.94444)x6.0, glue set - 0.8889fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 Q
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.68056fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 R
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set 0.22221fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 S
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 T
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.75002fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 U
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.75002fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 V
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 2.1389fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 W
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.75002fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 X
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.75002fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 Y
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.83331+0.0)x6.0, glue set - 0.05556fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 Z
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(7.5+2.5)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 [
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 \
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(7.5+2.5)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ]
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.67859+0.0)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 _
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\glue(\lineskip) 0.0
+....\hbox(8.39996+3.60004)x345.0, glue set 4.80249fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+3.60004)x59.39479, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+......\TU/lmtt/m/n/8 U
+......\TU/lmtt/m/n/8 +
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 6
+......\TU/lmtt/m/n/8 0
+......\kern1.33337
+......\TU/lmtt/m/n/8 -
+......\kern1.33337
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 6
+......\TU/lmtt/m/n/8 F
+......\pdfcolorstack 0 pop
+......\glue 0.0 plus 1.0fil
+......\glue 10.00002
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 `
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 a
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.22221fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 b
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 0.77779fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 c
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.22221fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 d
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 0.77779fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 e
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 1.47221fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 f
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+1.94444)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 g
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.22221fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 h
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.67859+0.0)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 i
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.67859+1.94444)x6.0, glue set 1.47221fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 j
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.3611fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 k
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 1.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 l
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set - 1.16669fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 m
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 0.22221fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 n
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 o
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\glue(\lineskip) 0.0
+....\hbox(8.39996+3.60004)x345.0, glue set 4.80249fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+3.60004)x59.39479, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\pdfcolorstack 0 push {0 0 1 rg 0 0 1 RG}
+......\TU/lmtt/m/n/8 U
+......\TU/lmtt/m/n/8 +
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 7
+......\TU/lmtt/m/n/8 0
+......\kern1.33337
+......\TU/lmtt/m/n/8 -
+......\kern1.33337
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 0
+......\TU/lmtt/m/n/8 7
+......\TU/lmtt/m/n/8 F
+......\pdfcolorstack 0 pop
+......\glue 0.0 plus 1.0fil
+......\glue 10.00002
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+1.94444)x6.0, glue set 0.22221fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 p
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+1.94444)x6.0, glue set 0.36111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 q
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 1.04167fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 r
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 1.02779fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 s
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.15079+0.0)x6.0, glue set 1.05556fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 t
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 0.22221fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 u
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 0.3611fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 v
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set - 0.61111fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 w
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 0.3611fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 x
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+1.94444)x6.0, glue set 0.3611fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 y
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 0.77779fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 z
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 {
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(4.30554+0.0)x6.0, glue set - 2.00002fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 |
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94444+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 }
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x18.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.67859+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ~
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x12.00002, direction TLT
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.67859+0.0)x6.0, glue set 0.5fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/cmr10(0)/m/n/10 ^^?
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\penalty 10000
+....\vbox(0.0+0.0)x0.0, direction TLT
+...\penalty 10000
+...\penalty 0
+...\glue 12.0 plus 4.0 minus 4.0
+...\glue -3.60004
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 23.34
+..\hbox(6.66+0.0)x345.0, direction TLT
+...\pdfcolorstack 0 push {0 g 0 G}
+...\hbox(6.66+0.0)x345.0, glue set 170.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10 1
+....\glue 0.0 plus 1.0fil
+...\pdfcolorstack 0 pop
+(unicodefonttable-002.aux)

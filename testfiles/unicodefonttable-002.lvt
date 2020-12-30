@@ -1,0 +1,16 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{unicodefonttable}
+
+\begin{document}
+
+\START
+
+\showoutput
+
+\displayfonttable*{cmr10}
+
+
+\end{document}

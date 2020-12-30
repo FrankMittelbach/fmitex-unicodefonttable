@@ -1,0 +1,9 @@
+*.toc
+*.aux
+*.log
+*.glo
+*.hd
+*.idx
+*.out
+build
+*.pdf
