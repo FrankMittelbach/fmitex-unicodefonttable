@@ -17,15 +17,15 @@
 % for those people who are interested or want to report an issue.
 %
 
-\def\unicodefonttabledate   {2020/07/25}
-\def\unicodefonttableversion{v0.9c}
+\def\unicodefonttabledate   {2021/09/12}
+\def\unicodefonttableversion{v0.9d}
 
 
 %<*driver>
 \documentclass{l3doc}
 \usepackage{unicodefonttable}
 
-% bug fix fo l3doc.cls
+% bug fix for l3doc.cls
 \ExplSyntaxOn
 \cs_set_protected:Npn \__codedoc_macro_typeset_one:nN #1#2
   {
@@ -64,7 +64,8 @@
 %
 %
 % \begin{abstract}
-%   A package for typesetting font tables for larger fonts, e.g., TrueType or OpenType Unicode fonts.
+%   A package for typesetting font tables for larger fonts, e.g.,
+%    TrueType or OpenType Unicode fonts.
 % \end{abstract}
 %
 %
@@ -75,14 +76,14 @@
 % \section{Introduction}
 %
 %    When I started to write a new chapter for the third edition of
-%    \emph{The \LaTeX{} Companion}  on modern fonts available
-%    for different \LaTeX{} engines,  I was a bit surprised that I
-%    couldn't find a way to easily typeset tables showing the glyphs
-%    available TrueType or OpenType fonts. The \pkg{nfssfont} package available
-%    with \LaTeX{} only supports fonts from the 8-bit world, but modern
-%    fonts that can be used with \XeTeX{} or \LuaTeX{} can contain
-%    thousands of glyphs and having a method to display what is
-%    available in them was rather important for me.
+%    \emph{The \LaTeX{} Companion} on modern fonts available for
+%    different \LaTeX{} engines, I was a bit surprised that I couldn't
+%    find a way to easily typeset tables showing the glyphs available
+%    TrueType or OpenType fonts. The \pkg{nfssfont} package available
+%    with \LaTeX{} only supports fonts from the 8-bit world, but
+%    modern fonts that can be used with \XeTeX{} or \LuaTeX{} can
+%    contain thousands of glyphs and having a method to display what
+%    is available in them was rather important for me.
 %
 %    I therefore set out to write my own little package and what has
 %    started as an afternoon exercise ended up being this package
@@ -90,8 +91,9 @@
 %    font tables.
 %
 %    As there can be many glyphs in such fonts a tabular
-%    representation of them might run for several pages, so the package
-%    internally uses the \pkg{longtable} package to handle that.
+%    representation of them might run for several pages, so the
+%    package internally uses the \pkg{longtable} package to handle
+%    that.
 %
 %    In most cases the glyphs inside the fonts are index by their
 %    Unicode numbers so it is natural to display them sorted by their
@@ -100,19 +102,19 @@
 %    Unicode is organized in named blocks such as ``Basic Latin'',
 %    ``Latin-1~Supplement'', etc.\ typically consisting of 265
 %    characters each.\footnote{Some blocks are smaller and those
-%    containing the Asian idiographs are much larger.} It is therefore
+%    containing the Asian ideographs are much larger.} It is therefore
 %    helpful to use these block names as sub-titles within the table
 %    in order to easily find the information one is looking for.
 %
-%    A common way to represent the number of a single Unicode character is
-%    \texttt{U+} followed by four (or more) hexdecimals. For example
-%    \texttt{U+0041} represents the letter ``A'' and \texttt{U+20AC} the
-%    Euro currency symbol ``\texteuro''.
+%    A common way to represent the number of a single Unicode
+%    character is \texttt{U+} followed by four (or more)
+%    hexadecimals. For example \texttt{U+0041} represents the letter
+%    ``A'' and \texttt{U+20AC} the Euro currency symbol ``\texteuro''.
 %    We use this convention by showing a Unicode range (of sixteen
 %    character) at the left of each table row, e.g., \texttt{U+0040 -
 %    004F}, followed by the sixteen glyphs in the range. Thus that
-%    particular table row from the ``Basic Latin'' block
-%    would show something like
+%    particular table row from the ``Basic Latin'' block would show
+%    something like
 %\begin{quote}
 %  \displayfonttable*[noheader,range-start=0040, range-end=004F]{Latin Modern Sans}
 %\end{quote}
@@ -120,13 +122,13 @@
 %    font then this is indicated by a special symbol (by default a
 %    colored hyphen).
 %
-%    In order to easily find any Unicode character the table shows by default
-%    sixteen hex digits a column headings so in order to find Euro
-%    currency symbol (\texttt{U+20AC}) one first has to find the right
-%    row which is the range \texttt{U+20A0 - 20AF} and then find the
-%    \texttt{C} column in the row and there it is (or an indication
-%    that the font is missing the glyph you are looking for --- the
-%    line shows that for other slots).
+%    In order to easily find any Unicode character the table shows by
+%    default sixteen hex digits a column headings so in order to find
+%    Euro currency symbol (\texttt{U+20AC}) one first has to find the
+%    right row which is the range \texttt{U+20A0 - 20AF} and then find
+%    the \texttt{C} column in the row and there it is (or an
+%    indication that the font is missing the glyph you are looking for
+%    --- the line shows that for other slots).
 %
 %\begin{quote}
 %  \displayfonttable*[noheader,range-start=20A0, range-end=20AF]{Latin Modern Sans}
@@ -137,8 +139,8 @@
 % \section{The user interface}
 %
 %    The package offers one command to typeset a font table. The
-%    appearance of the table can be customized by specifyinf
-%    key/value pairs.
+%    appearance of the table can be customized by specifying key/value
+%    pairs.
 %
 % \begin{function}{\displayfonttable}
 %   \begin{syntax}
@@ -146,7 +148,7 @@
 %   \end{syntax}
 %    The \meta{font-name} is the font to be displayed. This and
 %    \meta{font-features} argument are passed to \pkg{fontspec} so
-%    should follow the conventions of that package for specifing a
+%    should follow the conventions of that package for specifying a
 %    font. The \meta{key/value-list} offers customization
 %    possibilities discussed below.
 %
@@ -178,7 +180,7 @@
 %     \cs{fonttableglyphcount}
 %   \end{syntax}
 %    While typesetting a font table the package keeps track of the
-%    number of gpyhs it find in the font. After the table is finished
+%    number of glyphs it find in the font. After the table is finished
 %    this value is available in \cs{fonttableglyphcount} and is, for
 %    example, used when statistics are produced. At the start of the
 %    next table it is reset to zero.
@@ -192,7 +194,7 @@
 %    Several of the available keys are boolean accepting \texttt{true}
 %    or \texttt{false} and usually exist in pairs so that one can
 %    specify the desired behavior without the need to provide a value,
-%    e.g., spacifying \key{header} is equivalent to specifying
+%    e.g., specifying \key{header} is equivalent to specifying
 %    \key{header}\texttt{=true} or \key{noheader}\texttt{=false}, etc.
 %
 %    In the lists below the default settings are indicated by an
@@ -213,7 +215,7 @@
 %
 % \item[\key{title-format}, \key{title-format-cont}]
 %    These keys define what is provided as a header title or
-%    continuation title if the table consists of several line.
+%    continuation title if the table consists of several pages.
 %    They expect code as their value. This code can contain \verb=#1=
 %    and \verb=#2= to denote the \meta{font-name} and
 %    \meta{font-features} arguments, respectively.
@@ -262,7 +264,8 @@
 %    \end{description}%
 %
 % \item[\key{hex-digits-font}]
-%    The font to use for the hex digits by default \underline{\cs{ttfamily}\cs{scriptsize}}.
+%    The font to use for the hex digits by default 
+%    \underline{\cs{ttfamily}\cs{scriptsize}}.
 %
 % \item[\key{color}]
 %    This key determines the color for parts of the table (hex digits
@@ -291,7 +294,7 @@
 %
 %
 % \item[\key{statistics-format}]
-%    Code (text) to spacify what should be typeset in the
+%    Code (text) to specify what should be typeset in the
 %    statistics. One can use \verb=#1= for the \meta{font-name} and
 %    \verb=#2= for the glyph count.
 %    The material is typeset on a single line at the end of the
@@ -338,6 +341,38 @@
 %
 %
 %  \begin{variable}{
+%     compare-with,compare-color, compare-bgcolor}
+%  }
+%
+%    You can make comparisons between two fonts, which is useful, for
+%    example when dealing with incomplete math fonts and you need to
+%    see how well the symbols from one font blend with the supplement
+%    symbols from another font.
+%
+% \begin{description}
+% \item[\key{compare-color}, \key{compare-bgcolor}]
+%
+%    If given, the value is a \meta{comparison-font-name} that is used
+%    to supply missing glyphs. This means that if the font to be
+%    displayed is missing a glyph in a slot, the
+%    \meta{comparison-font-name} is check and it that font has the
+%    glyph in question it will be displayed.
+%
+%    To distinguish real glyphs from missing but shown glyphs, they are
+%    typically drawn in a different color and/or they get their
+%    background colored.
+%
+% \item[\key{compare-with}]
+%
+%    Such substituted glyphs can be colored specially (default
+%    \underline{\texttt{red}}) and you can have the background colored (default is
+%    \underline{\texttt{black!10}}, i.e., a light gray).
+%
+% \end{description}
+% \end{variable}
+%
+%
+%  \begin{variable}{
 %     range-start, range-end,
 %  }
 %    Finally there are a few more keys.
@@ -352,13 +387,13 @@
 %    The \key{range-start} specifies where to start with the search
 %    (default \underline{\texttt{0000}}) and \key{range-stop} gives
 %    the last slot that is tested (default
-%    \underline{\texttt{FFFF}}).\footnote{This is the whole of what
+%    \underline{\texttt{FFFF}}).\footnotemark
+% \end{description}
+% \end{variable}\footnotetext{This is the whole of what
 %    the \pkg{unicodefonttable} is currently able to handle, so right
 %    now you can only reduce not extend!}
-% \end{description}
-% \end{variable}
 %
-
+%
 % \section{Example usage}
 %
 % In this section we show the results of a few calls to \cs{displayfonttable}.
@@ -367,7 +402,7 @@
 %
 % Command used: \verb/\displayfonttable*[color=none, range-end=7F]{cmss10}/
 % 
-%\iffalse 
+%\iftrue
 %  \displayfonttable*[color=none, range-end=7F]{cmss10}
 %\fi
 %
@@ -379,7 +414,7 @@
 %                    hex-digits = head+foot,range-end = FF]{ec-qhvr}
 %\end{verbatim}
 % 
-%\iffalse
+%\iftrue
 % \displayfonttable*[color=red,nostatistics=false,
 %                    hex-digits = head+foot,range-end = FF]{ec-qhvr}
 %\fi 
@@ -394,7 +429,7 @@
 %                  ]{Latin Modern Sans}
 %\end{verbatim}
 % 
-%\iffalse
+%\iftrue
 % \displayfonttable[hex-digits = block,
 %                   title-cont-format = \caption[]{\emph{continued}}
 %                  ]{Latin Modern Sans}
@@ -421,7 +456,7 @@
 %    By default the package uses coloring to improve the table
 %    appearance and therefore requires a color package.
 %    \begin{macrocode}
-\RequirePackage{color}
+\RequirePackage{xcolor}
 %    \end{macrocode}
 %
 
@@ -435,7 +470,7 @@
 %    require \pkg{expl3} so there is no need to load that explicitly.
 %    Actually, \pkg{expl3}, \pkg{l3keys2e} and the \pkg{xparse}
 %    functionality is now all part of the \LaTeX{} kernel so the next
-%    line is actually not needed with a current \LaTeX{} kernel, but
+%    line is actually not needed at all with a current \LaTeX{} kernel, but
 %    in order to support older installations we keep it for now.
 %
 %    \begin{macrocode}
@@ -460,10 +495,10 @@
 %
 %
 %  Throughout the implementation we will define a number of keys (and
-%  their allowed values. We introduce them at the point where they are
-%    used, so they are sprincled across the code.\footnote{This fits
+%  their allowed values). We introduce them at the point where they are
+%    used, so they are sprinkled across the code.\footnote{This fits
 %    with the way this package was developed. I first implemented a
-%    single rigid table layout without configuration possibiities and
+%    single rigid table layout without configuration possibilities and
 %    then thought about which parts I wanted to have flexible. I then
 %    replaced the rigid code with code that is affected by setting
 %    key/value pairs.}
@@ -516,16 +551,23 @@
 %    \texttt{fontspec} conventions) and the final optional argument is
 %    the font feature list if any. If the latter is not provided it
 %    will get a special value (\texttt{--NoValue--}) assigned by
-%    \texttt{xparse}, which is somehting that can be tested for.
+%    \texttt{xparse}, which is something that can be tested for.
 %    \begin{macrocode}
 \cs_new:Npn \@@_display_fonttable:nnn #1#2#3 {
   \group_begin:
 %    \end{macrocode}
-%    First initialize the font that should displayed (perhaps with a
+%    First initialize the font that should be displayed (perhaps with a
 %    feature list) and then update the key value list using \verb=#1=. 
 %    \begin{macrocode}
     \fontspec{#2}[#3]
     \keys_set:nn{@@}{#1}
+%    \end{macrocode}
+%    If the user has asked for a comparsion to some other font we need to set this up:
+%    \begin{macrocode}
+    \tl_if_empty:NF \l_@@_compare_with_tl
+       {
+         \setfontface\FOO {\l_@@_compare_with_tl}[]
+       }
 %    \end{macrocode}
 %    The we start the table with 17 columns.
 %    \begin{macrocode}
@@ -555,8 +597,8 @@
 %
 %  \begin{macro}{\fonttableglyphcount}
 %  \begin{macro}{\g_@@_glyph_int}
-%    while generating the font table we count the number of gyphs we
-%    have seen (and typeset). The total is available in the command
+%    While generating the font table we count the number of glyphs we
+%    see (and typeset). The total is available in the command
 %    \cs{fonttableglyphcount} after the table got finished and will be reset to
 %    zero when the next table starts.
 %    \begin{macrocode}
@@ -618,7 +660,7 @@
 %    The footer of the last page of the table will always be
 %    empty. Any special row, such as a row of hex digits, will be
 %    provided in the table body. The reason is that we may want to
-%    disply statistics at the very end of the table and those can't be
+%    display statistics at the very end of the table and those can't be
 %    placed into a static footer.
 %    \begin{macrocode}
   \endlastfoot
@@ -798,7 +840,7 @@
 %    explicit \cs{parbox}.
 %    \begin{macrocode}
     ,statistics-format  .cs_set:Np = \@@_format_stats:nn #1#2
-    ,statistics-format  .initial:n = Total~ number~ of~ gyphs~ in~ #1:~#2 
+    ,statistics-format  .initial:n = Total~ number~ of~ glyphs~ in~ #1:~#2 
   }
 %    \end{macrocode}
 %  \end{macro}
@@ -941,22 +983,63 @@
       }
 %    \end{macrocode}
 %    If the current slot has no glyph in the font we also add a
-%    \verb=&= followed by an indicator that the glyph is missing.
-%    For this case we provide so customization through keys:
-%    \cs{l_@@_missing_glyph_tl} holds the symbol for a missing glyph
-%    (default a hyphen). It is typeset in color and we allow for
-%    setting it in a special font.
+%    \verb=&= followed by an something that indicates the glyph is
+%    missing.  If we do font comparison, it may show the glyph from
+%    the other font (if it exists there) in some special way to indicate which glyph
+%    should be in this slot.
 %    \begin{macrocode}
-      { \tl_gput_right:Nn \g_@@_row_tl 
-         { & \@@_format_glyph:n { \l_@@_missing_glyph_color_tl
-	                          \l_@@_missing_glyph_font_tl 
-	                          \l_@@_missing_glyph_tl } }
-      }
+      { \@@_handle_missing_glyph:n {#1} }
 }
 %    \end{macrocode}
 %    
 %    \begin{macrocode}
 \cs_generate_variant:Nn \@@_handle_slot:n {x}
+%    \end{macrocode}
+%  \end{macro}
+%
+
+%  \begin{macro}{\@@_handle_missing_glyph:n,
+%                \@@_handle_missing_glyph_std:n,
+%                \@@_handle_missing_glyph_compare:n}}
+%    
+%    In the normal case we typset an indicator symbol that the glyph is missing.
+%    For this case we provide some customization through keys:
+%    \cs{l_@@_missing_glyph_tl} holds the symbol for a missing glyph
+%    (default a hyphen). It is typeset in a specific color and we allow for
+%    setting it in a special font. The actual symbol number in \verb=#1=is not needed.
+%    \begin{macrocode}
+\cs_new:Npn \@@_handle_missing_glyph_std:n #1 {
+ \tl_gput_right:Nn \g_@@_row_tl 
+    { &
+      \@@_format_glyph:n { \l_@@_missing_glyph_color_tl
+                           \l_@@_missing_glyph_font_tl 
+	                   \l_@@_missing_glyph_tl }
+    }
+}
+%    \end{macrocode}
+%    
+%    \begin{macrocode}
+\cs_new:Npn \@@_handle_missing_glyph_compare:n #1 {
+  \group_begin:
+    \FOO
+    \@@_if_uchar_exists:nTF { #1 }
+       {
+         \tl_gput_right:Nn \g_@@_row_tl 
+            { &
+              \@@_format_glyph:n {  \l_@@_compare_bgcolor_tl { \l_@@_compare_color_tl \FOO \symbol{#1} } }
+	    }
+         \bool_gset_true:N \g_@@_glyph_seen_bool
+       }
+       {
+         \@@_handle_missing_glyph_std:n {}
+       }
+  \group_end:
+}
+%    \end{macrocode}
+%    
+%    \begin{macrocode}
+\cs_new_eq:NN \@@_handle_missing_glyph:n \@@_handle_missing_glyph_std:n
+%\cs_new_eq:NN \@@_handle_missing_glyph:n \@@_handle_missing_glyph_compare:n
 %    \end{macrocode}
 %  \end{macro}
 %
@@ -974,7 +1057,7 @@
   ,missing-glyph       .initial:n = -  }
 %    \end{macrocode}
 %
-%    The defualt definition for the color is to use the same as the
+%    The default definition for the color is to use the same as the
 %    one specified by the \key{color} key. We therefore define the
 %    default outside of \pkg{l3keys} method.
 %    \begin{macrocode}
@@ -1092,9 +1175,23 @@
        ,range-end   .initial:n = FFFF
      }
 
+
+\tl_new:N \l_@@_compare_color_tl
+\tl_new:N \l_@@_compare_bgcolor_tl
      
-
-
+\keys_define:nn {@@}
+     {
+       ,compare-with .tl_set:N  = \l_@@_compare_with_tl
+       ,compare-with .initial:n = 
+       ,compare-color .choice:
+       ,compare-color / none    .code:n    = \tl_clear:N \l_@@_compare_color_tl
+       ,compare-color / unknown .code:n    = \tl_set:Nn  \l_@@_compare_color_tl { \color {#1} }
+       ,compare-color           .initial:n = red
+       ,compare-bgcolor .choice:
+       ,compare-bgcolor / none    .code:n    = \tl_clear:N \l_@@_compare_bgcolor_tl
+       ,compare-bgcolor / unknown .code:n    = \tl_set:Nn  \l_@@_compare_bgcolor_tl { \colorbox {#1} }
+       ,compare-bgcolor           .initial:n = black!10
+     }
 
 \tl_new:N \g_@@_row_tl
 \tl_new:N \g_@@_block_title_tl
@@ -1123,8 +1220,8 @@
 
 
 %  \begin{macro}{\@@_initialize_table_rows:}
-%    At the start ofa table we are processing the first row
-%    (obviously), we haven't see a glyph yet and  there wasn't a
+%    At the start of a table we are processing the first row
+%    and so we (obviously) haven't see a glyph yet and there wasn't a
 %    missing row recently.
 %    \begin{macrocode}
 \cs_new:Npn \@@_initialize_table_rows: {

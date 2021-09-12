@@ -9,7 +9,7 @@ module = "unicodefonttable"
 
 typesetfiles  = {"*.tex"}
 
-typesetexe    = "luatex"
+typesetexe    = "lualatex"
 
 stdengine     = "luatex"
 

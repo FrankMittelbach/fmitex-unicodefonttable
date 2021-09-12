@@ -1,0 +1,16 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{unicodefonttable}
+
+\begin{document}
+
+\START
+
+\showoutput
+
+\displayfonttable[compare-with=NewCMMath-Regular.otf,range-start=2A00,range-end=2AFF]
+                 {latinmodern-math.otf}
+
+\end{document}
