@@ -171,7 +171,7 @@
 %   \end{syntax}
 %    Instead or in addition of specifying key/values to
 %    \cs{displayfonttable} it is possible to set them up as
-%    default. Inside \cs{displayfonttable} they are are applied first
+%    default. Inside \cs{displayfonttable} they are applied first,
 %    so that one can still overwrite their values on individual tables.
 % \end{function}
 %
@@ -341,7 +341,7 @@
 %
 %
 %  \begin{variable}{
-%     compare-with,compare-color, compare-bgcolor}
+%     compare-with,compare-color, compare-bgcolor
 %  }
 %
 %    You can make comparisons between two fonts, which is useful, for
@@ -353,10 +353,11 @@
 % \item[\key{compare-color}, \key{compare-bgcolor}]
 %
 %    If given, the value is a \meta{comparison-font-name} that is used
-%    to supply missing glyphs. This means that if the font to be
-%    displayed is missing a glyph in a slot, the
-%    \meta{comparison-font-name} is check and it that font has the
-%    glyph in question it will be displayed.
+%    to supply missing glyphs. This means that if the \meta{font-name}
+%    to be displayed is missing a glyph in a slot, then the
+%    \meta{comparison-font-name} is checked and it that font has the
+%    glyph in question, it will be displayed instead of showing a
+%    missing glyph indicator.
 %
 %    To distinguish real glyphs from missing but shown glyphs, they are
 %    typically drawn in a different color and/or they get their
@@ -365,8 +366,8 @@
 % \item[\key{compare-with}]
 %
 %    Such substituted glyphs can be colored specially (default
-%    \underline{\texttt{red}}) and you can have the background colored (default is
-%    \underline{\texttt{black!10}}, i.e., a light gray).
+%    \underline{\texttt{red}}) and you can have their background colored
+%    (default is \underline{\texttt{black!10}}, i.e., a light gray).
 %
 % \end{description}
 % \end{variable}
@@ -388,6 +389,11 @@
 %    (default \underline{\texttt{0000}}) and \key{range-stop} gives
 %    the last slot that is tested (default
 %    \underline{\texttt{FFFF}}).\footnotemark
+%
+%    This is also quite useful in combination with the previous
+%    \key{compare-with} key, to just display, for example, the greek
+%    letters and see how glyphs from two fonts blend with each other.
+
 % \end{description}
 % \end{variable}\footnotetext{This is the whole of what
 %    the \pkg{unicodefonttable} is currently able to handle, so right
@@ -433,6 +439,23 @@
 % \displayfonttable[hex-digits = block,
 %                   title-cont-format = \caption[]{\emph{continued}}
 %                  ]{Latin Modern Sans}
+%\fi 
+%
+% \subsection{Latin Modern Math compared to New Computer Modern Math
+%    in the range 2A00--2AFF}
+% 
+% Command used:
+%\begin{verbatim}
+%\displayfonttable[noheader,nostatistics,hex-digits = block,
+%   compare-with=NewCMMath-Regular.otf,range-start=2A00,range-end=2AFF]
+%                 {latinmodern-math.otf}
+%\end{verbatim}
+% 
+%\iftrue
+% \newpage
+%\displayfonttable[noheader,nostatistics,hex-digits = block,
+%   compare-with=NewCMMath-Regular.otf,range-start=2A00,range-end=2AFF]
+%                 {latinmodern-math.otf}
 %\fi 
 %
 \iffalse
@@ -566,7 +589,9 @@
 %    \begin{macrocode}
     \tl_if_empty:NF \l_@@_compare_with_tl
        {
-         \setfontface\FOO {\l_@@_compare_with_tl}[]
+         \setfontface \l_@@_compare_font_tl {\l_@@_compare_with_tl}[]
+         \cs_set_eq:NN \@@_handle_missing_glyph:n
+                       \@@_handle_missing_glyph_compare:n
        }
 %    \end{macrocode}
 %    The we start the table with 17 columns.
@@ -875,7 +900,7 @@
 %
 %
 %    The body of the table consists of rows with sixteen glyphs each
-%    and to to produce it we loop through all possible Unicode points
+%    and to produce it we loop through all possible Unicode points
 %    starting at \texttt{U+0000} and ending with \texttt{U+FFFF}.
 %
 %    This is implemented a four nested loop that run through the
@@ -1000,7 +1025,7 @@
 
 %  \begin{macro}{\@@_handle_missing_glyph:n,
 %                \@@_handle_missing_glyph_std:n,
-%                \@@_handle_missing_glyph_compare:n}}
+%                \@@_handle_missing_glyph_compare:n}
 %    
 %    In the normal case we typset an indicator symbol that the glyph is missing.
 %    For this case we provide some customization through keys:
@@ -1017,29 +1042,52 @@
     }
 }
 %    \end{macrocode}
-%    
+%    This here is the version that handles a missing glyph by checking
+%    the \key{compare-with} font to see if that font contains the
+%    glyph.
+%    If yes, the substitute will be typeset, otherwise the missing
+%    glyph symbol is shown.
 %    \begin{macrocode}
 \cs_new:Npn \@@_handle_missing_glyph_compare:n #1 {
   \group_begin:
-    \FOO
+%    \end{macrocode}
+%    Locally switch  to the other font, then check for the glyph:
+%    \begin{macrocode}
+    \l_@@_compare_font_tl
     \@@_if_uchar_exists:nTF { #1 }
        {
+%    \end{macrocode}
+%    If available format it (together with the \texttt{\&}) but use a
+%    special color and perhaps a background color.
+%    \begin{macrocode}
          \tl_gput_right:Nn \g_@@_row_tl 
             { &
-              \@@_format_glyph:n {  \l_@@_compare_bgcolor_tl { \l_@@_compare_color_tl \FOO \symbol{#1} } }
+              \@@_format_glyph:n
+                 { \l_@@_compare_bgcolor_tl { \l_@@_compare_color_tl
+                                              \l_@@_compare_font_tl
+                                              \symbol {#1} } 
+                 }
 	    }
+%    \end{macrocode}
+%    Also tell the algorithm that we have seen a glyph to typeset. If
+%    we don't do this then a whole row of sustitute glyphs is never
+%    typeset. However, we don't update the glyph count, because this
+%    is not a glyph from the main font we display.
+%    \begin{macrocode}
          \bool_gset_true:N \g_@@_glyph_seen_bool
        }
-       {
-         \@@_handle_missing_glyph_std:n {}
-       }
+%    \end{macrocode}
+%    If the alternate font doesn't have the glyph either we
+%    typesetting the missing glyph symbol.
+%    \begin{macrocode}
+       { \@@_handle_missing_glyph_std:n {} }
   \group_end:
 }
 %    \end{macrocode}
-%    
+%    By default, i.e., if no font for comparison has been specified we
+%    handle missing glyphs by displaying a missing glyph symbol.
 %    \begin{macrocode}
 \cs_new_eq:NN \@@_handle_missing_glyph:n \@@_handle_missing_glyph_std:n
-%\cs_new_eq:NN \@@_handle_missing_glyph:n \@@_handle_missing_glyph_compare:n
 %    \end{macrocode}
 %  \end{macro}
 %
