@@ -134,6 +134,19 @@
 %  \displayfonttable*[noheader,range-start=20A0, range-end=20AF]{Latin Modern Sans}
 %\end{quote}
 %
+%    It is sometimes useful to compare two fonts with each other by
+%    filling the table with glyphs from a secondary font if the
+%    primary font is missing them. For example, the next display shows
+%    two rows of Latin Modern Math (black glyphs) and instead of showing
+%    a missing glyph symbol in most slots, we rope in glyphs from New
+%    Computer Modern Math, which has a much larger glyph set (red
+%    glyphs with gray background).
+%
+%\begin{quote}
+%\displayfonttable[noheader,nostatistics,display-block=none,
+%   compare-with=NewCMMath-Regular.otf,range-start=2A00,range-end=2A1F]
+%                 {latinmodern-math.otf}
+%\end{quote}
 %
 %
 % \section{The user interface}
@@ -146,8 +159,8 @@
 %   \begin{syntax}
 %     \cs{displayfonttable} \texttt{*} \oarg{key/value-list} \Arg{font-name} \oarg{font-features}
 %   \end{syntax}
-%    The \meta{font-name} is the font to be displayed. This and
-%    \meta{font-features} argument are passed to \pkg{fontspec} so
+%    The \meta{font-name} is the font to be displayed. This and the
+%    \meta{font-features} argument are passed to \pkg{fontspec}, thus they
 %    should follow the conventions of that package for specifying a
 %    font. The \meta{key/value-list} offers customization
 %    possibilities discussed below.
@@ -169,19 +182,20 @@
 %   \begin{syntax}
 %     \cs{fonttablesetup} \Arg{key/value-list}
 %   \end{syntax}
-%    Instead or in addition of specifying key/values to
+%    Instead or in addition to specifying key/values to
 %    \cs{displayfonttable} it is possible to set them up as
-%    default. Inside \cs{displayfonttable} they are applied first,
+%    default. Inside \cs{displayfonttable} the defaults are applied first,
 %    so that one can still overwrite their values on individual tables.
 % \end{function}
+%
 %
 % \begin{function}{\fonttableglyphcount}
 %   \begin{syntax}
 %     \cs{fonttableglyphcount}
 %   \end{syntax}
 %    While typesetting a font table the package keeps track of the
-%    number of glyphs it find in the font. After the table is finished
-%    this value is available in \cs{fonttableglyphcount} and is, for
+%    number of glyphs it find in the font. After the table has finished,
+%    this value is available in \cs{fonttableglyphcount} and it is, for
 %    example, used when statistics are produced. At the start of the
 %    next table it is reset to zero.
 % \end{function}
@@ -203,8 +217,6 @@
 %  \begin{variable}{
 %     header, noheader,
 %     title-format, title-format-const,
-%     display-block,
-%     hex-digits, color,
 %  }
 %    The first set of keys are concerned with the overall look and
 %    feel of the generated table.
@@ -223,6 +235,18 @@
 %    By default a title using the \cs{caption} command is produced; on
 %    continuation titles without showing the \meta{font-features}.
 %
+% \end{description}
+%
+% \end{variable}
+%
+%
+%  \begin{variable}{
+%     display-block,
+%     hex-digits, color,
+%  }
+%    These keys handle the inner parts of the table.
+%
+% \begin{description}
 % \item[\key{display-block}]
 %    The Unicode dataset is organized in named blocks typically 128 or
 %    256 characters though some are noticeably larger and a few are
@@ -235,10 +259,10 @@
 %      of the block is displayed.
 %
 %    \item[\kval{rules}]
-%      display blocks are only indicated by a \cs{midrule}.
+%      Display blocks are only indicated by a \cs{midrule}.
 %
 %    \item[\kval{none}]
-%      Display blocks are not indicated.
+%      Display blocks are not indicated at all.
 %    \end{description}
 %
 % \item[\key{hex-digits}]
@@ -313,7 +337,10 @@
 % \begin{description}
 % \item[\key{glyph-width}]
 %    All glyphs are typeset in a box with the same width, the default
-%    value is \underline{\texttt{6pt}}.
+%    value is \underline{\texttt{6pt}} which is suitable for most 10pt
+%    fonts 
+%    and make the table fit comfortably into the text width of
+%    a typical document.
 %
 % \item[\key{missing-glyph}]
 %    If a slot in a row doesn't have a glyph in the font you may still
@@ -376,7 +403,7 @@
 %  \begin{variable}{
 %     range-start, range-end,
 %  }
-%    Finally there are a few more keys.
+%    Finally there are two keys for restricting the display range.
 % \begin{description}
 % \item[\key{range-start}, \key{range-end}]
 %    The full Unicode set of characters is huge  and checking every
@@ -425,7 +452,7 @@
 %                    hex-digits = head+foot,range-end = FF]{ec-qhvr}
 %\fi 
 % 
-% 
+% \iffalse
 % \subsection{Latin Modern Sans --- OTF font}
 % 
 % Command used:
@@ -457,12 +484,13 @@
 %   compare-with=NewCMMath-Regular.otf,range-start=2A00,range-end=2AFF]
 %                 {latinmodern-math.otf}
 %\fi 
+% \fi
 %
-\iffalse
-\section{\TeX{} Gyre Pagella (Palatino) oldstyle figures --- OTF font}
-
-\displayfonttable{TeX Gyre Pagella}[Numbers=OldStyle]
-\fi
+%\iffalse
+%\section{\TeX{} Gyre Pagella (Palatino) oldstyle figures --- OTF font}
+%
+%\displayfonttable{TeX Gyre Pagella}[Numbers=OldStyle]
+%\fi
 
 %
 % \StopEventually{\setlength\IndexMin{200pt}  \PrintIndex  }
@@ -627,7 +655,8 @@
 %    \cs{fonttableglyphcount} after the table got finished and will be reset to
 %    zero when the next table starts.
 %    \begin{macrocode}
-\DeclareDocumentCommand \fonttableglyphcount {} { \int_use:N \g_@@_glyph_int }
+\DeclareDocumentCommand \fonttableglyphcount {}
+                        { \int_use:N \g_@@_glyph_int }
 %    \end{macrocode}
 %    
 %    \begin{macrocode}
@@ -883,6 +912,9 @@
 \cs_new:Npn \@@_debug_nl:n #1 {}
 %    \end{macrocode}
 %    
+% \keysetup{debugging}
+%    This key is really internal and is therefore not documented above
+%    (and its behavior may changes over time).
 %    \begin{macrocode}
 \keys_define:nn {@@} {
   debug .code:n = \cs_set:Npn \@@_debug_nl:n ##1
@@ -1027,26 +1059,56 @@
 %                \@@_handle_missing_glyph_std:n,
 %                \@@_handle_missing_glyph_compare:n}
 %    
-%    In the normal case we typset an indicator symbol that the glyph is missing.
+%    In the standard case we typeset a special symbol to indicate that the glyph is missing.
 %    For this case we provide some customization through keys:
 %    \cs{l_@@_missing_glyph_tl} holds the symbol for a missing glyph
 %    (default a hyphen). It is typeset in a specific color and we allow for
-%    setting it in a special font. The actual symbol number in \verb=#1=is not needed.
+%    setting it in a special font. The actual symbol number in
+%    \verb=#1=is not needed in this scenario.
 %    \begin{macrocode}
 \cs_new:Npn \@@_handle_missing_glyph_std:n #1 {
  \tl_gput_right:Nn \g_@@_row_tl 
     { &
-      \@@_format_glyph:n { \l_@@_missing_glyph_color_tl
+      \@@_format_glyph:n {
+%        \colorbox{black!30}                      % <--- povide interface
+                 {\l_@@_missing_glyph_color_tl
                            \l_@@_missing_glyph_font_tl 
 	                   \l_@@_missing_glyph_tl }
+      }
     }
 }
 %    \end{macrocode}
+%
+% \keysetup{missing glyphs}
+%    Here are the keys for customizing the missing glyph representation.
+%    \begin{macrocode}
+\keys_define:nn {@@} {
+   missing-glyph-color .choice:
+  ,missing-glyph-color / none    .code:n    =
+       \tl_clear:N \l_@@_missing_glyph_color_tl
+  ,missing-glyph-color / unknown .code:n    =
+       \tl_set:Nn \l_@@_missing_glyph_color_tl { \color {#1} }
+%
+  ,missing-glyph-font  .tl_set:N  = \l_@@_missing_glyph_font_tl
+  ,missing-glyph-font  .initial:n = \ttfamily \scriptsize
+  ,missing-glyph       .tl_set:N  = \l_@@_missing_glyph_tl
+  ,missing-glyph       .initial:n = -  }
+%    \end{macrocode}
+%
+%
+%    The default definition for the color is to use the same as the
+%    one specified by the \key{color} key. We therefore define the
+%    default outside of \pkg{l3keys} method.
+%    \begin{macrocode}
+\tl_new:N  \l_@@_missing_glyph_color_tl
+\tl_set:Nn \l_@@_missing_glyph_color_tl {\l_@@_color_tl}
+%    \end{macrocode}
+%
 %    This here is the version that handles a missing glyph by checking
 %    the \key{compare-with} font to see if that font contains the
 %    glyph.
-%    If yes, the substitute will be typeset, otherwise the missing
-%    glyph symbol is shown.
+%    If yes, the substitute glyph will be typeset, otherwise the missing
+%    glyph symbol is shown by calling \cs{@@_handle_missing_glyph_std:n}.
 %    \begin{macrocode}
 \cs_new:Npn \@@_handle_missing_glyph_compare:n #1 {
   \group_begin:
@@ -1070,7 +1132,7 @@
 	    }
 %    \end{macrocode}
 %    Also tell the algorithm that we have seen a glyph to typeset. If
-%    we don't do this then a whole row of sustitute glyphs is never
+%    we don't do this then a row consitingon only of substitute glyphs is not
 %    typeset. However, we don't update the glyph count, because this
 %    is not a glyph from the main font we display.
 %    \begin{macrocode}
@@ -1084,34 +1146,39 @@
   \group_end:
 }
 %    \end{macrocode}
+%    
+% \keysetup{comparison}
+
+%    \begin{macrocode}
+\tl_new:N \l_@@_compare_color_tl
+\tl_new:N \l_@@_compare_bgcolor_tl
+%    \end{macrocode}
+%    
+%    \begin{macrocode}
+\keys_define:nn {@@}
+     {
+       ,compare-with .tl_set:N  = \l_@@_compare_with_tl
+       ,compare-with .initial:n = 
+       ,compare-color .choice:
+       ,compare-color / none    .code:n    = \tl_clear:N \l_@@_compare_color_tl
+       ,compare-color / unknown .code:n    = \tl_set:Nn  \l_@@_compare_color_tl { \color {#1} }
+       ,compare-color           .initial:n = red
+       ,compare-bgcolor .choice:
+       ,compare-bgcolor / none    .code:n    = \tl_clear:N \l_@@_compare_bgcolor_tl
+       ,compare-bgcolor / unknown .code:n    = \tl_set:Nn  \l_@@_compare_bgcolor_tl { \colorbox {#1} }
+       ,compare-bgcolor           .initial:n = black!10
+     }
+%    \end{macrocode}
+%
+%
 %    By default, i.e., if no font for comparison has been specified we
 %    handle missing glyphs by displaying a missing glyph symbol.
 %    \begin{macrocode}
-\cs_new_eq:NN \@@_handle_missing_glyph:n \@@_handle_missing_glyph_std:n
+\cs_new_eq:NN \@@_handle_missing_glyph:n
+              \@@_handle_missing_glyph_std:n
 %    \end{macrocode}
 %  \end{macro}
 %
-%    \begin{macrocode}
-\keys_define:nn {@@} {
-   missing-glyph-color .choice:
-  ,missing-glyph-color / none    .code:n    =
-       \tl_clear:N \l_@@_missing_glyph_color_tl
-  ,missing-glyph-color / unknown .code:n    =
-       \tl_set:Nn \l_@@_missing_glyph_color_tl { \color {#1} }
-%
-  ,missing-glyph-font  .tl_set:N  = \l_@@_missing_glyph_font_tl
-  ,missing-glyph-font  .initial:n = \ttfamily \scriptsize
-  ,missing-glyph       .tl_set:N  = \l_@@_missing_glyph_tl
-  ,missing-glyph       .initial:n = -  }
-%    \end{macrocode}
-%
-%    The default definition for the color is to use the same as the
-%    one specified by the \key{color} key. We therefore define the
-%    default outside of \pkg{l3keys} method.
-%    \begin{macrocode}
-\tl_new:N  \l_@@_missing_glyph_color_tl
-\tl_set:Nn \l_@@_missing_glyph_color_tl {\l_@@_color_tl}
-%    \end{macrocode}
 
 
 %  \begin{macro}{\@@_format_glyph:n}
@@ -1122,6 +1189,8 @@
   \hbox_to_wd:nn {\l_@@_glyph_box_dim} { \hss #1 \hss } }
 %    \end{macrocode}
 %    
+% \keysetup{glyph typesetting}
+%    The key to customize the width. The 6pt are fine for most cases.
 %    \begin{macrocode}
 \keys_define:nn {@@} {
   glyph-width .dim_set:N = \l_@@_glyph_box_dim
@@ -1148,17 +1217,17 @@
 
 
 
-
-   %    \begin{macrocode}
-
-
-
+%  \begin{macro}{\@@_handle_hex_C:n}
+%    
+%    \begin{macrocode}
 \cs_set:Npn \@@_handle_hex_C:n #1 {
   \@@_maybe_display_block_title:
 %
   \tl_gset:Nn\g_@@_hex_C_tl{#1}
   %
-  \@@_update_block_title:n { \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl }
+  \@@_update_block_title:n { \g_@@_hex_A_tl
+                             \g_@@_hex_B_tl
+                             \g_@@_hex_C_tl }
   \int_compare:nNnF
       { " \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
     < { "\l_@@_range_start_tl }
@@ -1175,12 +1244,21 @@
                                     \@@_handle_hex_D:n     }
       }
 }
+%    \end{macrocode}
+%  \end{macro}
+
+   %    \begin{macrocode}
+
+
+
 
 
 
 \bool_new:N \l_@@_display_block_bool
 \tl_new:N   \l_@@_display_block_action_tl
 
+
+% \keysetup{display blocks}
    
 \keys_define:nn {@@}
      {
@@ -1195,16 +1273,7 @@
          \bool_set_false:N \l_@@_display_block_bool
          \tl_set:Nn \l_@@_display_block_action_tl {\\}
        ,display-block .initial:n  = titles
-%         
   }
-
-   
-
-
-
-
-
-\tl_new:N \l_@@_display_block_hline_tl
 %    \end{macrocode}
 
 
@@ -1214,6 +1283,7 @@
 %
 
 %
+% \keysetup{ranges}
 %    \begin{macrocode}
 \keys_define:nn {@@}
      {
@@ -1224,22 +1294,7 @@
      }
 
 
-\tl_new:N \l_@@_compare_color_tl
-\tl_new:N \l_@@_compare_bgcolor_tl
      
-\keys_define:nn {@@}
-     {
-       ,compare-with .tl_set:N  = \l_@@_compare_with_tl
-       ,compare-with .initial:n = 
-       ,compare-color .choice:
-       ,compare-color / none    .code:n    = \tl_clear:N \l_@@_compare_color_tl
-       ,compare-color / unknown .code:n    = \tl_set:Nn  \l_@@_compare_color_tl { \color {#1} }
-       ,compare-color           .initial:n = red
-       ,compare-bgcolor .choice:
-       ,compare-bgcolor / none    .code:n    = \tl_clear:N \l_@@_compare_bgcolor_tl
-       ,compare-bgcolor / unknown .code:n    = \tl_set:Nn  \l_@@_compare_bgcolor_tl { \colorbox {#1} }
-       ,compare-bgcolor           .initial:n = black!10
-     }
 
 \tl_new:N \g_@@_row_tl
 \tl_new:N \g_@@_block_title_tl
