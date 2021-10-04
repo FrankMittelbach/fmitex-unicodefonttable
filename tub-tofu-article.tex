@@ -1,0 +1,354 @@
+\documentclass{ltugboat}
+
+\usepackage{fontspec}
+\setmainfont{Alegreya}
+\setsansfont{Alegreya Sans}
+
+
+\usepackage{microtype,graphicx,amssymb,csquotes,unicodefonttable}
+
+\newcommand\LPack[1]{\texttt{#1}}
+\newcommand\Prog[1]{\texttt{#1}}
+\newcommand\pdfTeX{pdf\TeX}
+
+\newcommand\tofu{$\square$}
+
+\providecommand\pkg[1]{\texttt{#1}}
+
+
+
+\setcounter{secnumdepth}{1}
+
+
+\author{Frank Mittelbach}
+\title{Preventing Tofu with \pdfTeX{} and Unicode engines}
+\address{Mainz, Germany}
+\netaddress{https://www.latex-project.org}
+\personalURL{https://ctan.org/pkg/unicodefonttable}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\tableofcontents
+
+\section{With tofu through the years}
+
+Tofu is not just an essential ingredient for many Asian dishes, it is
+also the nick name for little squares that are produced by many
+bowsers when they get asked to render a character for which they do
+not have a glyph available.
+
+Especially in the early days of the World Wide Web,
+websites in foreign languages (from the perspective of your computer)
+got often littered with such squares, making text comprehension quite
+difficult if not impossible in some cases. So instead of getting
+\begin{quote}
+  ?`But aren't Kafka's Schlo{\ss} \&
+  {\AE}sop's {\OE}uvres often na{\"\i}ve vis-\`{a}-vis the d{\ae}monic
+  \textit{ph{\oe}nix's official r\^{o}le} in fluffy souffl\'{e}s?
+\end{quote}
+you might have seen something like
+\begin{quote}
+  \tofu But aren't Kafka's Schlo{\tofu} \tofu{} {\tofu}sop's
+  \tofu{}uvres often na{\tofu}ve vis-\tofu{}-vis the d{\tofu}monic
+  \textit{ph{\tofu}nix's official r\tofu{}le} in fluffy
+  souffl\tofu{}s?
+\end{quote}
+Over the years the situation with browsers improved (partly because
+using inferior fonts deemed acceptable as long as they could render
+the needed glyphs), but even nowadays you may find tofu-littered sites
+when you direct your browser to it or perhaps worse those where you
+browser thinks it can show you the glyphs but renders the wrong ones.
+
+While with browsers you may accept a certain imperfection in the
+rendering, tofu in printed material is quite unacceptable and
+typesetting systems should always use the correct glyphs or at least
+tell you very explicitly if they are unable to do so for some reason,
+to allow you to apply some corrective actions. In the remainder of
+this article we will discuss how \TeX{} and in particular \LaTeX{} is
+doing in this respect and what a user can or has to do to avoid some
+capital blunder.
+
+%\subsection{The first \TeX{} years}
+\subsection{Early  vegetarian dishes with \TeX{}}
+
+In the early days of \TeX{} the use of fonts was easy because you
+could use any font you wanted as long as it was called Computer
+Modern.
+
+In other words there was essentially only one set of fonts available
+for use with \TeX\ and the glyphs it contained and how to address them
+was described in the \TeX{}book~\cite{Knuth:ct-a}. Furthermore, all fonts only
+contained 128 glyphs, i.e., essentially the base Latin characters, a
+few accents to construct diacritical characters using the \cs{accent}
+primitive and a few other symbols such as \textdagger, \$ and so forth
+to be accessed through command names.
+
+Thus, once you learned the construction methods and memorized the
+control sequences for accessing the existing symbols you could be sure
+that the characters you used would faithfully appear in the printed
+result. Of course, part of the reason was that the glyph set was
+fairly limited and already for any Latin-based language other than
+English posed series issues, be it that necessary glyphs where missing
+or only available as constructed characters (whenever accents where
+involved) which prevented \TeX{} from applying hyphenation.
+
+So when \TeX{} got more and more popular outside the English-speaking
+world there was considerable pressure on Don Knuth (largely by
+European users, the author among them) to extend \TeX{} so that it
+could better handle languages with larger character sets. At the 1989
+\TeX{} conference in Stanford we finally managed to convince Don to
+reopen (in a limited way) \TeX{} development and to produce
+\TeX~3. This version of \TeX{} was then able to deal with more than
+one language within a document (e.g., use multiple hyphenation
+patterns) and support 8-bit input and output (that is 256 characters
+in a font).
+
+While this enabled the use of different input code pages, as common in
+those days in computers depending on the country and solved the
+problem of hyphenating words containing accented characters (by using
+fonts with precomposed glyphs), it also posed new challenges.
+
+Depending on the code page used in the computer when writing a
+document the same keyboard character might got associated with a
+different number (between 0 and 255) and that number had to be mapped
+to the right slot in a font to produce the glyph that was originally
+intended. So the days of input number equals font glyph position was
+definitely over and the \TeX{} world had to come up with a more
+elaborate scheme to translate one into the other to avoid missing or
+wrong characters in the output.
+
+
+\subsection{The \LaTeXe{} solution}
+
+For \LaTeX{} the solution came in form of the New Font Selection
+Scheme~\cite{Mittelbach:TB11-1-91} and in particular with the packages
+\LPack{inputenc} (for managing input in different code pages and
+mapping it to a standard internal
+representation) and \LPack{fontenc}
+(for translating this internal representation to the correct glyph
+positions in different fonts).
+
+
+\subsubsection{Introducing font encodings}
+
+\LaTeX{} classified the font encodings and gave them names such as
+\texttt{OT1}, \texttt{T1}, \texttt{TS1}, \texttt{T2A}, \texttt{T2B},
+etc. Each such font encoding defined which glyphs are in a font using
+that encoding and where each glyph was stored in the font. Thus, if
+you had two different fonts with the same encoding you could exchange
+one for the other and still be one hundred percent sure\footnote{Well,
+  more 99\% because sometimes fonts claimed to be in one encoding but
+  didn't faithfully follow its specification, e.g., didn't provide all
+  glyphs or sometimes even placed wrong glyphs into some slots.}  that
+your document  typesets correctly without any missing or
+incorrect glyphs in the output.
+
+In practice only a small number of font encodings ever got used and
+new fonts usually were made available in these ``popular'' encodings
+by providing the necessary font re-encodings through the virtual font
+mechanism or through re-encodings done by device drivers such as
+\Prog{dvips} or directly in the engine (in case of \Prog{pdftex}).
+
+As an overall result, life for \LaTeX{} users got again fairly easy after
+1994 and remained this way well into this century, because just by
+specifying which font encoding to use documents normally would typeset
+without any defects regardless of the font family that got used. And
+due to the fact that for users writing in Latin-based languages
+essentially every font available was provided in \texttt{T1} encoding,
+it was also clear which glyphs were available and those were then
+available universally.
+
+\subsubsection{Pitfalls with missing input encodings}
+
+Of course, there was also the need to specify the input encoding---at
+least if one wanted to input accented characters directly from the
+keyboard instead of using constructs like \verb=\"a=. One problem in
+this respect was that, depending on the language you were writing in,
+it sometimes worked even without specifying the input encoding. This
+was possible because the \texttt{T1} font encoding was nearly identical to
+the quite common \texttt{latin1} input encoding.\footnote{For example,
+  with French texts it worked throughout. However, with German only
+  the ``umlauts'' worked, but the sharp s ``ß'' generated a different
+  character.}  Years later, omitting the input encoding declaration
+even when it worked initially finally backfired: once \LaTeX{} moved
+on to make UTF-8 the default encoding, documents stored in legacy
+encodings failed if they didn't contain an input
+declaration.\footnote{The remedy for such old documents is then to
+  either add the missing declaration or re-encode the old source and
+  store it in UTF-8.}
+
+\subsubsection{Pitfalls with the \texttt{TS1} encoding}
+
+When 8-bit fonts became more common, the \TeX{} community defined two
+font encodings during a conference at Cork in 1990. These are
+\texttt{T1}, which holds common Latin text glyphs that play a role in
+hyphenation and therefore have to be present in the same font when
+seen by \TeX{}, and the \texttt{TS1} encoding, which contains other
+symbols, such as oldstyle numerals or currency symbols, that can be
+fetched from as secondary font without harm to the hyphenation
+algorithm (because they do not appear as part of words to be
+hyphenated).
+
+The glyphs in the \texttt{T1} encoding were well chosen and it is usually
+possible to arrange any commercial or free font to be presented in
+this encoding to \TeX.\footnote{There are a few exceptions where a some
+  glyphs are missing, but these cases are rare.} As a result replacing
+fonts encoded in \texttt{T1} means that you can be fairly sure that
+there will be no tofu in your output afterwards.
+
+Unfortunately, this is not at all true for the \texttt{TS1}
+encoding. Here the community made a big mistake by going overboard in
+adding several \enquote{supposedly} useful glyphs to the encoding that could
+be produced in theory (and for Computer Modern and similar \TeX{}
+fonts were produced), but that simply did not exist in any font that
+had its origin outside the \TeX{} world.
+
+As a result, using such glyphs from the \texttt{TS1} encoding meant
+that you either had to stay with a very limited number of font
+families or you had to be very careful not to use any of the
+problematical symbols to avoid tofu.
+
+To ease this problematical situation, the \texttt{TS1} encoding was
+subdivided into five sub-encodings and an interface was established to
+identify that a font family with a certain NFSS name belonged one of
+the sub-encodings. This way \LaTeX{} was enabled to make
+\enquote{reasonable} adjustments when a requested symbol was not
+available in the current font, either by substituting it from a
+different font or by telling you, that the symbol is not there by
+means of an error message\Dash not perfect but better than tofu in the
+end. This was implemented in the \pkg{textcomp} package that provided
+the \LaTeX{} commands to access the symbols from \texttt{TS1}.
+
+In one of the recent \LaTeX{} releases the code from \pkg{textcomp}
+was moved to the \LaTeX{} format, so that these extra symbols are now
+available out of the box without the need to load an additional
+package. At the same time the classification of fonts into
+\texttt{TS1} sub-encodings was reworked. We now support nine
+sub-encodings and the \LaTeX{} format contains close to 200
+declarations that sort the commonly available font families into the
+right sub-encodings. Thus these days the situation is fairly well under
+control again (at least with \pdfTeX).
+
+\section{Unicode}
+
+One of the goals of Unicode is to uniquely identify each and every
+character used in different languages and scripts around the world,
+thereby avoiding some of the possible translation problems that
+occurred because a text was written under the assumption of one
+(8-bit) encoding, but interpreted later on under a different encoding.
+
+While this was a huge step forward for correctly interpreting any
+source document (because it took away with different input
+encodings\Dash all is now Unicode), it unfortunately reintroduced a lot
+of tofu through the back door.
+
+The reason is simple: with Unicode as the means to reliably address a
+glyph to be typeset in a font, such a font has to contain glyphs for
+\emph{all} characters available in Unicode, because \TeX{} just takes
+the Unicode number and tells the current font \emph{typeset this}.
+While this is in theory possible in the TrueType or OpenType font
+formats there is no single font that offers this.\footnote{The only
+  font I know that comes close is Code\,2000~\cite{web:Code2000} that implements 53068
+  characters\Dash but even that is only a fraction of the whole
+  Unicode universe.  Google's Noto project~\cite{web:Noto}, which stands for
+  \enquote{\textbf{no to}fu} and which was established to develop fonts
+  for typesetting text in any of the worlds languages and scripts is
+  currently split across more than a thousand font families, e.g., if
+  you want to typeset in Latin you can use \textsf{Noto Sans}, but for
+  Japanese you need \textsf{Noto Sans Japanese} and so forth.}
+\LaTeX{} has no way to identify if glyphs are missing, because the
+typesetting of paragraph text is a very low-level process in \TeX{} and
+in contrast to the \pdfTeX{} engine where \LaTeX{} can reliably
+assume that a font in \texttt{T1} encoding implements the whole
+encoding, in Unicode engines all fonts are in the \texttt{TU} encoding
+(the whole of Unicode), but no font implements that without huge holes.
+
+In theory it would have been possible to devise sub-encodings of
+\texttt{TU} and assign each and every font to the appropriate
+sub-encoding, but in practice this would be a hopeless undertaking,
+because each and every font implements its own set of glyphs so that
+no useful classification is possible.
+
+Thus when you typeset in \XeTeX{} or \LuaTeX{} and you request using a
+certain font family with something like
+\begin{verbatim}
+  \setmainfont{Alegreya}
+\end{verbatim}
+you have to hope your chosen family contains glyphs for all characters
+that you intend to use in your document: if not, you will end up with
+tofu in one or the other place.
+
+To give you some figures: \textsf{Latin Modern Roman} (the default
+font in \LaTeX{} on Unicode engines) implements 794 characters, the
+\textsf{Optima} font on the Mac just 264, \textsf{Alegreya} (used for
+this document) 1251 and \textsf{Noto Serif} even 2840. But none of this
+means that the characters contained in your document are covered.
+
+
+\subsection{Letting \TeX{} tell you about your tofu}
+
+The \TeX{} program offers one tracing parameter, called
+\cs{tracinglostchars}, that, if set to a positive value, reports missing
+glyphs (a.k.a.\ tofu) in the transcript file with a line such as
+\begin{verbatim}
+Missing character: There is no
+             È (U+00C8) in font cmr10!
+\end{verbatim}
+Interestingly enough, this information is not even given by default, but
+only when you explicitly ask for it\Dash obviously, Don Knuth did not
+foresee that \TeX{} is used with fonts other than those carefully
+crafted for \TeX{} and containing all the characters you may want.
+
+Recently all \TeX{} engines got enhanced so that tofu reporting
+becomes a little better: you can now set this parameter to \texttt{2}
+after which it reports its finding also on the terminal (the new
+default value in \LaTeX{}), or you can set it to \texttt{3} after
+which it will throw an error rather than a warning that is easy to
+miss.
+%
+With Unicode engines we strongly recommend to always set
+\begin{verbatim}
+  \tracinglostchars=3
+\end{verbatim}
+in the preamble of your document\Dash it is much better to get errors
+when writing your documents instead of getting reports by others about
+tofu in your published work.  As explained before, when typesetting with
+\pdfTeX{} there is little danger of ending up with tofu, so there it is
+less important to change the parameter, though it obviously doesn't
+hurt.
+
+
+\section{Typesetting Unicode font tables}
+
+When I worked on the font chapter for the new edition of \emph{The
+  \LaTeX{} Companion, ed\,3}~\cite{TLC3} I wanted to produce glyph
+tables for various fonts to examine which characters they encode and
+how they looked. To my surprise I could not find any \TeX{} tool to do
+this for me. There is, of course, the old \texttt{nfssfont} which I
+had adapted from work by Don Knuth, but that is of no help with
+Unicode fonts as it can only display tables of the first 256
+characters, i.e. 8-bit fonts. So during my last stay at Bachotek
+(before the pandemic) I sketched out some code, the result of which is
+now available as the \pkg{unicodefonttable} package.
+
+
+\fontsize{9.5}{11}\selectfont
+\SetBibJustification{\raggedright}
+\SetBibJustification{\raggedright \advance\itemsep by 2pt plus2pt minus1pt }
+
+\bibliography{texbook1,\jobname}
+
+\bibliographystyle{tugboat}
+
+
+\makesignature
+
+
+\end{document}
+

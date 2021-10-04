@@ -1,6 +1,6 @@
 % \iffalse meta-comment
 %
-%% File: unicodefonttable.dtx (C) Copyright 2019-2020 Frank Mittelbach
+%% File: unicodefonttable.dtx (C) Copyright 2019-2021 Frank Mittelbach
 %
 % It may be distributed and/or modified under the conditions of the
 % LaTeX Project Public License (LPPL), either version 1.3c of this
@@ -17,29 +17,14 @@
 % for those people who are interested or want to report an issue.
 %
 
-\def\unicodefonttabledate   {2021/09/12}
-\def\unicodefonttableversion{v0.9d}
+\def\unicodefonttabledate   {2021/10/04}
+\def\unicodefonttableversion{v1.0a}
 
 
 %<*driver>
-\documentclass{l3doc}
-\usepackage{unicodefonttable}
+\documentclass{l3doc-TUB}
 
-% bug fix for l3doc.cls
-\ExplSyntaxOn
-\cs_set_protected:Npn \__codedoc_macro_typeset_one:nN #1#2
-  {
-    \vbox_set:Nn \l__codedoc_macro_box
-      {
-        \vbox_unpack_drop:N \l__codedoc_macro_box
-        \hbox { \llap { \__codedoc_print_macroname:nN {#1} #2
-            \MacroFont       % <----- without it the \ is in lmr10 if a link is made
-            \      
-        } }
-      }
-    \int_incr:N \l__codedoc_macro_int
-  }
-\ExplSyntaxOff
+\usepackage{graphicx,unicodefonttable}
 
 \EnableCrossrefs
 \CodelineIndex
@@ -55,9 +40,12 @@
 % \newcommand\kval[1]{\texttt{#1}}
 %
 % \newcommand\keysetup[1]{\noindent\marginpar{\raggedleft Key setup: #1}\ignorespaces}
+% \renewcommand\keysetup[1]{\paragraph*{\hspace*{-8pc}Key setup (#1)}}
 %
 %
-% \title{The \texttt{unicodefonttable} package\thanks{}}
+% \title{The \texttt{unicodefonttable} package\thanks{This package has
+%    the version \unicodefonttableversion\ dated
+%    \unicodefonttabledate; the license is LPPL.}}
 % \author{Frank Mittelbach}
 %
 % \maketitle
@@ -123,12 +111,12 @@
 %    colored hyphen).
 %
 %    In order to easily find any Unicode character the table shows by
-%    default sixteen hex digits a column headings so in order to find
+%    default sixteen hex digits as a column heading, thus in order to find
 %    Euro currency symbol (\texttt{U+20AC}) one first has to find the
 %    right row which is the range \texttt{U+20A0 - 20AF} and then find
 %    the \texttt{C} column in the row and there it is (or an
 %    indication that the font is missing the glyph you are looking for
-%    --- the line shows that for other slots).
+%    --- the line shows that for some of the other slots).
 %
 %\begin{quote}
 %  \displayfonttable*[noheader,range-start=20A0, range-end=20AF]{Latin Modern Sans}
@@ -166,7 +154,7 @@
 %    possibilities discussed below.
 %
 %    The \cs{displayfonttable*} is a variant of the command, intended
-%    for use with 8-bit legacy fonts. It presets some keys but
+%    for use with 8-bit legacy fonts. It presets some keys, but
 %    otherwise behaves identically.  The values used in that case are
 %\begin{verbatim}
 %     nostatistics, display-block=none, hex-digits=head, range-end=FF
@@ -184,7 +172,7 @@
 %   \end{syntax}
 %    Instead or in addition to specifying key/values to
 %    \cs{displayfonttable} it is possible to set them up as
-%    default. Inside \cs{displayfonttable} the defaults are applied first,
+%    defaults. Inside \cs{displayfonttable} the defaults are applied first,
 %    so that one can still overwrite their values on individual tables.
 % \end{function}
 %
@@ -194,7 +182,7 @@
 %     \cs{fonttableglyphcount}
 %   \end{syntax}
 %    While typesetting a font table the package keeps track of the
-%    number of glyphs it find in the font. After the table has finished,
+%    number of glyphs it finds in the font. After the table has finished,
 %    this value is available in \cs{fonttableglyphcount} and it is, for
 %    example, used when statistics are produced. At the start of the
 %    next table it is reset to zero.
@@ -216,7 +204,7 @@
 %
 %  \begin{variable}{
 %     header, noheader,
-%     title-format, title-format-const,
+%     title-format, title-format-cont,
 %  }
 %    The first set of keys are concerned with the overall look and
 %    feel of the generated table.
@@ -249,7 +237,7 @@
 % \begin{description}
 % \item[\key{display-block}]
 %    The Unicode dataset is organized in named blocks typically 128 or
-%    256 characters though some are noticeably larger and a few are
+%    256 characters, though some are noticeably larger and a few are
 %    smaller. With the help of the \key{display-block} key it is
 %    possible to specify if and how such blocks should be made visible.
 %    The following values are supported:
@@ -284,7 +272,7 @@
 %      A row is added to the top and the foot of each table page.
 %
 %    \item[\kval{none}]
-%      A hex digit rows are suppressed.
+%      All hex digit rows are suppressed.
 %    \end{description}%
 %
 % \item[\key{hex-digits-font}]
@@ -333,7 +321,7 @@
 %     glyph-width,
 %     missing-glyph, missing-glyph-font,  missing-glyph-color, 
 %  }
-%    Another set of keys deals customization on the glyph level.
+%    Another set of keys deals with customization on the glyph level.
 % \begin{description}
 % \item[\key{glyph-width}]
 %    All glyphs are typeset in a box with the same width, the default
@@ -354,11 +342,11 @@
 %
 % \item[\key{missing-glyph-font}]
 %
-%    The font used for the missing glyphs (default
+%    The font used for the missing glyphs (the default value is
 %    \underline{\cs{ttfamily}\cs{scriptsize}}).
 %
 % \item[\key{missing-glyph-color}]
-%    If not specified it uses the value specified with the \cs{color}
+%    If not specified it uses the value specified with the \key{color}
 %    key. If you want a different color, e.g., \texttt{red}, you can
 %    use a color value or you can specify \kval{none} to use no coloring.
 %
@@ -377,7 +365,7 @@
 %    symbols from another font.
 %
 % \begin{description}
-% \item[\key{compare-color}, \key{compare-bgcolor}]
+% \item[\key{compare-with}]
 %
 %    If given, the value is a \meta{comparison-font-name} that is used
 %    to supply missing glyphs. This means that if the \meta{font-name}
@@ -386,15 +374,12 @@
 %    glyph in question, it will be displayed instead of showing a
 %    missing glyph indicator.
 %
-%    To distinguish real glyphs from missing but shown glyphs, they are
-%    typically drawn in a different color and/or they get their
-%    background colored.
+% \item[\key{compare-color}, \key{compare-bgcolor}]
 %
-% \item[\key{compare-with}]
-%
-%    Such substituted glyphs can be colored specially (default
-%    \underline{\texttt{red}}) and you can have their background colored
-%    (default is \underline{\texttt{black!10}}, i.e., a light gray).
+%    To distinguish real glyphs from missing but substituted glyphs,
+%    they can be colored specially (default \underline{\texttt{red}})
+%    and/or you can have their background colored (default is
+%    \underline{\texttt{black!10}}, i.e., a light gray).
 %
 % \end{description}
 % \end{variable}
@@ -426,6 +411,7 @@
 %    the \pkg{unicodefonttable} is currently able to handle, so right
 %    now you can only reduce not extend!}
 %
+% \newpage
 %
 % \section{Example usage}
 %
@@ -478,16 +464,20 @@
 %                 {latinmodern-math.otf}
 %\end{verbatim}
 % 
-%\iftrue
 % \newpage
 %\displayfonttable[noheader,nostatistics,hex-digits = block,
 %   compare-with=NewCMMath-Regular.otf,range-start=2A00,range-end=2AFF]
 %                 {latinmodern-math.otf}
-%\fi 
 % \fi
 %
-%\iffalse
-%\section{\TeX{} Gyre Pagella (Palatino) oldstyle figures --- OTF font}
+%\iftrue
+%
+%\subsection{\TeX{} Gyre Pagella (Palatino) oldstyle figures --- OTF font}
+%
+% Command used:
+%\begin{verbatim}
+%\displayfonttable{TeX Gyre Pagella}[Numbers=OldStyle]
+%\end{verbatim}
 %
 %\displayfonttable{TeX Gyre Pagella}[Numbers=OldStyle]
 %\fi
@@ -496,9 +486,8 @@
 % \StopEventually{\setlength\IndexMin{200pt}  \PrintIndex  }
 %
 %
-% \section{The Implementation}
+% \section{The package implementation}
 %
-% \subsection{The package}
 %
 %    \begin{macrocode}
 %<*package>
@@ -542,7 +531,7 @@
 %
 %
 %                    
-% \subsubsection{User interface commands}
+% \subsection{User interface commands}
 %
 %
 %  Throughout the implementation we will define a number of keys (and
@@ -668,7 +657,7 @@
 
 
 
-% \subsubsection{The overall table layout}
+% \subsection{The overall table layout}
 %
 %     
 %  \begin{macro}{\@@_setup_header_footer:nn}
@@ -928,7 +917,7 @@
 %
 %
 %
-% \subsubsection{The producing the table content}
+% \subsection{The producing the table content}
 %
 %
 %    The body of the table consists of rows with sixteen glyphs each
@@ -1003,7 +992,7 @@
 \cs_new:Npn \@@_handle_hex_C:n #1 { \tl_gset:Nn\g_@@_hex_C_tl{#1}
    \clist_map_function:NN \c_@@_hex_digits_clist \@@_handle_hex_D:n }
 %    \end{macrocode}
-%    In the innermost loop we new have the full Unicode number
+%    In the innermost loop we now have the full Unicode number
 %    available, so there we have to decide what to do with it. This is
 %    done by \cs{@@_handle_hex_D:n} that receives the full number,
 %    e.g., \texttt{1A7C} as its argument.
@@ -1015,6 +1004,16 @@
 %    \end{macrocode}
 %  \end{macro}
 
+%  \begin{macro}{\g_@@_row_tl}
+%    We first collect the glyphs for a whole row before decide to
+%    typeset it, because in case the row is empty we want to omit
+%    it. The data for the row is collected slot by slot and the typesetting
+%    information (the glyph or the indication for a missing glyph is
+%    appended to \cs{g_@@_row_tl}.
+%    \begin{macrocode}
+\tl_new:N \g_@@_row_tl
+%    \end{macrocode}
+%  \end{macro}
 
 
 %  \begin{macro}{\@@_handle_slot:n,\@@_handle_slot:x}
@@ -1073,7 +1072,7 @@
 %        \colorbox{black!30}                      % <--- povide interface
                  {\l_@@_missing_glyph_color_tl
                            \l_@@_missing_glyph_font_tl 
-	                   \l_@@_missing_glyph_tl }
+                           \l_@@_missing_glyph_tl }
       }
     }
 }
@@ -1129,7 +1128,7 @@
                                               \l_@@_compare_font_tl
                                               \symbol {#1} } 
                  }
-	    }
+            }
 %    \end{macrocode}
 %    Also tell the algorithm that we have seen a glyph to typeset. If
 %    we don't do this then a row consitingon only of substitute glyphs is not
@@ -1148,8 +1147,11 @@
 %    \end{macrocode}
 %    
 % \keysetup{comparison}
-
+%
+%    In order to display glyphs from a secondary font we need a
+%    secondary color for the glyph itself and possibly some background color.
 %    \begin{macrocode}
+\tl_new:N \l_@@_compare_with_tl
 \tl_new:N \l_@@_compare_color_tl
 \tl_new:N \l_@@_compare_bgcolor_tl
 %    \end{macrocode}
@@ -1160,12 +1162,16 @@
        ,compare-with .tl_set:N  = \l_@@_compare_with_tl
        ,compare-with .initial:n = 
        ,compare-color .choice:
-       ,compare-color / none    .code:n    = \tl_clear:N \l_@@_compare_color_tl
-       ,compare-color / unknown .code:n    = \tl_set:Nn  \l_@@_compare_color_tl { \color {#1} }
+       ,compare-color / none    .code:n
+             = \tl_clear:N \l_@@_compare_color_tl
+       ,compare-color / unknown .code:n
+             = \tl_set:Nn  \l_@@_compare_color_tl { \color {#1} }
        ,compare-color           .initial:n = red
        ,compare-bgcolor .choice:
-       ,compare-bgcolor / none    .code:n    = \tl_clear:N \l_@@_compare_bgcolor_tl
-       ,compare-bgcolor / unknown .code:n    = \tl_set:Nn  \l_@@_compare_bgcolor_tl { \colorbox {#1} }
+       ,compare-bgcolor / none    .code:n
+             = \tl_clear:N \l_@@_compare_bgcolor_tl
+       ,compare-bgcolor / unknown .code:n
+             = \tl_set:Nn  \l_@@_compare_bgcolor_tl { \colorbox {#1} }
        ,compare-bgcolor           .initial:n = black!10
      }
 %    \end{macrocode}
@@ -1192,10 +1198,14 @@
 % \keysetup{glyph typesetting}
 %    The key to customize the width. The 6pt are fine for most cases.
 %    \begin{macrocode}
+\dim_new:N\l_@@_glyph_box_dim
+%    \end{macrocode}
+%
+%    \begin{macrocode}
 \keys_define:nn {@@} {
-  glyph-width .dim_set:N = \l_@@_glyph_box_dim
- ,glyph-width .initial:n = 6pt    }
-  
+   glyph-width .dim_set:N = \l_@@_glyph_box_dim
+  ,glyph-width .initial:n = 6pt
+}
 %    \end{macrocode}
 %  \end{macro}
 
@@ -1214,76 +1224,97 @@
   }
 %    \end{macrocode}
 %  \end{macro}
-
-
-
+%
+%
+%
+%
+% \subsection{Handling a single row}
+%
+%
 %  \begin{macro}{\@@_handle_hex_C:n}
-%    
+%    As promised here is the read definition for
+%    \cs{@@_handle_hex_C:n} in all its glory.
 %    \begin{macrocode}
 \cs_set:Npn \@@_handle_hex_C:n #1 {
-  \@@_maybe_display_block_title:
-%
+%    \end{macrocode}
+%    We are now at the start of a new row (but with the last row not
+%    yet typeset) and this last row may need a Unicode block heading
+%    before it. This is the reason why we have to delay the
+%    typesetting, because in case the line doesn't contain any glyphs
+%    we want to typeset neither and that is only known after the all
+%    slots in the row have been processed.
+%    \begin{macrocode}
+  \@@_maybe_typeset_a_row_and_display_a_block_title:
+%    \end{macrocode}
+%    We then store away the value for the third hex digit (denoted as
+%    C) in order to start with the next row.
+%    \begin{macrocode}
   \tl_gset:Nn\g_@@_hex_C_tl{#1}
-  %
+%    \end{macrocode}
+%    Being at the start of a new row we might be at the start of a new
+%    Unicode block. If so we have to update the block title to add in
+%    front of the row when we typeset it (or in front of one of the
+%    next rows if the first rows in the is block have no glyphs). If
+%    we are still in the same block no update happens.
+%    \begin{macrocode}
   \@@_update_block_title:n { \g_@@_hex_A_tl
                              \g_@@_hex_B_tl
                              \g_@@_hex_C_tl }
+%    \end{macrocode}
+%    We now check if this row is within the requested range, i.e.,
+%    above or equal to \cs{l_@@_range_start_tl} and not above
+%    \cs{l_@@_range_end_tl}.
+%    \begin{macrocode}
   \int_compare:nNnF
       { " \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
     < { "\l_@@_range_start_tl }
-      {
-        \tl_gset:Nx \g_@@_row_tl
-           {
-             \exp_not:N \@@_format_row_title:n
-                 { \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl  }
-           }
-        \int_compare:nNnF
-           { " \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
-         > { "\l_@@_range_end_tl }
-           { \clist_map_function:NN \c_@@_hex_digits_clist
-                                    \@@_handle_hex_D:n     }
-      }
+    {
+      \int_compare:nNnF
+          { " \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
+        > { "\l_@@_range_end_tl }
+        {
+%    \end{macrocode}
+%    If we are within range we process the slots in the row by first
+%    initializing \cs{g_@@_row_tl} with the row title (the info on the
+%    left) and then loop through all slots the row to append glyphs
+%    (or missing glyps) to \cs{g_@@_row_tl} to bluild up everything we
+%    need to finally typeset it.
+%    \begin{macrocode}
+          \tl_gset:Nx \g_@@_row_tl
+             {
+               \exp_not:N \@@_format_row_title:n
+                   { \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl  }
+             }
+          \clist_map_function:NN \c_@@_hex_digits_clist
+                                 \@@_handle_hex_D:n
+        }
+    }
 }
 %    \end{macrocode}
 %  \end{macro}
-
-   %    \begin{macrocode}
-
-
-
-
-
-
-\bool_new:N \l_@@_display_block_bool
-\tl_new:N   \l_@@_display_block_action_tl
-
-
-% \keysetup{display blocks}
-   
-\keys_define:nn {@@}
-     {
-       ,display-block .choice:
-       ,display-block / titles  .code:n =
-         \bool_set_true:N \l_@@_display_block_bool
-         \tl_set:Nn \l_@@_display_block_action_tl {\\}
-       ,display-block / rules   .code:n =
-         \bool_set_false:N \l_@@_display_block_bool
-         \tl_set:Nn \l_@@_display_block_action_tl {\\ \midrule}
-       ,display-block / none   .code:n =
-         \bool_set_false:N \l_@@_display_block_bool
-         \tl_set:Nn \l_@@_display_block_action_tl {\\}
-       ,display-block .initial:n  = titles
-  }
+%
+%
+%  \begin{macro}{\@@_format_row_title:n}
+%    The function to format the row title on the left, as used above.
+%    \begin{macrocode}
+\cs_new:Npn \@@_format_row_title:n #1 {
+  \texttt { \footnotesize \l_@@_color_tl U+#1 0 \, - \, #1 F }
+}
 %    \end{macrocode}
-
-
-
-     
+%  \end{macro}
 %
 %
-
 %
 % \keysetup{ranges}
+%
+%    For the range we have two keys, its start and the end. By default the
+%    whole range from 0 to FFFF is processed.
+%
+%    \begin{macrocode}
+\tl_new:N \l_@@_range_start_tl
+\tl_new:N \l_@@_range_end_tl
+%    \end{macrocode}
+%
 %    \begin{macrocode}
 \keys_define:nn {@@}
      {
@@ -1292,22 +1323,125 @@
        ,range-end   .tl_set:N  = \l_@@_range_end_tl
        ,range-end   .initial:n = FFFF
      }
-
-
-     
-
-\tl_new:N \g_@@_row_tl
-\tl_new:N \g_@@_block_title_tl
 %    \end{macrocode}
+%
+%
+%
+%
+%
+%  \begin{macro}{\@@_maybe_typeset_a_row_and_display_a_block_title:}
+%    The function handles the just finished row and if not consisting
+%    of only missing glyphs typeset it. If necessary it also typesets
+%    a Unicode block first.
+%    \begin{macrocode}
+\cs_new:Npn \@@_maybe_typeset_a_row_and_display_a_block_title: {
+%    \end{macrocode}
+%    We first check if the row had any real glyphs
+%    \begin{macrocode}
+  \bool_if:NTF \g_@@_glyph_seen_bool
+    {
+%    \end{macrocode}
+%    If the row needs typesetting the fun part starts. We first look
+%    at the content of \cs{g_@@_block_title_tl}.
+%    \begin{macrocode}
+      \tl_if_empty:NTF \g_@@_block_title_tl
+         {
+%    \end{macrocode}
+%    It is empty we are in the middle of a block and we can ignore
+%    the Unicode title. However, we have to see if the previous row
+%    (or several) was missing (i.e., contained no glyphs). In that
+%    case we leave a little extra space, otherwise we just finish the
+%    previous row
+%    \begin{macrocode}
+           \bool_if:NTF \g_@@_row_missing_bool
+                { \@@_debug_nl:n{A}\\[6pt] }
+                { \@@_debug_nl:n{B}\\      }
+         }
+         {
+%    \end{macrocode}
+%    Otherwise we first have to typeset the Unicode block title (or
+%    whatever should happen instead).
+%    \begin{macrocode}
+           \typeout{ Processing~ \tl_use:N \g_@@_block_title_tl }
+           \bool_if:NTF \l_@@_display_block_bool
+                {
+%    \end{macrocode}
+%    If we are to typeset the title the action depends a bit on
+%    whether we are at the very first row or typesetting a later block.
+%    \begin{macrocode}
+                  \bool_if:NTF \g_@@_first_row_bool
+                    {
+                      \bool_gset_false:N \g_@@_first_row_bool
+                      \@@_debug_nl:n{C}\\[-8pt]
+                    }
+                    {
+                      \@@_debug_nl:n{D}\\[4pt]
+                    }
+                 \multicolumn{17}{c}{\normalfont \bfseries
+                                     \tl_use:N \g_@@_block_title_tl}
+%    \end{macrocode}
+%    After the block title is typeset we may want to add a row of hex
+%    digits as well if that was requested, otherwise we only leave a
+%    bit of extra space.
+%    \begin{macrocode}
+                  \bool_if:NTF \l_@@_blockwise_hex_digits_bool
+                       { \@@_debug_nl:n{E}\\*
+                         \@@_display_row_of_hex_digits:
+                         \@@_debug_nl:n{H}\\*
+                       }
+                       { \@@_debug_nl:n{F}\\*[2pt] }
+                }
+                {
+%    \end{macrocode}
+%    If the Unicode block title is not typeset we may still have to do
+%    someting special and again it differs if we at the very beginning
+%    of the table (because there we do nothing except changing the
+%    state of \cs{g_@@_first_row_bool}).
+%    \begin{macrocode}
+                  \bool_if:NTF \g_@@_first_row_bool
+                    { \bool_gset_false:N \g_@@_first_row_bool }
+                    {
+                      \@@_debug_nl:n{G~ (new~ block)}
+                      \l_@@_display_block_action_tl
+                    }
+                }
+%    \end{macrocode}
+%    Once we are past the block title we clear it to that is not
+%    retypeset in front of the next row.
+%    \begin{macrocode}
+           \tl_gclear:N \g_@@_block_title_tl
+         }
+%    \end{macrocode}
+%    The final action is to typeset the row and reset the boolean (in
+%    case they where true --- if they are false already then we do this
+%    unnecessarily, but that is probably faster than testing first.
+%    \begin{macrocode}
+      \bool_gset_false:N \g_@@_glyph_seen_bool     
+      \bool_gset_false:N \g_@@_row_missing_bool
+      \tl_use:N \g_@@_row_tl
+    }
+%    \end{macrocode}
+%    Current row had no chars, remember that fact and that is all we
+%    have to do in that case.
+%    \begin{macrocode}
+    {
+      \bool_gset_true:N \g_@@_row_missing_bool
+    }
+}
+%    \end{macrocode}
+%  \end{macro}
 
-
-
+%
+%
+% \subsection{Initialisation at the start of the table}
+%
+%
 %  \begin{macro}{\g_@@_first_row_bool,\g_@@_glyph_seen_bool,\g_@@_row_missing_bool}
-%    Declare the three booleans used in the code below. The will tell
-%    us answers to the following questions
+%    Declare the three booleans used in the code below. They will tell
+%    us answers to the following questions:
 %    \begin{itemize}
 %    \item Are we processing the first row?
-%    \item Have we seen any glyph so far?
+%    \item Have we seen any glyph so far (in the current row)?
 %    \item Did we have one or more missing rows recently?
 %    \end{itemize}
 %    \begin{macrocode}
@@ -1340,68 +1474,22 @@
 %  \end{macro}
 
 
-  
-%    
+%
+%
+% \subsection{Handling block titles}
+%
+%  \begin{macro}{g_@@_block_title_tl}
+%    We keep the current block title in this token list.
 %    \begin{macrocode}
-
-\errorstopmode
-\errorcontextlines=50
-
-\cs_new:Npn \@@_maybe_display_block_title: {
-  \bool_if:NTF \g_@@_glyph_seen_bool
-    {
-      \tl_if_empty:NTF \g_@@_block_title_tl
-         {
-           \bool_if:NTF \g_@@_row_missing_bool
-                { \@@_debug_nl:n{A}\\[6pt] }
-                { \@@_debug_nl:n{B}\\      }
-         }
-         {
-           \typeout{ Processing~ \tl_use:N \g_@@_block_title_tl }
-           \bool_if:NTF \l_@@_display_block_bool
-                {
-                  \bool_if:NTF \g_@@_first_row_bool
-                    {
-                      \bool_gset_false:N \g_@@_first_row_bool
-                      \@@_debug_nl:n{C}\\[-8pt]
-                    }
-                    {
-                      \@@_debug_nl:n{D}\\[4pt]
-                    }
-	          \multicolumn{17}{c}{\normalfont \bfseries \tl_use:N \g_@@_block_title_tl}
-                  \bool_if:NTF \l_@@_blockwise_hex_digits_bool
-	               { \@@_debug_nl:n{E}\\*
-                         \@@_display_row_of_hex_digits:
-                         \@@_debug_nl:n{H}\\*
-                       }
-                       { \@@_debug_nl:n{F}\\*[2pt] }
-                }
-                {
-                  \bool_if:NTF \g_@@_first_row_bool
-                    { \bool_gset_false:N \g_@@_first_row_bool }
-                    {
-                      \@@_debug_nl:n{G~ (new~ block)}
-                      \l_@@_display_block_action_tl
-                    }
-                }
-	   \tl_gclear:N \g_@@_block_title_tl
-	 }
-      \bool_gset_false:N \g_@@_glyph_seen_bool     
-      \bool_gset_false:N \g_@@_row_missing_bool
-      \tl_use:N \g_@@_row_tl
-    }
+\tl_new:N \g_@@_block_title_tl
 %    \end{macrocode}
-%    Current row had no chars, remember that fact
+%  \end{macro}
+
+  
+%  \begin{macro}{\@@_update_block_title:n}
+%    A block title is updated when the hex digits A,B,C have a certain
+%    value, so this is nothing more than a huge case switch.
 %    \begin{macrocode}
-    {
-      \bool_gset_true:N \g_@@_row_missing_bool
-    }
-}
-
-
-
-
-
 \cs_new:Npn \@@_update_block_title:n #1 {
     \tl_gset:Nx \g_@@_block_title_tl  {
     \int_case:nnF{ "#1 }
@@ -1528,48 +1616,54 @@
        }
 %    \end{macrocode}
 %    If none of the above has matched we are somewhere within a block
-%    so we want keep the current name. However, since the case statement was
-%    executed within a |\tl_gset:Nx| we have to do this by passing the current block name
-%    back.
+%    so we want keep the current name. However, since the case
+%    statement was executed within a |\tl_gset:Nx| we have to do this
+%    by passing the current block name back.
 %    \begin{macrocode}
        { \tl_use:N \g_@@_block_title_tl }
   }
 }
-
-
-
-
-
-%\cs_new:Npn \@@_if_ignore_slot:nTF #1#2#3 {\ifodd"#1\relax #2\else #3\fi}
-
-
-
-
-
-
-
-%\unicodefonttabletablesetup{debug}
-
-
-\cs_new:Npn \@@_format_row_title:n #1 {
-  \texttt { \footnotesize \l_@@_color_tl U+#1 0 \, - \, #1 F }
-}
-
-
-\ExplSyntaxOff
-
-
-
-
-\RequirePackage{longtable,booktabs,caption,fontspec}
-
-
-
-
+%    \end{macrocode}
+%  \end{macro}
+%    
+%
+% \keysetup{display blocks}
+%
+%    The Unicode blocks may get indicated in different ways: with titles,
+%    simply through rules or not at all. Here is the necessary setup.
+%
+%    \begin{macrocode}
+\bool_new:N \l_@@_display_block_bool
+\tl_new:N   \l_@@_display_block_action_tl
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\keys_define:nn {@@}
+     {
+       ,display-block .choice:
+       ,display-block / titles  .code:n =
+         \bool_set_true:N \l_@@_display_block_bool
+         \tl_set:Nn \l_@@_display_block_action_tl {\\}
+       ,display-block / rules   .code:n =
+         \bool_set_false:N \l_@@_display_block_bool
+         \tl_set:Nn \l_@@_display_block_action_tl {\\ \midrule}
+       ,display-block / none   .code:n =
+         \bool_set_false:N \l_@@_display_block_bool
+         \tl_set:Nn \l_@@_display_block_action_tl {\\}
+       ,display-block .initial:n  = titles
+  }
 %    \end{macrocode}
 %
 %
-%  So what remains to be done is executing all options passed to the
+%    That's all of the programming using the L3 layer.
+%    \begin{macrocode}
+\ExplSyntaxOff
+%    \end{macrocode}
+%    What remains is to require all packages needed \ldots
+%    \begin{macrocode}
+\RequirePackage{longtable,booktabs,caption,fontspec}
+%    \end{macrocode}
+%    \ldots and executing all options passed to the
 %    package via \cs{usepackage}.
 %    \begin{macrocode}
 \ProcessKeysPackageOptions{@@}
@@ -1580,7 +1674,7 @@
 %
 %
 %
-% \subsection{The samples file}
+% \section{A samples file}
 %
 %    \begin{macrocode}
 %<*samples>
@@ -1646,30 +1740,18 @@
 
 \displayfonttable{TeX Gyre Pagella}[Numbers=OldStyle]
 
+\newpage
+
+\section{Comparing Latin Modern Math with New Computer Modern Math}
+
+\displayfonttable[compare-with=NewCMMath-Regular.otf]
+                 {latinmodern-math.otf}
+
 \end{document}
 %    \end{macrocode}
 %
 %    \begin{macrocode}
 %</samples>
-%    \end{macrocode}
-
-
-
-%
-%
-% \subsection{The standalone file}
-%
-%    \begin{macrocode}
-%<*standalone>
-%    \end{macrocode}
-%
-%    \begin{macrocode}
-\typeout{CODE here}
-%    \end{macrocode}
-%
-%
-%    \begin{macrocode}
-%</standalone>
 %    \end{macrocode}
 %
 % \Finale
@@ -1679,18 +1761,3 @@
 \endinput
 
 %%%%%%%%%%%%%%%%%%%
-
-%    \begin{macrocode}
-\cs_new_protected:cpn { \c__keys_props_root_str .cs_set:Np } #1
-   { \__keys_cs_make:NNpn \cs_set:Npn #1 { } }
-\cs_new_protected:Npn \__keys_cs_make:NNpn #1#2#3#
-   {
-     \cs_set_protected:cpx { \c__keys_code_root_str \l_keys_path_str } ##1
-       { #1 \exp_not:N #2 \exp_not:n {#3} {##1} }
-     \use_none:n
-   }  
-%    \end{macrocode}
-%    
-
-%%%%%%%%%%%%%%%%%%%
-
