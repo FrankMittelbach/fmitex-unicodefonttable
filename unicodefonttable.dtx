@@ -17,7 +17,7 @@
 % for those people who are interested or want to report an issue.
 %
 
-\def\unicodefonttabledate   {2021/10/04}
+\def\unicodefonttabledate   {2021/10/06}
 \def\unicodefonttableversion{v1.0a}
 
 
@@ -411,7 +411,17 @@
 %    the \pkg{unicodefonttable} is currently able to handle, so right
 %    now you can only reduce not extend!}
 %
-% \newpage
+%
+%
+% \section{A standalone interactive version}
+%
+%     If you want to quickly display a single font you can run
+%    \texttt{unicodefont.tex} through \LuaTeX. Similar to
+%    \texttt{nfssfont.tex} (which is for 8-bit fonts with \pdfTeX) it
+%    will ask you a few questions and then generate the font table for
+%    you. There are less configuration options available in that case,
+%    but saves you writing a document get the table.
+%
 %
 % \section{Example usage}
 %
@@ -472,14 +482,28 @@
 %
 %\iftrue
 %
-%\subsection{\TeX{} Gyre Pagella (Palatino) oldstyle figures --- OTF font}
+%^^A\subsection{\TeX{} Gyre Pagella (Palatino) oldstyle figures --- OTF font}
+%\subsection{New Computer Modern Roman with oldstyle figures --- OTF font}
 %
 % Command used:
 %\begin{verbatim}
-%\displayfonttable{TeX Gyre Pagella}[Numbers=OldStyle]
+%\displayfonttable[font-cmds=\bfseries]{NewCM10-Regular}[Numbers=OldStyle]
 %\end{verbatim}
+%^^A\displayfonttable{TeX Gyre Pagella}[Numbers=OldStyle]
 %
-%\displayfonttable{TeX Gyre Pagella}[Numbers=OldStyle]
+%^^A\displayfonttable{TeX Gyre Pagella}[Numbers=OldStyle]
+%\defaultfontfeatures[NewCM10-Regular]
+%   {
+%    Extension = .otf ,
+%    UprightFont = NewCM10-Regular,
+%    ItalicFont = NewCM10-Italic,
+%    BoldFont = NewCM10-Bold,
+%    BoldItalicFont = NewCM10-BoldItalic,
+%    SlantedFont = NewCM10-Regular,
+%    BoldSlantedFont = NewCM10-Bold,
+%    SmallCapsFeatures = {Numbers=OldStyle}
+%}
+%\displayfonttable[font-cmds=\bfseries\itshape]{NewCM10-Regular}[Numbers=OldStyle]
 %\fi
 
 %
@@ -1671,6 +1695,139 @@
 %    \end{macrocode}
 %
 %
+%
+%
+%
+% \section{The standalone \texttt{unicodefont.tex} file}
+%
+%    \begin{macrocode}
+%<*standalone>
+\documentclass{article}
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\setlength\textwidth{470pt}
+\setlength\oddsidemargin{0pt}
+\addtolength\textheight{7\baselineskip}
+\addtolength\topmargin{-3\baselineskip}
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+
+\usepackage{unicodefonttable}
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\def\defaultfontname{Latin Modern Roman}
+\def\defaultfontfeatures{}
+\def\defaulttableconfig{}
+\def\defaultunicodefont{}
+\begin{document}
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\typeout{^^J}
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\ifx\generatetable\undefined
+\else
+  \typein[\answer]{^^JReuse settings from last time (default yes)?^^J^^J%
+    [ font name = \defaultfontname^^J
+      \space unicode? =  \ifx\defaultunicodefont\empty yes^^J
+                           \space font features = \defaultfontfeatures
+                         \else no\fi^^J
+      \space table config = \defaulttableconfig \space]}
+\fi
+%    \end{macrocode}
+%    
+%    \begin{macrocode}
+\ifx\answer\empty
+  \let\currfontname\defaultfontname
+  \let\unicodefont\defaultunicodefont
+  \let\fontfeatures\defaultfontfeatures
+  \let\tableconfiguration\defaulttableconfig
+\else
+%    \end{macrocode}
+%    
+%    \begin{macrocode}
+\typein[\currfontname]%
+       {^^JInput external font name as understood by fontspec, e.g.,^^J%
+         'TeX Gyre Pagella' or 'lmroman10-regular.otf'%
+         \ifx\defaultfontname\empty\else ^^J^^J[default \defaultfontname]\fi:}
+\ifx\currfontname\empty \let\currfontname\defaultfontname \fi       
+%    \end{macrocode}
+%    
+%    \begin{macrocode}
+\typein[\unicodefont]%
+       {^^JIs this a Unicode font?^^J^^J%
+        \ifx\defaultunicodefont\empty  [default yes]\else [default no]\fi:}
+%    \end{macrocode}
+%    
+%    \begin{macrocode}
+\ifx\unicodefont\empty
+%  \ifx\defaultunicodefont\empty
+%  \else
+    \let\unicodefont\defaultunicodefont
+%  \fi
+\else
+  \ifx\defaultunicodefont\empty
+  \else
+     \let\unicodefont\empty
+  \fi
+\fi
+%    \end{macrocode}
+%    
+%    \begin{macrocode}
+\ifx\unicodefont\empty
+  \typein[\fontfeatures]%
+         {^^JInput font feature key/value list to apply%
+           \ifx\defaultfontfeatures\empty\else
+           ^^J^^J[default \defaultfontfeatures]\fi:}
+  \ifx\fontfeatures\empty \let\fontfeatures\defaultfontfeatures \fi      
+\else
+  \let\fontfeatures\defaultfontfeatures
+\fi
+%    \end{macrocode}
+%    
+%    \begin{macrocode}
+\typein[\tableconfiguration]%
+       {^^JInput table configuration key/value list to apply%
+        \ifx\defaulttableconfig\empty\else
+         ^^J^^J[default \expandafter\detokenize\expandafter{\defaulttableconfig}]\fi:}
+\ifx\tableconfiguration\empty \let\tableconfiguration\defaulttableconfig \fi       
+%    \end{macrocode}
+%    
+%    \begin{macrocode}
+\edef\generatetable{\noexpand\displayfonttable
+  \ifx\unicodefont\empty\else *\fi
+  \ifx\tableconfiguration\empty\else
+      [\expandafter\unexpanded\expandafter{\tableconfiguration}]\fi
+  {\currfontname}%
+  \ifx\fontfeatures\empty\else[\fontfeatures]\fi
+}  
+%    \end{macrocode}
+%    
+%    \begin{macrocode}
+\fi
+%    \end{macrocode}
+%    
+%    \begin{macrocode}
+\makeatletter
+\protected@write\@auxout{}{\gdef\string\generatetable
+     {\expandafter\detokenize\expandafter{\generatetable}}}
+\protected@write\@auxout{}{\gdef\string\defaultfontname{\currfontname}}
+\protected@write\@auxout{}{\gdef\string\defaultunicodefont{\unicodefont}}
+\protected@write\@auxout{}{\gdef\string\defaultfontfeatures{\fontfeatures}}
+\protected@write\@auxout{}{\gdef\string\defaulttableconfig{\tableconfiguration}}
+\makeatother
+%    \end{macrocode}
+%    
+%    \begin{macrocode}
+\generatetable
+\end{document}
+%</standalone>
+%    \end{macrocode}
 %
 %
 %

@@ -25,7 +25,7 @@
 %%
 %% --------------- start of docstrip commands ------------------
 %%
-\input l3docstrip
+\input docstrip
 
 \keepsilent
 
@@ -61,10 +61,9 @@ where one can also log issues in case there are any.
 
 \endpreamble
 
-
 \generate{\file{unicodefonttable.sty}{\from{unicodefonttable.dtx}{package}}}
 \generate{\file{unicodefonttable-samples.tex}{\from{unicodefonttable.dtx}{samples}}}
 
-%\generate{\file{unicodefonttable.tex}{\from{unicodefonttable.dtx}{standalone}}}
+\generate{\file{unicodefont.tex}{\from{unicodefonttable.dtx}{standalone}}}
 
 \endbatchfile

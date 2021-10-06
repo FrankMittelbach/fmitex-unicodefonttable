@@ -7,7 +7,9 @@
 
 module = "unicodefonttable"
 
-sourcefiles = {"*.dtx", "*.ins", "*-????-??-??.sty", "l3doc-TUB.cls"}
+sourcefiles = {"*.dtx", "*.ins", "*-????-??-??.sty", "l3doc-TUB.cls", "NewCM10fmi.fontspec"}
+
+installfiles = {"*.sty", ".cls", "unicodefont.tex"}
 
 typesetfiles  = {"*.tex"}
 
