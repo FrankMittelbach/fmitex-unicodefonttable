@@ -11,7 +11,7 @@ sourcefiles = {"*.dtx", "*.ins", "*-????-??-??.sty", "l3doc-TUB.cls", "NewCM10fm
 
 installfiles = {"*.sty", ".cls", "unicodefont.tex"}
 
-typesetfiles  = {"*.tex"}
+typesetfiles  = {"*-doc.tex", "*-code.tex", "*-sample.tex"}
 
 typesetexe    = "lualatex"
 

@@ -54,6 +54,7 @@
 % \begin{abstract}
 %   A package for typesetting font tables for larger fonts, e.g.,
 %    TrueType or OpenType Unicode fonts.
+%    To produce a one-off table, a standalone version is available as well.
 % \end{abstract}
 %
 %
@@ -415,15 +416,29 @@
 %
 % \section{A standalone interactive version}
 %
-%     If you want to quickly display a single font you can run
+%     If you want to quickly display a single font, you can run
 %    \texttt{unicodefont.tex} through \LuaTeX. Similar to
 %    \texttt{nfssfont.tex} (which is for 8-bit fonts with \pdfTeX) it
-%    will ask you a few questions and then generate the font table for
+%    asks you a few questions and then generates the font table for
 %    you. There are less configuration options available in that case,
-%    but saves you writing a document get the table.
+%    but this workflow saves you writing a document just get the a
+%    one-off table.
 %
+%    Most font tables need several runs due to the use of
+%    \pkg{longtable}, which has to find the right width for the columns
+%    across several pages. The \texttt{unicodefont} therefore
+%    remembers your selection from the previous run and asks you if
+%    you want to reapply it to speed up the process.
 %
-% \section{Example usage}
+% \ExplSyntaxOn
+%  \cs_new:Npn\IfImplementationShownTF
+%     {\bool_if:NTF \g__codedoc_typeset_implementation_bool}
+% \ExplSyntaxOff
+%
+% \IfImplementationShownTF{}
+%   {\appendix \setlength\IndexMin{200pt}  \PrintIndex}
+%
+% \section{Examples}
 %
 % In this section we show the results of a few calls to \cs{displayfonttable}.
 %
@@ -431,10 +446,9 @@
 %
 % Command used: \verb/\displayfonttable*[color=none, range-end=7F]{cmss10}/
 % 
-%\iftrue
 %  \displayfonttable*[color=none, range-end=7F]{cmss10}
-%\fi
 %
+% \iffalse
 % \subsection{TeX Gyre Heros (Helvetica)  --- 8-bit font}
 % 
 % Command used:
@@ -443,7 +457,6 @@
 %                    hex-digits = head+foot,range-end = FF]{ec-qhvr}
 %\end{verbatim}
 % 
-%\iftrue
 % \displayfonttable*[color=red,nostatistics=false,
 %                    hex-digits = head+foot,range-end = FF]{ec-qhvr}
 %\fi 
@@ -487,27 +500,20 @@
 %
 % Command used:
 %\begin{verbatim}
-%\displayfonttable[font-cmds=\bfseries]{NewCM10-Regular}[Numbers=OldStyle]
+%\displayfonttable{NewCM10-Regular}[Numbers=OldStyle]
 %\end{verbatim}
 %^^A\displayfonttable{TeX Gyre Pagella}[Numbers=OldStyle]
 %
 %^^A\displayfonttable{TeX Gyre Pagella}[Numbers=OldStyle]
-%\defaultfontfeatures[NewCM10-Regular]
-%   {
-%    Extension = .otf ,
-%    UprightFont = NewCM10-Regular,
-%    ItalicFont = NewCM10-Italic,
-%    BoldFont = NewCM10-Bold,
-%    BoldItalicFont = NewCM10-BoldItalic,
-%    SlantedFont = NewCM10-Regular,
-%    BoldSlantedFont = NewCM10-Bold,
-%    SmallCapsFeatures = {Numbers=OldStyle}
-%}
-%\displayfonttable[font-cmds=\bfseries\itshape]{NewCM10-Regular}[Numbers=OldStyle]
-%\fi
-
 %
-% \StopEventually{\setlength\IndexMin{200pt}  \PrintIndex  }
+%\displayfonttable{NewCM10-Regular}[Numbers=OldStyle]
+%\fi
+%
+%
+% \IfImplementationShownTF
+%    {\StopEventually{\setlength\IndexMin{200pt}  \PrintIndex }}
+%    {\StopEventually{}}
+%
 %
 %
 % \section{The package implementation}
@@ -1754,7 +1760,8 @@
 \typein[\currfontname]%
        {^^JInput external font name as understood by fontspec, e.g.,^^J%
          'TeX Gyre Pagella' or 'lmroman10-regular.otf'%
-         \ifx\defaultfontname\empty\else ^^J^^J[default \defaultfontname]\fi:}
+         \ifx\defaultfontname\empty\else
+            ^^J^^J[default \defaultfontname]\fi:}
 \ifx\currfontname\empty \let\currfontname\defaultfontname \fi       
 %    \end{macrocode}
 %    
@@ -1794,7 +1801,8 @@
 \typein[\tableconfiguration]%
        {^^JInput table configuration key/value list to apply%
         \ifx\defaulttableconfig\empty\else
-         ^^J^^J[default \expandafter\detokenize\expandafter{\defaulttableconfig}]\fi:}
+          ^^J^^J[default
+          \expandafter\detokenize\expandafter{\defaulttableconfig}]\fi:}
 \ifx\tableconfiguration\empty \let\tableconfiguration\defaulttableconfig \fi       
 %    \end{macrocode}
 %    
@@ -1819,7 +1827,8 @@
 \protected@write\@auxout{}{\gdef\string\defaultfontname{\currfontname}}
 \protected@write\@auxout{}{\gdef\string\defaultunicodefont{\unicodefont}}
 \protected@write\@auxout{}{\gdef\string\defaultfontfeatures{\fontfeatures}}
-\protected@write\@auxout{}{\gdef\string\defaulttableconfig{\tableconfiguration}}
+\protected@write\@auxout{}{\gdef\string\defaulttableconfig
+                  \expandafter\detokenize\expandafter{\defaulttableconfig}}
 \makeatother
 %    \end{macrocode}
 %    
@@ -1861,7 +1870,6 @@
 \begin{document}
 
 \listoftables
-
 
 \section{Computer Modern  --- 8bit font}
 
