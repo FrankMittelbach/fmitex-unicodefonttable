@@ -17,8 +17,8 @@
 % for those people who are interested or want to report an issue.
 %
 
-\def\unicodefonttabledate   {2021/10/06}
-\def\unicodefonttableversion{v1.0a}
+\def\unicodefonttabledate   {2021/10/08}
+\def\unicodefonttableversion{v1.0b}
 
 
 %<*driver>
@@ -358,7 +358,7 @@
 %
 %
 %  \begin{variable}{
-%     compare-with,compare-color, compare-bgcolor
+%     compare-with,compare-color, compare-bgcolor,statistics-compare-format
 %  }
 %
 %    You can make comparisons between two fonts, which is useful, for
@@ -382,6 +382,21 @@
 %    they can be colored specially (default \underline{\texttt{red}})
 %    and/or you can have their background colored (default is
 %    \underline{\texttt{black!10}}, i.e., a light gray).
+%
+% \item[\key{statistics-compare-format}]
+%
+%    Code (text) to specify what should be typeset in the statistics
+%    when comparing two fonts. One can use \verb=#1= for the
+%    \meta{font-name} and \verb=#2= for its glyph count, \verb=#3= is
+%    the name of the comparison font, \verb=#4= its glyph count,
+%    \verb=#5= for the number of glyphs missing in this font and
+%    \verb=#6= the number of extra glyphs in it. This code is used
+%    instead of \key{statistics-format} when comparisons are made.
+%
+%    The material is typeset on a single line at the end of the
+%    table. If several lines are needed you need to use  \cs{parbox}
+%    or a similar construct.
+%
 %
 % \end{description}
 % \end{variable}
@@ -437,11 +452,19 @@
 % \ExplSyntaxOff
 %
 % \IfImplementationShownTF{}
-%   {\appendix \setlength\IndexMin{200pt}  \PrintIndex}
+%   {\appendix \setlength\IndexMin{200pt}
+%    \PrintIndex
+%    \newpage
+%   }
+%
 %
 % \section{Examples}
 %
-% In this section we show the results of a few calls to \cs{displayfonttable}.
+%    In this section we show the results of a few calls to
+%    \cs{displayfonttable}.
+%    The tables are a bit easier to navigate if they use color in some
+%    places, but for printing in \TUB{} this is not possible. So we
+%    use black and gray instead.
 %
 % \subsection{Computer Modern Sans --- 8-bit font}
 %
@@ -472,29 +495,27 @@
 %                  ]{Latin Modern Sans}
 %\end{verbatim}
 % 
-%\iftrue
 % \displayfonttable[hex-digits = block,
 %                   title-cont-format = \caption[]{\emph{continued}}
 %                  ]{Latin Modern Sans}
-%\fi 
-%
-% \subsection{Latin Modern Math compared to New Computer Modern Math
-%    in the range 2A00--2AFF}
-% 
-% Command used:
-%\begin{verbatim}
-%\displayfonttable[noheader,nostatistics,hex-digits = block,
-%   compare-with=NewCMMath-Regular.otf,range-start=2A00,range-end=2AFF]
-%                 {latinmodern-math.otf}
-%\end{verbatim}
-% 
-% \newpage
-%\displayfonttable[noheader,nostatistics,hex-digits = block,
-%   compare-with=NewCMMath-Regular.otf,range-start=2A00,range-end=2AFF]
-%                 {latinmodern-math.otf}
 % \fi
 %
-%\iftrue
+% \subsection{Latin Modern Math compared to New Computer Modern Math}
+%
+%    This examples shows the extra symbols available in New Computer
+%    Modern Math in comparison to Latin Modern Math as the base font. 
+%    We use the following setup:
+%\begin{verbatim}
+%\displayfonttable[hex-digits=head+foot,color=black!50,
+%     compare-with=NewCMMath-Regular.otf,compare-color=black]
+%    {latinmodern-math.otf}
+%\end{verbatim}
+% 
+%\displayfonttable[hex-digits=head+foot,color=black!50,
+%     compare-with=NewCMMath-Regular.otf,compare-color=black]
+%    {latinmodern-math.otf}
+%
+%\iffalse
 %
 %^^A\subsection{\TeX{} Gyre Pagella (Palatino) oldstyle figures --- OTF font}
 %\subsection{New Computer Modern Roman with oldstyle figures --- OTF font}
@@ -635,7 +656,8 @@
 %    \end{macrocode}
 %    If the user has asked for a comparsion to some other font we need to set this up:
 %    \begin{macrocode}
-    \tl_if_empty:NF \l_@@_compare_with_tl
+    \tl_if_empty:NTF \l_@@_compare_with_tl
+       { \tl_clear:N \l_@@_compare_font_tl }
        {
          \setfontface \l_@@_compare_font_tl {\l_@@_compare_with_tl}[]
          \cs_set_eq:NN \@@_handle_missing_glyph:n
@@ -669,7 +691,7 @@
 
 %
 %  \begin{macro}{\fonttableglyphcount}
-%  \begin{macro}{\g_@@_glyph_int}
+%  \begin{macro}{\g_@@_glyph_int,\g_@@_glyph_only_B_int,\g_@@_glyph_also_B_int}
 %    While generating the font table we count the number of glyphs we
 %    see (and typeset). The total is available in the command
 %    \cs{fonttableglyphcount} after the table got finished and will be reset to
@@ -681,6 +703,13 @@
 %    
 %    \begin{macrocode}
 \int_new:N \g_@@_glyph_int
+%    \end{macrocode}
+%    When comparing fonts we also record data for the second font: the
+%    number of glyphs in both and the number of glyphs only in the
+%    second one.
+%    \begin{macrocode}
+\int_new:N \g_@@_glyph_only_B_int
+\int_new:N \g_@@_glyph_also_B_int
 %    \end{macrocode}
 %  \end{macro}
 %  \end{macro}
@@ -704,8 +733,16 @@
 %    \cs{@@_format_table_title:nn} which can be customized through the
 %    key \key{title-format}.
 %    \begin{macrocode}
-    \bool_if:NT \l_@@_display_header_bool
-      { \@@_format_table_title:nn{#1}{#2} \@@_debug_nl:n{T}\\*[6pt] }
+    \bool_if:NTF \l_@@_display_header_bool
+       { \@@_format_table_title:nn{#1}{#2} \@@_debug_nl:n{T}\\*[6pt] }
+%    \end{macrocode}
+%    If there is no header then there can't be a caption, but
+%    \pkg{longtable} still increments the table counter. If we only
+%    show small tables that doesn't seem appropriate when there is no
+%    indication what number that \enquote{table} would have. So we
+%    undo this. Perhaps we add a key for this one day.
+%    \begin{macrocode}
+       { \addtocounter{table}{-1} }
 %    \end{macrocode}
 %    We may also want to display a line of hex digits. This is
 %    controlled through the key \key{hex-digits} that accepts different
@@ -884,9 +921,34 @@
   \bool_if:NT \l_@@_footer_hex_digits_bool
     { \@@_display_row_of_hex_digits: \@@_debug_nl:n{H} \\*   }
   \bool_if:NT \l_@@_display_statistics_bool
-    { \\*[4pt]
+    { \\*[2pt]
       \multicolumn{17}{l}{ \l_@@_stats_font_tl
-                           \@@_format_stats:nn{#1}{\fonttableglyphcount} } }
+%    \end{macrocode}
+%    If we do font comparison, we use a different command for
+%    displaying statistics and pass more data to it.
+%    \begin{macrocode}
+        \tl_if_empty:NTF \l_@@_compare_with_tl
+          {
+            \@@_format_stats:nn{#1}{\fonttableglyphcount}
+          }
+          {
+            \@@_format_compare_stats:nnnnnn{#1}{\fonttableglyphcount}
+               { \l_@@_compare_with_tl }
+%    \end{macrocode}
+%    The extra arguments are total glyph number in second font, glyphs
+%    missing in second font and glyphs only in second font.
+%    \begin{macrocode}
+               { \int_eval:n { \int_use:N\g_@@_glyph_also_B_int +
+                               \int_use:N\g_@@_glyph_only_B_int }
+               }
+               { \int_eval:n { \fonttableglyphcount -
+                               \int_use:N\g_@@_glyph_also_B_int }
+               }
+               { \int_use:N\g_@@_glyph_only_B_int }
+          }
+        \hspace*{-3cm}
+      }
+    }
 }
 %    \end{macrocode}
 %
@@ -1067,6 +1129,18 @@
 %    \begin{macrocode}
         \int_gincr:N\g_@@_glyph_int
         \bool_gset_true:N \g_@@_glyph_seen_bool
+%    \end{macrocode}
+%    If we do font comparison we also check if the glyph is in the
+%    second font and if so record that fact.
+%    \begin{macrocode}
+        \tl_if_empty:NF \l_@@_compare_font_tl
+           {
+             \group_begin:
+               \l_@@_compare_font_tl
+               \@@_if_uchar_exists:nT { #1 }
+                  { \int_gincr:N \g_@@_glyph_also_B_int }
+             \group_end:
+           }
       }
 %    \end{macrocode}
 %    If the current slot has no glyph in the font we also add a
@@ -1149,7 +1223,7 @@
     \@@_if_uchar_exists:nTF { #1 }
        {
 %    \end{macrocode}
-%    If available format it (together with the \texttt{\&}) but use a
+%    If available, format it (together with the \texttt{\&}) but use a
 %    special color and perhaps a background color.
 %    \begin{macrocode}
          \tl_gput_right:Nn \g_@@_row_tl 
@@ -1160,6 +1234,10 @@
                                               \symbol {#1} } 
                  }
             }
+%    \end{macrocode}
+%    Having seen a glyph only in the second font we record this fact.
+%    \begin{macrocode}
+         \int_gincr:N \g_@@_glyph_only_B_int            
 %    \end{macrocode}
 %    Also tell the algorithm that we have seen a glyph to typeset. If
 %    we don't do this then a row consitingon only of substitute glyphs is not
@@ -1204,6 +1282,17 @@
        ,compare-bgcolor / unknown .code:n
              = \tl_set:Nn  \l_@@_compare_bgcolor_tl { \colorbox {#1} }
        ,compare-bgcolor           .initial:n = black!10
+%    \end{macrocode}
+%    If we run a comparison we show different statistics that have
+%    their own key.
+%    \begin{macrocode}
+       ,statistics-compare-format  .cs_set:Np
+             = \@@_format_compare_stats:nnnnnn #1#2#3#4#5#6
+       ,statistics-compare-format  .initial:n
+             = \parbox{\linewidth}{
+                   Total~ number~ of~ glyphs~ in~ \texttt{#1}:~#2\\
+                   Comparison~ font~ \texttt{#3}~ has~ #5~ missing~ and~ #6~
+                   extra~ glyphs}
      }
 %    \end{macrocode}
 %
@@ -1246,7 +1335,7 @@
 %    need to resort to low-level methods, because so far the
 %    \texttt{expl3} doesn't offer an interface.
 %    \begin{macrocode}
-\prg_set_conditional:Npnn \@@_if_uchar_exists:n #1 { TF }
+\prg_set_conditional:Npnn \@@_if_uchar_exists:n #1 { TF , T }
   { \tex_iffontchar:D \tex_font:D #1 \scan_stop:
       \prg_return_true:
     \else:
@@ -1403,10 +1492,10 @@
                   \bool_if:NTF \g_@@_first_row_bool
                     {
                       \bool_gset_false:N \g_@@_first_row_bool
-                      \@@_debug_nl:n{C}\\[-8pt]
+                      \@@_debug_nl:n{C}\\[-4pt]
                     }
                     {
-                      \@@_debug_nl:n{D}\\[4pt]
+                      \@@_debug_nl:n{D}\\[8pt]
                     }
                  \multicolumn{17}{c}{\normalfont \bfseries
                                      \tl_use:N \g_@@_block_title_tl}
@@ -1418,7 +1507,7 @@
                   \bool_if:NTF \l_@@_blockwise_hex_digits_bool
                        { \@@_debug_nl:n{E}\\*
                          \@@_display_row_of_hex_digits:
-                         \@@_debug_nl:n{H}\\*
+                         \@@_debug_nl:n{H}\\*[2pt]
                        }
                        { \@@_debug_nl:n{F}\\*[2pt] }
                 }
@@ -1497,9 +1586,11 @@
      \bool_gset_false:N \g_@@_glyph_seen_bool     
      \bool_gset_false:N \g_@@_row_missing_bool
 %    \end{macrocode}
-%    And clearly the glyph count for the font is zero.
+%    And clearly the glyph count for the font(s) is zero.
 %    \begin{macrocode}
      \int_gzero:N \g_@@_glyph_int 
+     \int_gzero:N \g_@@_glyph_only_B_int 
+     \int_gzero:N \g_@@_glyph_also_B_int 
 }
 %    \end{macrocode}
 %  \end{macro}

@@ -1,0 +1,5 @@
+2021-10-08  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
+
+	* unicodefonttable.dtx (subsection{Keys and their values}):
+	Added statistics-compare-format key.
+
