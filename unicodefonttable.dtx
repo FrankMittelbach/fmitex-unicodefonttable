@@ -18,7 +18,7 @@
 %
 
 \def\unicodefonttabledate   {2021/10/08}
-\def\unicodefonttableversion{v1.0b}
+\def\unicodefonttableversion{v1.0c}
 
 
 %<*driver>
@@ -666,9 +666,13 @@
                        \@@_handle_missing_glyph_compare:n
        }
 %    \end{macrocode}
-%    The we start the table with 17 columns.
+%    The we start the table with 17 columns. We use \texttt{longtable}
+%    if we produce a caption and \texttt{longtable*} if not (so that
+%    the table number is not increased which would look odd if you
+%    have other tables in your document).
 %    \begin{macrocode}
-    \begin{longtable}{@{}c@{\quad}*{16}{c}@{}}
+    \begin{longtable\bool_if:NF\l_@@_display_header_bool{*}}
+          {@{}c@{\quad}*{16}{c}@{}}
 %    \end{macrocode}
 %    Special headers and footers are set up first:
 %    \begin{macrocode}
@@ -684,7 +688,7 @@
 %    do not change based on the table content.
 %    \begin{macrocode}
       \@@_handle_table_ending:n {#2}
-    \end{longtable}
+    \end{longtable\bool_if:NF\l_@@_display_header_bool{*}}
   \group_end:
 }
 %    \end{macrocode}
@@ -735,16 +739,8 @@
 %    \cs{@@_format_table_title:nn} which can be customized through the
 %    key \key{title-format}.
 %    \begin{macrocode}
-    \bool_if:NTF \l_@@_display_header_bool
+    \bool_if:NT \l_@@_display_header_bool
        { \@@_format_table_title:nn{#1}{#2} \@@_debug_nl:n{T}\\*[6pt] }
-%    \end{macrocode}
-%    If there is no header then there can't be a caption, but
-%    \pkg{longtable} still increments the table counter. If we only
-%    show small tables that doesn't seem appropriate when there is no
-%    indication what number that \enquote{table} would have. So we
-%    undo this. Perhaps we add a key for this one day.
-%    \begin{macrocode}
-       { \addtocounter{table}{-1} }
 %    \end{macrocode}
 %    We may also want to display a line of hex digits. This is
 %    controlled through the key \key{hex-digits} that accepts different

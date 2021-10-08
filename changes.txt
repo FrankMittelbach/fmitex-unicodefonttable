@@ -2,4 +2,6 @@
 
 	* unicodefonttable.dtx (subsection{Keys and their values}):
 	Added statistics-compare-format key.
+	Use longtable* from the caption package when not showing a
+	header with a \caption.
 
