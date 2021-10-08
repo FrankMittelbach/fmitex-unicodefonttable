@@ -303,7 +303,8 @@
 %    the end of the table.
 %
 % \item[\key{statistics-font}]
-%    The font used to typeset the statistics, default is \underline{\cs{normalfont}}.
+%    The font used to typeset the statistics, default is
+%    \underline{\cs{normalfont}\cs{small}}.
 %
 %
 % \item[\key{statistics-format}]
@@ -906,7 +907,7 @@
 %    supply a family to avoid getting the font used in the table body. 
 %    \begin{macrocode}
     ,statistics-font    .tl_set:N  = \l_@@_stats_font_tl
-    ,statistics-font    .initial:n = \normalfont
+    ,statistics-font    .initial:n = \normalfont\small
 %    \end{macrocode}
 %    And here we have the default text. There is only space for a
 %    single line. If more text is needed one needs to provide some
