@@ -105,11 +105,13 @@
 %    particular table row from the ``Basic Latin'' block would show
 %    something like
 %\begin{quote}
-%  \displayfonttable*[noheader,range-start=0040, range-end=004F]{Latin Modern Sans}
+%  \displayfonttable*[noheader,range-start=0040, range-end=004F,
+%                     color=black!50]{Latin Modern Sans}
 %\end{quote}
 %    If a Unicode character has no glyph representation in a given
 %    font then this is indicated by a special symbol (by default a
-%    colored hyphen).
+%    colored hyphen). By default some coloring is used which shown
+%    in \TUB{} as gray.
 %
 %    In order to easily find any Unicode character the table shows by
 %    default sixteen hex digits as a column heading, thus in order to find
@@ -120,7 +122,8 @@
 %    --- the line shows that for some of the other slots).
 %
 %\begin{quote}
-%  \displayfonttable*[noheader,range-start=20A0, range-end=20AF]{Latin Modern Sans}
+%  \displayfonttable*[noheader,range-start=20A0, range-end=20AF,
+%                     color=black!50]{Latin Modern Sans}
 %\end{quote}
 %
 %    It is sometimes useful to compare two fonts with each other by
@@ -133,8 +136,9 @@
 %
 %\begin{quote}
 %\displayfonttable[noheader,nostatistics,display-block=none,
-%   compare-with=NewCMMath-Regular.otf,range-start=2A00,range-end=2A1F]
-%                 {latinmodern-math.otf}
+%   compare-with=NewCMMath-Regular.otf,range-start=2A00,range-end=2A1F,
+%   color=black!50,compare-color=none]
+%   {latinmodern-math.otf}
 %\end{quote}
 %
 %
