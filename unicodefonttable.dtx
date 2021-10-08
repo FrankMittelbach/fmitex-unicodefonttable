@@ -944,6 +944,13 @@
                }
                { \int_use:N\g_@@_glyph_only_B_int }
           }
+%    \end{macrocode}
+%    We don't know exactly how wide the table is (and nor does the
+%    user) but one may need to use \cs{parbox} when formatting
+%    the statistic line(s). So we back up a bit (rather random) which
+%    allows us to use \verb=\parbox{\linewidth}{...= in the key
+%    without thinking too much about it.
+%    \begin{macrocode}
         \hspace*{-3cm}
       }
     }
