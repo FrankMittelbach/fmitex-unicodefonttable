@@ -1843,10 +1843,10 @@
 %    \end{macrocode}
 %
 %    \begin{macrocode}
-\def\defaultfontname{Latin Modern Roman}
-\def\defaultfontfeatures{}
-\def\defaulttableconfig{}
-\def\defaultunicodefont{}
+\def\DEFAULTfontname{Latin Modern Roman}
+\def\DEFAULTfontfeatures{}
+\def\DEFAULTtableconfig{}
+\def\DEFAULTunicodefont{}
 \begin{document}
 %    \end{macrocode}
 %
@@ -1858,80 +1858,80 @@
 \ifx\generatetable\undefined
 \else
   \typein[\answer]{^^JReuse settings from last time (default yes)?^^J^^J%
-    [ font name = \defaultfontname^^J
-      \space unicode? =  \ifx\defaultunicodefont\empty yes^^J
-                           \space font features = \defaultfontfeatures
+    [ font name = \DEFAULTfontname^^J
+      \space unicode? =  \ifx\DEFAULTunicodefont\empty yes^^J
+                           \space font features = \DEFAULTfontfeatures
                          \else no\fi^^J
-      \space table config = \defaulttableconfig \space]}
+      \space table config = \DEFAULTtableconfig \space]}
 \fi
 %    \end{macrocode}
 %    
 %    \begin{macrocode}
 \ifx\answer\empty
-  \let\currfontname\defaultfontname
-  \let\unicodefont\defaultunicodefont
-  \let\fontfeatures\defaultfontfeatures
-  \let\tableconfiguration\defaulttableconfig
+  \let\FontNameToTable\DEFAULTfontname
+  \let\IsUnicodeFont\DEFAULTunicodefont
+  \let\FontFeaturesToApply\DEFAULTfontfeatures
+  \let\TableConfigurationToApply\DEFAULTtableconfig
 \else
 %    \end{macrocode}
 %    
 %    \begin{macrocode}
-\typein[\currfontname]%
+\typein[\FontNameToTable]%
        {^^JInput external font name as understood by fontspec, e.g.,^^J%
          'TeX Gyre Pagella' or 'lmroman10-regular.otf'%
-         \ifx\defaultfontname\empty\else
-            ^^J^^J[default \defaultfontname]\fi:}
-\ifx\currfontname\empty \let\currfontname\defaultfontname \fi       
+         \ifx\DEFAULTfontname\empty\else
+            ^^J^^J[default \DEFAULTfontname]\fi:}
+\ifx\FontNameToTable\empty \let\FontNameToTable\DEFAULTfontname \fi       
 %    \end{macrocode}
 %    
 %    \begin{macrocode}
-\typein[\unicodefont]%
+\typein[\IsUnicodeFont]%
        {^^JIs this a Unicode font?^^J^^J%
-        \ifx\defaultunicodefont\empty  [default yes]\else [default no]\fi:}
+        \ifx\DEFAULTunicodefont\empty  [default yes]\else [default no]\fi:}
 %    \end{macrocode}
 %    
 %    \begin{macrocode}
-\ifx\unicodefont\empty
-%  \ifx\defaultunicodefont\empty
+\ifx\IsUnicodeFont\empty
+%  \ifx\DEFAULTunicodefont\empty
 %  \else
-    \let\unicodefont\defaultunicodefont
+    \let\IsUnicodeFont\DEFAULTunicodefont
 %  \fi
 \else
-  \ifx\defaultunicodefont\empty
+  \ifx\DEFAULTunicodefont\empty
   \else
-     \let\unicodefont\empty
+     \let\IsUnicodeFont\empty
   \fi
 \fi
 %    \end{macrocode}
 %    
 %    \begin{macrocode}
-\ifx\unicodefont\empty
-  \typein[\fontfeatures]%
+\ifx\IsUnicodeFont\empty
+  \typein[\FontFeaturesToApply]%
          {^^JInput font feature key/value list to apply%
-           \ifx\defaultfontfeatures\empty\else
-           ^^J^^J[default \defaultfontfeatures]\fi:}
-  \ifx\fontfeatures\empty \let\fontfeatures\defaultfontfeatures \fi      
+           \ifx\DEFAULTfontfeatures\empty\else
+           ^^J^^J[default \DEFAULTfontfeatures]\fi:}
+  \ifx\FontFeaturesToApply\empty \let\FontFeaturesToApply\DEFAULTfontfeatures \fi      
 \else
-  \let\fontfeatures\defaultfontfeatures
+  \let\FontFeaturesToApply\DEFAULTfontfeatures
 \fi
 %    \end{macrocode}
 %    
 %    \begin{macrocode}
-\typein[\tableconfiguration]%
+\typein[\TableConfigurationToApply]%
        {^^JInput table configuration key/value list to apply%
-        \ifx\defaulttableconfig\empty\else
+        \ifx\DEFAULTtableconfig\empty\else
           ^^J^^J[default
-          \expandafter\detokenize\expandafter{\defaulttableconfig}]\fi:}
-\ifx\tableconfiguration\empty \let\tableconfiguration\defaulttableconfig \fi       
+          \expandafter\detokenize\expandafter{\DEFAULTtableconfig}]\fi:}
+\ifx\TableConfigurationToApply\empty \let\TableConfigurationToApply\DEFAULTtableconfig \fi       
 %    \end{macrocode}
 %    
 %    \begin{macrocode}
 \edef\generatetable{\noexpand\displayfonttable
-  \ifx\unicodefont\empty\else *\fi
-  \ifx\tableconfiguration\empty\else
-      [\expandafter\unexpanded\expandafter{\tableconfiguration}]\fi
-  {\currfontname}%
-  \ifx\fontfeatures\empty\else[\fontfeatures]\fi
+  \ifx\IsUnicodeFont\empty\else *\fi
+  \ifx\TableConfigurationToApply\empty\else
+      [\expandafter\unexpanded\expandafter{\TableConfigurationToApply}]\fi
+  {\FontNameToTable}%
+  \ifx\FontFeaturesToApply\empty\else[\FontFeaturesToApply]\fi
 }  
 %    \end{macrocode}
 %    
@@ -1943,11 +1943,11 @@
 \makeatletter
 \protected@write\@auxout{}{\gdef\string\generatetable
      {\expandafter\detokenize\expandafter{\generatetable}}}
-\protected@write\@auxout{}{\gdef\string\defaultfontname{\currfontname}}
-\protected@write\@auxout{}{\gdef\string\defaultunicodefont{\unicodefont}}
-\protected@write\@auxout{}{\gdef\string\defaultfontfeatures{\fontfeatures}}
-\protected@write\@auxout{}{\gdef\string\defaulttableconfig
-                  \expandafter\detokenize\expandafter{\defaulttableconfig}}
+\protected@write\@auxout{}{\gdef\string\DEFAULTfontname{\FontNameToTable}}
+\protected@write\@auxout{}{\gdef\string\DEFAULTunicodefont{\IsUnicodeFont}}
+\protected@write\@auxout{}{\gdef\string\DEFAULTfontfeatures{\FontFeaturesToApply}}
+\protected@write\@auxout{}{\gdef\string\DEFAULTtableconfig
+                  {\expandafter\detokenize\expandafter{\TableConfigurationToApply}}}
 \makeatother
 %    \end{macrocode}
 %    
