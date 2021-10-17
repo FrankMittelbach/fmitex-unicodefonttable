@@ -17,8 +17,8 @@
 % for those people who are interested or want to report an issue.
 %
 
-\def\unicodefonttabledate   {2021/10/08}
-\def\unicodefonttableversion{v1.0c}
+\def\unicodefonttabledate   {2021/10/17}
+\def\unicodefonttableversion{v1.0d}
 
 
 %<*driver>
@@ -35,6 +35,7 @@
 %
 % \fi
 %
+% \tracinglostchars=3
 %
 % \newcommand\key [1]{\texttt{#1}}
 % \newcommand\kval[1]{\texttt{#1}}
@@ -417,7 +418,7 @@
 %    considerably by limiting the search (and consequently the output
 %    generation).
 %    The \key{range-start} specifies where to start with the search
-%    (default \underline{\texttt{0000}}) and \key{range-stop} gives
+%    (default \underline{\texttt{0000}}) and \key{range-end} gives
 %    the last slot that is tested (default
 %    \underline{\texttt{FFFF}}).\footnotemark
 %
@@ -426,9 +427,11 @@
 %    letters and see how glyphs from two fonts blend with each other.
 
 % \end{description}
-% \end{variable}\footnotetext{This is the whole of what
-%    the \pkg{unicodefonttable} is currently able to handle, so right
-%    now you can only reduce not extend!}
+% \end{variable}\footnotetext{By default we restrict the display to
+%    slots below \texttt{10000}, because text fonts seldom contain glyphs in the
+%    higher planes. But if you want everything supported by the
+%    package and are prepared to wait until the higher planes are scanned,
+%    you can go up to a value of \texttt{EFFFF}.}
 %
 %
 %
@@ -508,12 +511,12 @@
 %    Modern Math in comparison to Latin Modern Math as the base font. 
 %    We use the following setup:
 %\begin{verbatim}
-%\displayfonttable[hex-digits=head+foot,color=black!50,
+%\displayfonttable[hex-digits=head+foot,color=black!50,range-end=1FFFF,
 %     compare-with=NewCMMath-Regular.otf,compare-color=black]
 %    {latinmodern-math.otf}
 %\end{verbatim}
 % 
-%\displayfonttable[hex-digits=head+foot,color=black!50,
+%\displayfonttable[hex-digits=head+foot,color=black!50, range-end=1FFFF,
 %     compare-with=NewCMMath-Regular.otf,compare-color=black]
 %    {latinmodern-math.otf}
 %
@@ -672,7 +675,7 @@
 %    have other tables in your document).
 %    \begin{macrocode}
     \begin{longtable\bool_if:NF\l_@@_display_header_bool{*}}
-          {@{}c@{\quad}*{16}{c}@{}}
+          {@{}r@{\quad}*{16}{c}@{}}
 %    \end{macrocode}
 %    Special headers and footers are set up first:
 %    \begin{macrocode}
@@ -1027,32 +1030,33 @@
 %    current hex value in each of the four positions stored in some variable.
 
 
-%  \begin{macro}{\g_@@_hex_A_tl}
-%  \begin{macro}{\g_@@_hex_B_tl}
-%  \begin{macro}{\g_@@_hex_C_tl}
-%    
-%    We really only need three variables the value innermost loop can
-%    used directly.
+%  \begin{macro}{\g_@@_hex_H_tl,\g_@@_hex_A_tl,
+%                \g_@@_hex_B_tl,\g_@@_hex_C_tl}
+%    \cs{g_@@_hex_H_tl} is a bit special because, it is initially not
+%    zero but empty so that slots in the lower plane are denoted by 4
+%    hex digits.
+%    We really only need three further variables, the value in the
+%    innermost loop can used directly.
 %    \begin{macrocode}
+\tl_new:N \g_@@_hex_H_tl   % higher plane
 \tl_new:N \g_@@_hex_A_tl
 \tl_new:N \g_@@_hex_B_tl
 \tl_new:N \g_@@_hex_C_tl
 %    \end{macrocode}
 %  \end{macro}
-%  \end{macro}
-%  \end{macro}
-
-
+%
+%
 %  \begin{macro}{\c_@@_hex_digits_clist}
-%    Here is the sequence we loop through on each level.
+%    Here is the sequence we loop through on each level, except the
+%    one for the outer level.
 %    \begin{macrocode}
 \clist_const:Nn\c_@@_hex_digits_clist{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F}
 %    \end{macrocode}
 %  \end{macro}
-
-
-
-%  \begin{macro}{\@@_produce_table_rows:,
+%
+%
+%
+%  \begin{macro}{\@@_produce_table_rows:,\@@_handle_hex_H:n,
 %                \@@_handle_hex_A:n,\@@_handle_hex_B:n,
 %                \@@_handle_hex_C:n,\@@_handle_hex_D:n}
 %    The overall code layout is then fairly simply:
@@ -1063,14 +1067,30 @@
 %    \begin{macrocode}
    \@@_initialize_table_rows: 
 %    \end{macrocode}
-%    and then loop over \cs{\c_@@_hex_digits_clist} for the leftmost
+%    and then loop we start the loop. The outer level is a bit special
+%    as currently Unicode has only slots allocated in plane 0, 1, 2
+%    amd E (well and F but that is a private area) so we loop only
+%    over those and instead of \texttt{0} we use an empty value.
+%
+%    \begin{macrocode}
+   \clist_map_function:nN { { } , 1, 2, E } \@@_handle_hex_H:n }
+%    \end{macrocode}
+%    
+%    Most fonts do not have glyphs in the higher planes, which is why
+%    by default we don't loop using a nonempty \cs{@@_handle_hex_H:n}.
+%    But if the user wants to scan and display the higher slots they
+%    can by setting \key{range-end} appropriatly.
+%
+%    So after setting \cs{@@_handle_hex_H:n} we loop over
+%    \cs{c_@@_hex_digits_clist} for the next
 %    hex digit (which we call \enquote{A}).
 %    \begin{macrocode}
+\cs_new:Npn \@@_handle_hex_H:n #1 { \tl_gset:Nn\g_@@_hex_H_tl{#1}
    \clist_map_function:NN \c_@@_hex_digits_clist \@@_handle_hex_A:n }
 %    \end{macrocode}
 %
 %    Handling \enquote{A} means storing its value for later use and
-%    then start a loop for setting the second hex digits:
+%    then start a loop for setting the second (or third on higher planes) hex digits:
 %    \begin{macrocode}
 \cs_new:Npn \@@_handle_hex_A:n #1 { \tl_gset:Nn\g_@@_hex_A_tl{#1}
    \clist_map_function:NN \c_@@_hex_digits_clist \@@_handle_hex_B:n }
@@ -1080,12 +1100,12 @@
 %    is a white lie. In reality we do a lot of extra stuff when
 %    handling \enquote{C} so later one we give a second definition for
 %    \cs{@@_handle_hex_C:n} but for understanding the overall picture
-%    the simpler one is better.}:
+%    the simpler one shown here is better.}:
 %    \begin{macrocode}
 \cs_new:Npn \@@_handle_hex_B:n #1 { \tl_gset:Nn\g_@@_hex_B_tl{#1}
    \clist_map_function:NN \c_@@_hex_digits_clist \@@_handle_hex_C:n }
 %    \end{macrocode}
-%    
+%
 %    \begin{macrocode}
 \cs_new:Npn \@@_handle_hex_C:n #1 { \tl_gset:Nn\g_@@_hex_C_tl{#1}
    \clist_map_function:NN \c_@@_hex_digits_clist \@@_handle_hex_D:n }
@@ -1093,15 +1113,15 @@
 %    In the innermost loop we now have the full Unicode number
 %    available, so there we have to decide what to do with it. This is
 %    done by \cs{@@_handle_hex_D:n} that receives the full number,
-%    e.g., \texttt{1A7C} as its argument.
+%    e.g., \texttt{1A7C} or \texttt{1AD00}, as its argument.
 %    \begin{macrocode}
 \cs_new:Npn \@@_handle_hex_D:n #1 {
   \@@_handle_slot:x
-     { " \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl #1 }
+     { " \g_@@_hex_H_tl \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl #1 }
 }
 %    \end{macrocode}
 %  \end{macro}
-
+%
 %  \begin{macro}{\g_@@_row_tl}
 %    We first collect the glyphs for a whole row before decide to
 %    typeset it, because in case the row is empty we want to omit
@@ -1382,7 +1402,8 @@
 %    next rows if the first rows in the is block have no glyphs). If
 %    we are still in the same block no update happens.
 %    \begin{macrocode}
-  \@@_update_block_title:n { \g_@@_hex_A_tl
+  \@@_update_block_title:n { \g_@@_hex_H_tl
+                             \g_@@_hex_A_tl
                              \g_@@_hex_B_tl
                              \g_@@_hex_C_tl }
 %    \end{macrocode}
@@ -1391,11 +1412,11 @@
 %    \cs{l_@@_range_end_tl}.
 %    \begin{macrocode}
   \int_compare:nNnF
-      { " \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
+      { " \g_@@_hex_H_tl \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
     < { "\l_@@_range_start_tl }
     {
       \int_compare:nNnF
-          { " \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
+          { " \g_@@_hex_H_tl \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
         > { "\l_@@_range_end_tl }
         {
 %    \end{macrocode}
@@ -1408,7 +1429,7 @@
           \tl_gset:Nx \g_@@_row_tl
              {
                \exp_not:N \@@_format_row_title:n
-                   { \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl  }
+                   { \g_@@_hex_H_tl \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl  }
              }
           \clist_map_function:NN \c_@@_hex_digits_clist
                                  \@@_handle_hex_D:n
@@ -1760,8 +1781,123 @@
          { "FE7 }{ Arabic~ Presentation~ Forms-B }
          { "FF0 }{ Halfwidth~ and Fullwidth~ Forms }
          { "FFF }{ Specials~ ... }
-%...         
-         { "1000 }{ Plane 1~ ... }
+%% ... Plane 1 ...         
+        { "1000 }{ Linear~ B~ Syllabary }
+        { "1008 }{ Linear~ B~ Ideograms }
+        { "1010 }{ Aegean~ Numbers }
+        { "1014 }{ Ancient~ Greek~ Numbers }
+        { "1019 }{ Ancient~ Symbols }
+        { "101D }{ Phaistos~ Disc }
+        { "1028 }{ Lycian }
+        { "102A }{ Carian }
+        { "102E }{ Coptic~ Epact~ Numbers }
+        { "1030 }{ Old~ Italic }
+        { "1033 }{ Gothic }
+        { "1035 }{ Old~ Permic }
+        { "1038 }{ Ugaritic }
+        { "103A }{ Old~ Persian }
+        { "1040 }{ Deseret }
+        { "1045 }{ Shavian }
+        { "1048 }{ Osmanya }
+        { "104B }{ Osage }
+        { "1050 }{ Elbasan }
+        { "1053 }{ Caucasian~ Albanian }
+        { "1060 }{ Linear~ A }
+        { "1080 }{ Cypriot~ Syllabary }
+        { "1084 }{ Imperial~ Aramaic }
+        { "1086 }{ Palmyrene }
+        { "1088 }{ Nabataean }
+        { "108E }{ Hatran }
+        { "1090 }{ Phoenician }
+        { "1092 }{ Lydian }
+        { "1098 }{ Meroitic~ Hieroglyphs }
+        { "109A }{ Meroitic~ Cursive }
+        { "10A0 }{ Kharoshthi }
+        { "10A6 }{ Old~ South~ Arabian }
+        { "10A8 }{ Old~ North~ Arabian }
+        { "10AC }{ Manichaean }
+        { "10B0 }{ Avestan }
+        { "10B4 }{ Inscriptional~ Parthian }
+        { "10B6 }{ Inscriptional~ Pahlavi }
+        { "10B8 }{ Psalter~ Pahlavi }
+        { "10C0 }{ Old~ Turkic }
+        { "10C8 }{ Old~ Hungarian }
+        { "10E6 }{ Rumi~ Numeral~ Symbols }
+        { "1100 }{ Brahmi }
+        { "1108 }{ Kaithi }
+        { "110D }{ Sora~ Sompeng }
+        { "1110 }{ Chakma }
+        { "1115 }{ Mahajani }
+        { "1118 }{ Sharada }
+        { "111E }{ Sinhala~ Archaic~ Numbers }
+        { "1120 }{ Khojki }
+        { "1128 }{ Multani }
+        { "112B }{ Khudawadi }
+        { "1130 }{ Grantha }
+        { "1140 }{ Newa }
+        { "1148 }{ Tirhuta }
+        { "1158 }{ Siddham }
+        { "1160 }{ Modi }
+        { "1166 }{ Mongolian~ Supplement }
+        { "1168 }{ Takri }
+        { "1170 }{ Ahom }
+        { "118A }{ Warang~ Citi }
+        { "11A0 }{ Zanabazar~ Square }
+        { "11A5 }{ Soyombo }
+        { "11AC }{ Pau~ Cin~ Hau }
+        { "11C0 }{ Bhaiksuki }
+        { "11C7 }{ Marchen }
+        { "11D0 }{ Masaram~ Gondi }
+        { "1200 }{ Cuneiform }
+        { "1240 }{ Cuneiform~ Numbers~ and~ Punctuation }
+        { "1248 }{ Early~ Dynastic~ Cuneiform }
+        { "1300 }{ Egyptian~ Hieroglyphs }
+        { "1440 }{ Anatolian~ Hieroglyphs }
+        { "1680 }{ Bamum~ Supplement }
+        { "16A4 }{ Mro }
+        { "16AD }{ Bassa~ Vah }
+        { "16B0 }{ Pahawh~ Hmong }
+        { "16F0 }{ Miao }
+        { "16FE }{ Ideographic~ Symbols~ and~ Punctuation }
+        { "1700 }{ Tangut }
+        { "1880 }{ Tangut~ Components }
+        { "1B00 }{ Kana~ Supplement }
+        { "1B10 }{ Kana~ Extended-A }
+        { "1B17 }{ Nushu }
+        { "1BC0 }{ Duployan }
+        { "1BCA }{ Shorthand~ Format~ Controls }
+        { "1D00 }{ Byzantine~ Musical~ Symbols }
+        { "1D10 }{ Musical~ Symbols }
+        { "1D20 }{ Ancient~ Greek~ Musical~ Notation }
+        { "1D30 }{ Tai~ Xuan~ Jing~ Symbols }
+        { "1D36 }{ Counting~ Rod~ Numerals }
+        { "1D40 }{ Mathematical~ Alphanumeric~ Symbols }
+        { "1D80 }{ Sutton~ SignWriting }
+        { "1E00 }{ Glagolitic~ Supplement }
+        { "1E80 }{ Mende~ Kikakui }
+        { "1E90 }{ Adlam }
+        { "1EE0 }{ Arabic~ Mathematical~ Alphabetic~ Symbols }
+        { "1F00 }{ Mahjong~ Tiles }
+        { "1F03 }{ Domino~ Tiles }
+        { "1F0A }{ Playing~ Cards }
+        { "1F10 }{ Enclosed~ Alphanumeric~ Supplement }
+        { "1F20 }{ Enclosed~ Ideographic~ Supplement }
+        { "1F30 }{ Miscellaneous~ Symbols~ and~ Pictographs }
+        { "1F60 }{ Emoticons }
+        { "1F65 }{ Ornamental~ Dingbats }
+        { "1F68 }{ Transport~ and~ Map~ Symbols }
+        { "1F70 }{ Alchemical~ Symbols }
+        { "1F78 }{ Geometric~ Shapes~ Extended }
+        { "1F80 }{ Supplemental~ Arrows-C }
+        { "1F90 }{ Supplemental~ Symbols~ and~ Pictographs }
+        { "2000 }{ CJK~ Unified~ Ideographs~ Extension~ B }
+        { "2A70 }{ CJK~ Unified~ Ideographs~ Extension~ C }
+        { "2B74 }{ CJK~ Unified~ Ideographs~ Extension~ D }
+        { "2B82 }{ CJK~ Unified~ Ideographs~ Extension~ E }
+        { "2CEB }{ CJK~ Unified~ Ideographs~ Extension~ F }
+        { "2F80 }{ CJK~ Compatibility~ Ideographs~ Supplement }
+        { "E010 }{ Tags }
+        { "E000 }{ Variation~ Selectors~ Supplement }
        }
 %    \end{macrocode}
 %    If none of the above has matched we are somewhere within a block
@@ -2028,7 +2164,7 @@
 
 \section{Comparing Latin Modern Math with New Computer Modern Math}
 
-\displayfonttable[compare-with=NewCMMath-Regular.otf]
+\displayfonttable[compare-with=NewCMMath-Regular.otf, range-end=1FFFF]
                  {latinmodern-math.otf}
 
 \end{document}

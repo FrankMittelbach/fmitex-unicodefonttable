@@ -1,3 +1,9 @@
+2021-10-17  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
+
+	* unicodefonttable.dtx:
+	Extend support to the higher planes of Unicode by allowing a
+	range from U+0000 to U+EFFFF
+
 2021-10-08  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
 
 	* unicodefonttable.dtx (subsection{Keys and their values}):

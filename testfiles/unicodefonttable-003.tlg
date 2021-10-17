@@ -177,9 +177,8 @@ Completed box being shipped out [1]
 ....\glue(\lineskip) 0.0
 ....\hbox(8.39996+3.60004)x345.0, glue set 4.80249fill, direction TLT
 .....\glue(\tabskip) 0.0 plus 1.0fill
-.....\hbox(8.39996+3.60004)x59.39478, glue set 24.69739fil, direction TLT
+.....\hbox(8.39996+3.60004)x59.39478, glue set 49.39478fil, direction TLT
 ......\rule(8.39996+3.60004)x0.0
-......\glue 0.0 plus 1.0fil
 ......\glue 0.0 plus 1.0fil
 ......\glue 10.0
 .....\glue(\tabskip) 0.0
@@ -345,9 +344,8 @@ Completed box being shipped out [1]
 ...\penalty 10000
 ...\hbox(8.39996+3.60004)x345.0, glue set 4.80249fill, direction TLT
 ....\glue(\tabskip) 0.0 plus 1.0fill
-....\hbox(8.39996+3.60004)x59.39478, glue set 24.69739fil, direction TLT
+....\hbox(8.39996+3.60004)x59.39478, glue set 49.39478fil, direction TLT
 .....\rule(8.39996+3.60004)x0.0
-.....\glue 0.0 plus 1.0fil
 .....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
@@ -477,7 +475,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 0
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(11.05+6.06)x12.00002, direction TLT
@@ -774,7 +771,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 1
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(12.67+7.68)x12.00002, direction TLT
@@ -1183,7 +1179,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 2
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(10.46+5.6)x12.00002, direction TLT
@@ -1592,7 +1587,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 3
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(10.78+4.86)x12.00002, direction TLT
@@ -2001,7 +1995,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 4
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(10.2+3.60004)x12.00002, direction TLT
@@ -2424,7 +2417,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 5
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(11.31+4.73)x12.00002, direction TLT
@@ -2847,7 +2839,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 6
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(11.31+5.87)x12.00002, direction TLT
@@ -3270,7 +3261,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 7
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(10.73+4.34)x12.00002, direction TLT
@@ -3665,7 +3655,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 8
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(11.89+6.86)x12.00002, direction TLT
@@ -3976,7 +3965,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 9
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(13.13+6.89)x12.00002, direction TLT
@@ -4371,7 +4359,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 A
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(11.98+5.03)x12.00002, direction TLT
@@ -4780,7 +4767,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 B
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(11.16+6.21)x12.00002, direction TLT
@@ -5189,7 +5175,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 C
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(10.03+5.87)x12.00002, direction TLT
@@ -5612,7 +5597,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 D
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(11.03+4.63)x12.00002, direction TLT
@@ -6035,7 +6019,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 E
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(11.12+5.5)x12.00002, direction TLT
@@ -6458,7 +6441,6 @@ Completed box being shipped out [1]
 .....\TU/lmtt/m/n/8 F
 .....\TU/lmtt/m/n/8 F
 .....\pdfcolorstack 0 pop
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ....\hbox(12.2+6.2)x12.00002, direction TLT
@@ -6863,11 +6845,10 @@ Completed box being shipped out [1]
 ...\glue(\lineskip) 0.0
 ...\hbox(8.39996+5.60004)x345.0, glue set 4.80249fill, direction TLT
 ....\glue(\tabskip) 0.0 plus 1.0fill
-....\hbox(8.39996+5.60004)x59.39478, glue set 24.69739fil, direction TLT
+....\hbox(8.39996+5.60004)x59.39478, glue set 49.39478fil, direction TLT
 .....\rule(8.39996+3.60004)x0.0
 .....\glue 0.0 plus 1.0fil
 .....\rule(0.0+5.60004)x0.0
-.....\glue 0.0 plus 1.0fil
 .....\glue 10.0
 ....\glue(\tabskip) 0.0
 ...\penalty 10000
