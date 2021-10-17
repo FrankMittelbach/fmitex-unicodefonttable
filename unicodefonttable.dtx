@@ -400,7 +400,6 @@
 %    table. If several lines are needed you need to use  \cs{parbox}
 %    or a similar construct.
 %
-%
 % \end{description}
 % \end{variable}
 %
@@ -505,6 +504,8 @@
 %                  ]{Latin Modern Sans}
 % \fi
 %
+%
+%
 % \subsection{Latin Modern Math compared to New Computer Modern Math}
 %
 %    This examples shows the extra symbols available in New Computer
@@ -515,7 +516,33 @@
 %     compare-with=NewCMMath-Regular.otf,compare-color=black]
 %    {latinmodern-math.otf}
 %\end{verbatim}
-% 
+%    We extended the range to cover \texttt{U+10000} to
+%    \texttt{U+1FFFF} in order to include the Unicode math alphabets.
+%
+%    Note that if you look at the table you see a number of slots that
+%    do not show a \enquote{missing glyph} sign, but nontheless appear
+%    to be empty. The reason is that Unicode contains a lot of special
+%    spaces or otherwise invisible characters, e.g., \texttt{U+0022}
+%    is the normal space, \texttt{U+00A0} is a non-breaking space,
+%    \texttt{U+00AD} is a soft-hyphen (what \LaTeX{} users would
+%    indicate with a \cs{-}), and so forth. Especially the row
+%    \texttt{U+2000-200F} looks strange as it appears to be totally
+%    empty, but in fact most of its slots contain spaces of different
+%    width.
+%
+%    Another, somewhat surprising area is the \enquote{Mathematical
+%    Alphanumeric Symbols} block, starting at \texttt{U+1D400}. In
+%    there you see a number of missing characters, e.g.,
+%    \texttt{U+1D455} (math italic small H) or \texttt{U+1D49D} (math
+%    script B). In this case the reason is \emph{not} that the font
+%    fails to implement the characters, but that these characters have
+%    been added in earlier revisions of the Unicode standard in the
+%    lower Unicode plane already. For example, the \enquote{h} is the
+%    Planck constant \texttt{U+210E} and in \texttt{U+212C} there is
+%    already a script capital B and the Unicode Consortium decided not
+%    to encode the \emph{same} character twice, hence the appearent
+%    holes.
+%
 %\displayfonttable[hex-digits=head+foot,color=black!50, range-end=1FFFF,
 %     compare-with=NewCMMath-Regular.otf,compare-color=black]
 %    {latinmodern-math.otf}
