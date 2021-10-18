@@ -10,3 +10,4 @@ build
 *.blg
 unicodefonttable-ctan.zip
 *.lot
+*.ind

@@ -36,14 +36,16 @@
 
 \IndexPrologue{%
    \IfImplementationShownTF{\section*{Index}%
-     Numbers underlined refer to the
+     Numbers written in italic refer to the page
+     where the corresponding entry is described
+     or mentioned. Numbers underlined refer to the
      code line of the
      definition; numbers in Roman refer to the
      code lines where the entry is used.}%
    {\section{Index}%
-    Numbers written in italic refer to the page
-    where the corresponding entry is described
-    or mentioned.}}
+     Numbers written in italic refer to the page
+     where the corresponding entry is described
+     or mentioned.}}
 
 \makeatother
 
@@ -554,6 +556,21 @@
 %  \displayfonttable*[color=none, range-end=7F]{cmss10}
 %
 %
+% \iffalse
+%
+%\subsection{\TeX{} Gyre Pagella (Palatino) oldstyle figures --- OTF font}
+%
+%    This example shows Pagella with oldstyle numerals.
+%    Command used:
+%\begin{verbatim}
+%\displayfonttable{TeX Gyre Pagella}[Numbers=OldStyle]
+%\end{verbatim}
+%
+%\displayfonttable{TeX Gyre Pagella}[Numbers=OldStyle]
+%
+% \fi
+%
+%
 %
 % \subsection{Latin Modern Math compared to New Computer Modern Math}
 %
@@ -562,13 +579,10 @@
 %    We use the following setup (including settings for the
 %    grayscaled \TUB\ output, as an example of color overrides):
 %\begin{verbatim}
-%  \displayfonttable[hex-digits=head+foot,
+%  \displayfonttable[hex-digits=head+foot, range-end=1FFFF,
 %                    compare-with=New Computer Modern Math,
-%                    compare-color=black,
-%                    compare-bgcolor=black!5,
-%                    missing-glyph-color=black!50,
-%                    color=black!75,
-%                    range-end=1FFFF ]
+%                    compare-color=black,  compare-bgcolor=black!5,
+%                    missing-glyph-color=black!50, color=black!75]
 %                   {Latin Modern Math}
 %\end{verbatim}
 %    That is, glyphs only in \texttt{NewCM} are shown with a light gray
@@ -577,28 +591,12 @@
 %    We also extended the range to cover \texttt{U+10000} to
 %    \texttt{U+1FFFF} in order to include the Unicode Math alphabets.
 %
-% \displayfonttable[hex-digits=head+foot,
+%  \displayfonttable[hex-digits=head+foot, range-end=1FFFF,
 %                    compare-with=New Computer Modern Math,
-%                    compare-color=black,
-%                    compare-bgcolor=black!5,
-%                    missing-glyph-color=black!50,
-%                    color=black!75,
-%                    range-end=1FFFF ]
+%                    compare-color=black,  compare-bgcolor=black!5,
+%                    missing-glyph-color=black!50, color=black!75]
 %                   {Latin Modern Math}
 %
-% \iffalse
-%
-%\subsection{\TeX{} Gyre Pagella (Palatino) oldstyle figures --- OTF font}
-%
-%    This example shows Pagella's oldstyle numerals.
-%    Command used:
-%\begin{verbatim}
-%\displayfonttable[range-end=7F]{TeX Gyre Pagella}[Numbers=OldStyle]
-%\end{verbatim}
-%
-%\displayfonttable[range-end=7F]{TeX Gyre Pagella}[Numbers=OldStyle]
-%
-% \fi
 %
 %\subsection{Garamond Libre's Byzantine Musical Symbols}
 %
@@ -606,10 +604,9 @@
 %    Garamond Libre.
 %    Command used:
 %\begin{verbatim}
-%  \displayfonttable[range-start=1D000,range-end=1D0FF,
+%  \displayfonttable[range-start=1D000, range-end=1D0FF,
 %                    hex-digits=block,
-%                    missing-glyph-color=black!50,
-%                    color=black!75,
+%                    missing-glyph-color=black!50, color=black!75,
 %                    statistics-format=Total number of glyphs in
 %                      this block of #1 is #2]
 %                   {Garamond Libre}
@@ -617,12 +614,11 @@
 %
 %    Note that we have altered the text produced by the statistics,
 %    because the default is somewhat misleading if only a portion of
-%    the font is displayed.This gives us output:
+%    the font is displayed. This produces the following table:
 %
-%  \displayfonttable[range-start=1D000,range-end=1D0FF,
+%  \displayfonttable[range-start=1D000, range-end=1D0FF,
 %                    hex-digits=foot,
-%                    missing-glyph-color=black!50,
-%                    color=black!75,
+%                    missing-glyph-color=black!50, color=black!75,
 %                    statistics-format=Total number of glyphs in
 %                      this block of #1 is #2]
 %                   {Garamond Libre}
@@ -1210,7 +1206,8 @@
 %    \begin{macrocode}
 \cs_new:Npn \@@_handle_hex_D:n #1 {
   \@@_handle_slot:x
-     { " \g_@@_hex_H_tl \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl #1 }
+     { " \g_@@_hex_H_tl \g_@@_hex_A_tl
+         \g_@@_hex_B_tl \g_@@_hex_C_tl #1 }
 }
 %    \end{macrocode}
 %  \end{macro}
@@ -1505,11 +1502,13 @@
 %    \cs{l_@@_range_end_tl}.
 %    \begin{macrocode}
   \int_compare:nNnF
-      { " \g_@@_hex_H_tl \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
+      { " \g_@@_hex_H_tl \g_@@_hex_A_tl
+          \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
     < { "\l_@@_range_start_tl }
     {
       \int_compare:nNnF
-          { " \g_@@_hex_H_tl \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
+          { " \g_@@_hex_H_tl \g_@@_hex_A_tl
+              \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
         > { "\l_@@_range_end_tl }
         {
 %    \end{macrocode}
@@ -1522,7 +1521,8 @@
           \tl_gset:Nx \g_@@_row_tl
              {
                \exp_not:N \@@_format_row_title:n
-                   { \g_@@_hex_H_tl \g_@@_hex_A_tl \g_@@_hex_B_tl \g_@@_hex_C_tl  }
+                   { \g_@@_hex_H_tl \g_@@_hex_A_tl
+                     \g_@@_hex_B_tl \g_@@_hex_C_tl  }
              }
           \clist_map_function:NN \c_@@_hex_digits_clist
                                  \@@_handle_hex_D:n
@@ -1615,6 +1615,7 @@
                     }
                     {
                       \@@_debug_nl:n{D}\\[8pt]
+                      \noalign{\vskip 1pt plus 1pt} % space above block: customizable?
                     }
 %                \noalign{\smallskip} % space above block: customizable?
                  \multicolumn{17}{c}{\normalfont \bfseries
