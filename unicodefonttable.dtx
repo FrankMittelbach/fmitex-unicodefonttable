@@ -17,8 +17,8 @@
 % for those people who are interested or want to report an issue.
 %
 
-\def\unicodefonttabledate   {2021/10/18}
-\def\unicodefonttableversion{v1.0d}
+\def\unicodefonttabledate   {2021/10/19}
+\def\unicodefonttableversion{v1.0e}
 
 
 %<*driver>
@@ -232,7 +232,6 @@
 %    specify the desired behavior without needing to provide a value,
 %    e.g., specifying \key{header} is equivalent to specifying
 %    \key{header}\texttt{=true} or \key{noheader}\texttt{=false}, etc.
-%
 %    In the lists below the default settings are indicated by an
 %    underline.
 %
@@ -256,6 +255,9 @@
 %
 %    By default a title using the \cs{caption} command is produced; on
 %    continuation titles, the \meta{font-features} are not shown.
+%    Note that this is a \env{longtable} header row, so you either need to use
+%    \cs{multicolumn} or a \cs{caption} command\Dash otherwise everything
+%    ends up in the first column.
 %
 % \end{description}
 %
@@ -453,9 +455,10 @@
 %    
 %    Thus, by default we restrict the display to slots below
 %    \texttt{10000}, because text fonts seldom contain glyphs in the
-%    higher planes. But if you want to see everything supported by the
-%    font (and this package) and are prepared to wait for the higher
-%    planes to be scanned, you can go up to a value of \texttt{EFFFF}. 
+%    higher planes. But if you want to see everything of the font (as 
+%    far as supported by this package) and are prepared to wait for 
+%    the higher
+%    planes to be scanned, you can go up to a value of \texttt{FFFFF}. 
 %
 %    These keys are also quite useful in combination with the previous
 %    \key{compare-with} key, to display only, for example, the Greek
@@ -551,7 +554,7 @@
 %
 % \subsection{Computer Modern Sans --- 8-bit font}
 %
-% Our first example is an 8-bit font which gives a constant size table.
+% Our first example is an 8-bit font which gives a concise table.
 % Command used: \begin{verbatim}
 %   \displayfonttable*[color=none, range-end=7F]{cmss10}
 % \end{verbatim}
@@ -1124,7 +1127,7 @@
 
 %  \begin{macro}{\g_@@_hex_H_tl,\g_@@_hex_A_tl,
 %                \g_@@_hex_B_tl,\g_@@_hex_C_tl}
-%    \cs{g_@@_hex_H_tl} is a bit special because,it is initially not
+%    \cs{g_@@_hex_H_tl} is a bit special because, it is initially not
 %    zero, but empty, so that slots in the lower plane are denoted by 4
 %    hex digits.
 %    We really only need three further variables, as the value in the
@@ -1157,15 +1160,17 @@
 %    \end{macrocode}
 %    First to some general initialization
 %    \begin{macrocode}
-   \@@_initialize_table_rows:
+  \@@_initialize_table_rows:
 %    \end{macrocode}
 %    and then loop we start the loop. The outer level is a bit special
 %    as currently Unicode has only slots allocated in plane 0, 1, 2
 %    and E (well, and F, but that is a private area) so we loop only
 %    over those and instead of \texttt{0} we use an empty value.
+%    Not covered is the whole of plane 16 which too is now a
+%    private area.  
 %
 %    \begin{macrocode}
-   \clist_map_function:nN { { } , 1, 2, E } \@@_handle_hex_H:n }
+   \clist_map_function:nN { { } , 1, 2, E, F } \@@_handle_hex_H:n }
 %    \end{macrocode}
 %    
 %    Most fonts do not have glyphs in the higher planes, which is why
@@ -1509,11 +1514,16 @@
           \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
     < { "\l_@@_range_start_tl }
     {
-      \int_compare:nNnF
+      \int_compare:nNnTF
           { " \g_@@_hex_H_tl \g_@@_hex_A_tl
               \g_@@_hex_B_tl \g_@@_hex_C_tl 0 }
         > { "\l_@@_range_end_tl }
-        {
+%    \end{macrocode}
+%    If we are past the \texttt{end-range} we break out the clist
+%    mapping, to avoind unnecessary repetition. This should be
+%    propagated back to the outer clists as well (not done).
+%    \begin{macrocode}
+        {  \clist_map_break: }
 %    \end{macrocode}
 %    If we are within range we process the slots in the row by first
 %    initializing \cs{g_@@_row_tl} with the row title (the info on the
@@ -1521,6 +1531,7 @@
 %    (or missing glyphs) to \cs{g_@@_row_tl} to build up everything we
 %    need to finally typeset it.
 %    \begin{macrocode}
+        {
           \tl_gset:Nx \g_@@_row_tl
              {
                \exp_not:N \@@_format_row_title:n
@@ -1996,6 +2007,8 @@
         { "2F80 }{ CJK~ Compatibility~ Ideographs~ Supplement }
         { "E010 }{ Tags }
         { "E000 }{ Variation~ Selectors~ Supplement }
+        { "F000 }{ Supplementary~ Private~ Use~ Area-A }
+% higher up not covered!
        }
 %    \end{macrocode}
 %    If none of the above has matched we are somewhere within a block

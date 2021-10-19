@@ -1,3 +1,10 @@
+2021-10-19  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
+
+	* unicodefonttable.dtx
+	Extended support up to U+FFFFF after all, but not plane 16.
+	A bit more explanation in different places.
+	Some speed improvements (could be improved further)
+
 2021-10-17  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
 
 	* unicodefonttable.dtx:
