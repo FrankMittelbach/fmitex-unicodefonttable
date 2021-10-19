@@ -123,7 +123,7 @@
 %
 %    Unicode is organized in named blocks such as ``Basic Latin'',
 %    ``Latin-1~Supplement'', etc., typically consisting of 265
-%    characters each.\footnote{Some blocks are smaller and those
+%    characters each.\footnote{Some blocks are smaller, while those
 %    containing the Asian ideographs are much larger.} It is therefore
 %    helpful to use these block names as subtitles within the table,
 %    to more easily find the information one is looking for.
@@ -449,18 +449,20 @@
 %    The \key{range-start} specifies where to start with the search
 %    (default \underline{\texttt{0000}}) and \key{range-end} gives
 %    the last slot that is tested (default
-%    \underline{\texttt{FFFF}}).\footnotemark
+%    \underline{\texttt{FFFF}}).
+%    
+%    Thus, by default we restrict the display to slots below
+%    \texttt{10000}, because text fonts seldom contain glyphs in the
+%    higher planes. But if you want to see everything supported by the
+%    font (and this package) and are prepared to wait for the higher
+%    planes to be scanned, you can go up to a value of \texttt{EFFFF}. 
 %
-%    This is also quite useful in combination with the previous
+%    These keys are also quite useful in combination with the previous
 %    \key{compare-with} key, to display only, for example, the Greek
 %    letters and see how glyphs from two fonts blend with each other.
 
 % \end{description}
-% \end{variable}\footnotetext{By default we restrict the display to
-%    slots below \texttt{10000}, because text fonts seldom contain glyphs in the
-%    higher planes. But if you want everything supported by the
-%    package and are prepared to wait until the higher planes are scanned,
-%    you can go up to a value of \texttt{EFFFF}.}
+% \end{variable}
 %
 %
 %
@@ -485,8 +487,8 @@
 % \section{Notes on the table data}
 %
 %    If you look at some parts of a Unicode font table you see a number of slots that
-%    do not show a \enquote{missing glyph} sign, but nontheless appear
-%    to be empty. For example: 
+%    do not show a \enquote{missing glyph} sign, but nonetheless appear
+%    to be empty. For example:
 %
 % \displayfonttable[noheader,nostatistics,display-block=none,
 %   range-start=0020,range-end=00BF,
@@ -495,10 +497,10 @@
 %
 %
 %    The reason is that Unicode contains a lot of special
-%    spaces or otherwise invisible characters, e.g., \texttt{U+0022}
+%    spaces or otherwise invisible characters, e.g., \texttt{U+0020}
 %    is the normal space, \texttt{U+00A0} is a non-breaking space,
 %    \texttt{U+00AD} is a soft-hyphen (what \LaTeX{} users would
-%    indicate with a \cs{-}), and so forth. Especially the row
+%    indicate with \cs{-}), and so forth. Especially the row
 %    \texttt{U+2000-200F} in Table~1 looks strange as it appears to be totally
 %    empty, but in fact most of its slots contain spaces of different
 %    width.
@@ -509,10 +511,10 @@
 %   {latinmodern-math.otf}
 %
 %
-%    Another, somewhat surprising area is the \enquote{Mathematical
-%    Alphanumeric Symbols} block in math fonts, starting at \texttt{U+1D400}. In
-%    there you see a number of missing characters, the first two being
-%    \texttt{U+1D455} (math italic small H) or \texttt{U+1D49D} (math
+%    Another somewhat surprising area is the \enquote{Mathematical
+%    Alphanumeric Symbols} block in math fonts, starting at \texttt{U+1D400}.
+%    There you see a number of missing characters, the first two being
+%    \texttt{U+1D455} (math italic small h) and \texttt{U+1D49D} (math
 %    script B).
 %
 % \displayfonttable[noheader,nostatistics,hex-digits=foot,
@@ -522,12 +524,13 @@
 %
 %    In this case the reason is \emph{not} that the font
 %    fails to implement the characters, but that these characters have
-%    been  already added in earlier revisions of the Unicode standard in the
+%    already been defined in earlier revisions of the Unicode standard in the
 %    lower Unicode plane. For example, the \enquote{h} is the
-%    Planck constant \texttt{U+210E} and in \texttt{U+212C} there is
-%    already a script capital B, etc., and the Unicode Consortium decided not
-%    to encode the \emph{same} character twice, hence the appearent
+%    Planck constant \texttt{U+210E} and \texttt{U+212C} is
+%    the script capital B, etc. The Unicode Consortium decided not
+%    to encode the \emph{same} character twice, hence the apparent
 %    holes.
+%
 %
 % \IfImplementationShownTF{}
 %   {\appendix
@@ -548,7 +551,7 @@
 %
 % \subsection{Computer Modern Sans --- 8-bit font}
 %
-% First example is an 8-bit font which gives a consize table.
+% Our first example is an 8-bit font which gives a constant size table.
 % Command used: \begin{verbatim}
 %   \displayfonttable*[color=none, range-end=7F]{cmss10}
 % \end{verbatim}
@@ -758,9 +761,9 @@
                        \@@_handle_missing_glyph_compare:n
        }
 %    \end{macrocode}
-%    The we start the table with 17 columns. We use \texttt{longtable}
+%    Then we start the table with 17 columns. We use \texttt{longtable}
 %    if we produce a caption and \texttt{longtable*} if not (so that
-%    the table number is not increased which would look odd if you
+%    the table number is not increased, which would look odd if you
 %    have other tables in your document).
 %    \begin{macrocode}
     \begin{longtable\bool_if:NF\l_@@_display_header_bool{*}}
@@ -1121,10 +1124,10 @@
 
 %  \begin{macro}{\g_@@_hex_H_tl,\g_@@_hex_A_tl,
 %                \g_@@_hex_B_tl,\g_@@_hex_C_tl}
-%    \cs{g_@@_hex_H_tl} is a bit special because, it is initially not
-%    zero but empty so that slots in the lower plane are denoted by 4
+%    \cs{g_@@_hex_H_tl} is a bit special because,it is initially not
+%    zero, but empty, so that slots in the lower plane are denoted by 4
 %    hex digits.
-%    We really only need three further variables, the value in the
+%    We really only need three further variables, as the value in the
 %    innermost loop can used directly.
 %    \begin{macrocode}
 \tl_new:N \g_@@_hex_H_tl   % higher plane
@@ -1154,11 +1157,11 @@
 %    \end{macrocode}
 %    First to some general initialization
 %    \begin{macrocode}
-   \@@_initialize_table_rows: 
+   \@@_initialize_table_rows:
 %    \end{macrocode}
 %    and then loop we start the loop. The outer level is a bit special
 %    as currently Unicode has only slots allocated in plane 0, 1, 2
-%    amd E (well and F but that is a private area) so we loop only
+%    and E (well, and F, but that is a private area) so we loop only
 %    over those and instead of \texttt{0} we use an empty value.
 %
 %    \begin{macrocode}
