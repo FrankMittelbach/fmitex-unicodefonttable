@@ -23,7 +23,7 @@ checkruns     = 2
 -- Upload meta data
 
 uploadconfig = {
- pkg = "unicodetable",
+ pkg = "unicodefonttable",
  version = "v1.0e 2021-10-19",
  author = "Frank Mittelbach",
  license = "lppl1.3c",
