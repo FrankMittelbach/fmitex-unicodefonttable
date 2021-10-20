@@ -2,7 +2,15 @@
 
 -----
 
-This package produces font tables for unicode fonts as well as for 8bit fonts.
+This package produces font tables for unicode fonts as well as for
+8bit fonts.  The table layout can be adjusted in various ways
+including restricting the range of output to show only a portion of a
+specific font.
+
+To quickly produce a one-off table there is a stand-alone version
+`unicodefont.tex` that asks you a few questions and then generates the
+table --- somewhat similar to `nfssfont.tex` for 8-bit fonts.
+
 
 The official package source can be found at:
 
