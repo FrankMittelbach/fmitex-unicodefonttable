@@ -7,11 +7,11 @@
 
 module = "unicodefonttable"
 
-sourcefiles = {"*.dtx", "*.ins", "*-????-??-??.sty", "l3doc-TUB.cls", "NewCM10fmi.fontspec"}
+sourcefiles = {"*.dtx", "*.ins", "*-????-??-??.sty", "*-doc.tex", "*-code.tex", "l3doc-TUB.cls"}
 
 installfiles = {"*.sty", ".cls", "unicodefont.tex"}
 
-typesetfiles  = {"*-doc.tex", "*-code.tex", "*-sample.tex"}
+typesetfiles  = {"*-doc.tex", "*-code.tex", "*-samples.tex"}
 
 typesetexe    = "lualatex"
 
@@ -24,7 +24,7 @@ checkruns     = 2
 
 uploadconfig = {
  pkg = "unicodetable",
- version = "v1.0a 2021-10-04",
+ version = "v1.0e 2021-10-19",
  author = "Frank Mittelbach",
  license = "lppl1.3c",
  summary = "Unicode font table generator",
