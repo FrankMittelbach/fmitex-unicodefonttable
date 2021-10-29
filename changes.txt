@@ -1,3 +1,8 @@
+2021-10-29  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
+
+	* unicodefonttable.dtx (subsection{The overall table layout}):
+	Make documentation and code match: it should be title-format-cont.
+
 2021-10-19  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
 
 	* unicodefonttable.dtx

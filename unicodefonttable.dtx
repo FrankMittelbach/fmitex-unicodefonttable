@@ -18,7 +18,7 @@
 %
 
 \def\unicodefonttabledate   {2021/10/29}
-\def\unicodefonttableversion{v1.0e}
+\def\unicodefonttableversion{v1.0f}
 
 
 %<*driver>
@@ -632,6 +632,8 @@
 %                    compare-with=New Computer Modern Math,
 %                    title-format=\caption{Latin Modern Math compared to
 %                                          New Computer Modern Math},
+%                    title-format-cont=\caption{LM Math vs.\ NewCM Math,
+%                                          \emph{cont.}},
 %                    compare-color=black,  compare-bgcolor=black!5,
 %                    missing-glyph-color=black!50, color=black!75]
 %                   {Latin Modern Math}
@@ -646,6 +648,8 @@
 %                    compare-with=New Computer Modern Math,
 %                    title-format=\caption{Latin Modern Math compared to
 %                                          New Computer Modern Math},
+%                    title-format-cont=\caption{LM Math vs.\ NewCM Math,
+%                                          \emph{cont.}},
 %                    compare-color=black,  compare-bgcolor=black!5,
 %                    missing-glyph-color=black!50, color=black!75]
 %                   {Latin Modern Math}
@@ -1003,9 +1007,11 @@
 %    The default continuation title ignores the given features, so the
 %    formatting is somewhat simpler. It uses \verb=\caption[]{...}= to
 %    make a caption that doesn't alter the table number.
+% \changes{v1.0f}{2021/10/29}{Make documentation and code match:
+%                             it should be \texttt{title-format-cont}}
 %    \begin{macrocode}
-       ,title-cont-format .cs_set:Np = \@@_format_table_cont:nn #1#2
-       ,title-cont-format .initial:n = \caption[]{#1~ \emph{cont.}}
+       ,title-format-cont .cs_set:Np = \@@_format_table_cont:nn #1#2
+       ,title-format-cont .initial:n = \caption[]{#1~ \emph{cont.}}
 %    \end{macrocode}
 %    The key \key{hex-digits} is implemented as a choice, where each
 %    allowed value sets different booleans that are then used in the code.
@@ -2310,7 +2316,7 @@
 %  display-block = rules,
   %              missing-glyph = \tiny\setlength\fboxsep{0pt}\fbox{$\times$},
   hex-digits = block,
-  title-cont-format = \caption[]{\emph{continued}},
+  title-format-cont = \caption[]{\emph{continued}},
 ]{Latin Modern Sans}
 
 \newpage

@@ -24,7 +24,7 @@ checkruns     = 2
 
 uploadconfig = {
  pkg = "unicodefonttable",
- version = "v1.0e 2021-10-19",
+ version = "v1.0f 2021-10-29",
  author = "Frank Mittelbach",
  license = "lppl1.3c",
  summary = "A Unicode font table generator",
@@ -33,7 +33,7 @@ uploadconfig = {
  bugtracker = "https://github.com/FrankMittelbach/fmitex-unicodefonttable/issues",
  uploader = "Frank Mittelbach",
  email = "frank.mittelbach@latex-project.org",
- update = update ,
+ update = true ,
 }
 
 
