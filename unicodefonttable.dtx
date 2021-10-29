@@ -17,7 +17,7 @@
 % for those people who are interested or want to report an issue.
 %
 
-\def\unicodefonttabledate   {2021/10/20}
+\def\unicodefonttabledate   {2021/10/19}
 \def\unicodefonttableversion{v1.0e}
 
 
@@ -504,7 +504,7 @@
 %    is the normal space, \texttt{U+00A0} is a non-breaking space,
 %    \texttt{U+00AD} is a soft-hyphen (what \LaTeX{} users would
 %    indicate with \cs{-}), and so forth. Especially the row
-%    \texttt{U+2000-200F} in Table~2 looks strange as it appears to be totally
+%    \texttt{U+2000-200F} in Table~6 looks strange as it appears to be totally
 %    empty, but in fact most of its slots contain spaces of different
 %    width.
 %
@@ -552,9 +552,11 @@
 %    places, but for \TUB{} this is not practical, so we
 %    use black and gray.
 %
-% \subsection{Computer Modern Sans --- 8-bit font}
+% \subsection{Computer Modern Sans --- 7-bit font}
 %
-% Our first example is an 8-bit font which gives a concise table.
+% Our first example is the original Computer Modern Sans, with 
+% character codes $\le 127$.
+% 
 % Command used: \begin{verbatim}
 %   \displayfonttable*[color=none, range-end=7F]{cmss10}
 % \end{verbatim}
@@ -562,7 +564,44 @@
 %  \displayfonttable*[color=none, range-end=7F]{cmss10}
 %
 %
-% \iffalse
+% \iftrue
+%
+%\subsection{\TeX\ Gyre Heros --- 8-bit font}
+%
+%    This example shows the \TeX\ Gyre Heros 8-bit font,
+%    in the T1 encoding, with character codes $\le 255$.
+%    Command used:
+%\begin{verbatim}
+%  \displayfonttable*[color=none]{ec-qhvr}
+%\end{verbatim}
+%
+%\displayfonttable*[color=none]{ec-qhvr}
+%
+% \fi
+%
+%
+% \iftrue
+%\section{Latin Modern Math --- 8-bit fonts}
+%
+% The traditional Latin Modern Math Italic, Symbol and Extension fonts.
+% The symbol font (\texttt{lmsy10}) has two characters added to the
+% Computer Modern symbol repertoire, seen in the last row of the table.
+% Commands used:
+% 
+%\begin{verbatim}
+%  \displayfonttable*[color=none]{lmmi10}
+%  \displayfonttable*[color=none]{lmsy10}
+%  \displayfonttable*[color=none]{lmex10}
+%\end{verbatim}
+% 
+%\displayfonttable*[color=none]{lmmi10}
+%\displayfonttable*[color=none]{lmsy10}
+%\displayfonttable*[color=none]{lmex10}
+%
+% \fi
+%
+%
+% \iffalse % 5pp
 %
 %\subsection{\TeX{} Gyre Pagella (Palatino) oldstyle figures --- OTF font}
 %
@@ -577,7 +616,7 @@
 % \fi
 %
 %
-%
+% \newpage
 % \subsection{Latin Modern Math compared to New Computer Modern Math}
 %
 %    This example shows the extra symbols available in New Computer
@@ -587,6 +626,8 @@
 %\begin{verbatim}
 %  \displayfonttable[hex-digits=head+foot, range-end=1FFFF,
 %                    compare-with=New Computer Modern Math,
+%                    title-format=\caption{Latin Modern Math compared to
+%                                          New Computer Modern Math},
 %                    compare-color=black,  compare-bgcolor=black!5,
 %                    missing-glyph-color=black!50, color=black!75]
 %                   {Latin Modern Math}
@@ -599,6 +640,8 @@
 %
 %  \displayfonttable[hex-digits=head+foot, range-end=1FFFF,
 %                    compare-with=New Computer Modern Math,
+%                    title-format=\caption{Latin Modern Math compared to
+%                                          New Computer Modern Math},
 %                    compare-color=black,  compare-bgcolor=black!5,
 %                    missing-glyph-color=black!50, color=black!75]
 %                   {Latin Modern Math}
