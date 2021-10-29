@@ -17,4 +17,13 @@ These are an unsorted collection of thoughts by others or myself and may or may 
   points?), I'd suggest trying an open box (cf. the shaded box for
   second-font-only).
 
+- KB suggests to use a special default title when comparing showing both font names
+
+
+## Standalone
+
+- implement the question "Mathfont? (default no)" and make it
+  automatically set the range-end to a large value
+
+
 

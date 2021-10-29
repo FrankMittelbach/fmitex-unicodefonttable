@@ -17,7 +17,7 @@
 % for those people who are interested or want to report an issue.
 %
 
-\def\unicodefonttabledate   {2021/10/19}
+\def\unicodefonttabledate   {2021/10/29}
 \def\unicodefonttableversion{v1.0e}
 
 
@@ -90,10 +90,11 @@
 %    To produce a one-off table, a standalone version is available as well.
 % \end{abstract}
 %
+% \vspace*{\medskipamount}
 %
 % \tableofcontents
 %
-%
+% \vspace*{\bigskipamount}
 %
 % \section{Introduction}
 %
@@ -133,8 +134,10 @@
 %    hexadecimal digits. For example, \texttt{U+0041} represents the letter
 %    ``A'' and \texttt{U+20AC} the Euro currency symbol ``\texteuro''.
 %    We use this convention by showing a Unicode range of sixteen
-%    characters at the left of each table row, e.g., \texttt{U+0040 -
+%    characters at the left of each table row,
+%    e.g., \texttt{U+0040 -
 %    004F}, followed by the sixteen glyphs in the range. Thus that
+% \IfImplementationShownTF{}{\pagebreak}\ignorespaces
 %    particular table row from the ``Basic Latin'' block would show
 %    something like
 %
@@ -581,7 +584,7 @@
 %
 %
 % \iftrue
-%\section{Latin Modern Math --- 8-bit fonts}
+%\subsection{Latin Modern Math --- 8-bit fonts}
 %
 % The traditional Latin Modern Math Italic, Symbol and Extension fonts.
 % The symbol font (\texttt{lmsy10}) has two characters added to the
@@ -616,7 +619,8 @@
 % \fi
 %
 %
-% \newpage
+% \IfImplementationShownTF{}{\newpage}
+%
 % \subsection{Latin Modern Math compared to New Computer Modern Math}
 %
 %    This example shows the extra symbols available in New Computer
