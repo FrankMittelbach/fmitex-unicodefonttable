@@ -16,7 +16,7 @@ The official package source can be found at:
 
   https://github.com/FrankMittelbach/fmitex-unicodefonttable/
 
-The license is LPPL.
+The license is LPPL 1.3c.
 
 For version information see the .dtx file.
 
