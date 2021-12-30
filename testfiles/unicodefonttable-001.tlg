@@ -1,6 +1,6 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-luaotfload | aux : font no 27 (nil) does not define feature smcp for script latn
+luaotfload | aux : font no 19 (nil) does not define feature smcp for script latn
  with language dflt
 Package fontspec Info: Font family 'lmsans10-regular.otf(0)' created for font
 (fontspec)             'lmsans10-regular.otf' with options [].
@@ -130,11 +130,9 @@ Completed box being shipped out [1]
 ...........\TU/lmr/m/n/10 f
 ...........\penalty 10000
 ...........\rule(0.0+3.60004)x0.0
-...........\kern0.0
 ...........\penalty 10000
 ...........\glue(\parfillskip) 0.0
 ...........\glue(\rightskip) 0.0 plus 1.0fil
-.........\kern0.0
 .........\penalty 10000
 .........\glue(\parfillskip) 0.0 plus 1.0fil
 .........\glue(\rightskip) 0.0
@@ -7137,11 +7135,9 @@ Completed box being shipped out [2]
 ...........\kern0.0 (italic)
 ...........\penalty 10000
 ...........\rule(0.0+3.60004)x0.0
-...........\kern0.0
 ...........\penalty 10000
 ...........\glue(\parfillskip) 0.0
 ...........\glue(\rightskip) 0.0 plus 1.0fil
-.........\kern0.0
 .........\penalty 10000
 .........\glue(\parfillskip) 0.0 plus 1.0fil
 .........\glue(\rightskip) 0.0
@@ -13993,11 +13989,9 @@ Completed box being shipped out [3]
 ...........\kern0.0 (italic)
 ...........\penalty 10000
 ...........\rule(0.0+3.60004)x0.0
-...........\kern0.0
 ...........\penalty 10000
 ...........\glue(\parfillskip) 0.0
 ...........\glue(\rightskip) 0.0 plus 1.0fil
-.........\kern0.0
 .........\penalty 10000
 .........\glue(\parfillskip) 0.0 plus 1.0fil
 .........\glue(\rightskip) 0.0
@@ -19943,11 +19937,9 @@ Completed box being shipped out [4]
 ...........\kern0.0 (italic)
 ...........\penalty 10000
 ...........\rule(0.0+3.60004)x0.0
-...........\kern0.0
 ...........\penalty 10000
 ...........\glue(\parfillskip) 0.0
 ...........\glue(\rightskip) 0.0 plus 1.0fil
-.........\kern0.0
 .........\penalty 10000
 .........\glue(\parfillskip) 0.0 plus 1.0fil
 .........\glue(\rightskip) 0.0
