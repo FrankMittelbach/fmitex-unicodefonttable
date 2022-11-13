@@ -15798,7 +15798,7 @@ Completed box being shipped out [3]
 .....\glue 0.00002
 .....\hbox(7.16+0.0)x6.0, glue set - 0.61fil, direction TLT
 ......\glue 0.0 plus 1.0fil minus 1.0fil
-......\TU/lmsans10-regular.otf(0)/m/n/10 Ω
+......\TU/lmsans10-regular.otf(0)/m/n/10 Ω
 ......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\glue 0.0 plus 1.0fil
 .....\glue 6.0
@@ -24403,7 +24403,7 @@ Completed box being shipped out [4]
 ...\glue(\lineskip) 0.0
 ...\hbox(8.39996+3.60004)x345.0, glue set 4.80249fill, direction TLT
 ....\glue(\tabskip) 0.0 plus 1.0fill
-....\hbox(8.39996+3.60004)x59.39478, glue set 198.05101fil, direction TLT
+....\hbox(8.39996+3.60004)x59.39478, glue set 158.937fil, direction TLT
 .....\rule(8.39996+3.60004)x0.0
 .....\glue 6.0
 .....\glue 0.00002
@@ -24438,8 +24438,17 @@ Completed box being shipped out [4]
 .....\TU/lmr/m/n/9 h
 .....\TU/lmr/m/n/9 s
 .....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
-.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 h
+.....\TU/lmr/m/n/9 o
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 w
 .....\TU/lmr/m/n/9 n
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 f
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 m
 .....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
 .....\TU/lmr/m/n/9 l
 .....\TU/lmr/m/n/9 m

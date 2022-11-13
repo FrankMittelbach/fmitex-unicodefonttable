@@ -17,8 +17,8 @@
 % for those people who are interested or want to report an issue.
 %
 
-\def\unicodefonttabledate   {2021/10/29}
-\def\unicodefonttableversion{v1.0f}
+\def\unicodefonttabledate   {2022/11/12}
+\def\unicodefonttableversion{v1.0g}
 
 
 %<*driver>
@@ -269,7 +269,8 @@
 %
 %  \begin{variable}{
 %     display-block,
-%     hex-digits, color,
+%     hex-digits, hex-digits-font,hex-digits-row-format,
+%     color,
 %  }
 %    These keys handle the inner parts of the table.
 %
@@ -317,6 +318,18 @@
 % \item[\key{hex-digits-font}]
 %    The font to use for the hex digits, by default
 %    \underline{\cs{ttfamily}\cs{scriptsize}}.{\hfuzz=2.7pt\par}
+%
+% \item[\key{hex-digits-row-format}]
+%    This key defines the format for the hex digits shown on the left
+%    of each row. It accepts one argument hold the hex values for the
+%    row except for the last digit, e.g, \texttt{0A3} for the values
+%    from \texttt{0A30} to \texttt{0A3F}. The default formatting is
+%    \underline{\ttfamily U+\#10\cs{,}-\cs{,}\#1F} and without further
+%    adjustments it is automaticaly set
+%    in \cs{footnotesize} \cs{ttfamily} and in the color
+%    specified by the \key{color} key.
+%
+%
 %
 % \item[\key{color}]
 %    This key determines the color for parts of the table (hex digits
@@ -461,7 +474,14 @@
 %    higher planes. But if you want to see everything of the font (as 
 %    far as supported by this package) and are prepared to wait for 
 %    the higher
-%    planes to be scanned, you can go up to a value of \texttt{FFFFF}. 
+%    planes to be scanned, you can go up to a value of \texttt{FFFFF}.
+%
+%    However, please note that the \LuaTeX{} fontloader uses the
+%    \enquote{Supplementary Private Use Area-A}, which starts at
+%    \texttt{F0000}, as its own playground and places remapping into
+%    it, so by default you see random data instead of font data there. You
+%    either have to use the \XeTeX{} engine or load the font with
+%    \texttt{Renderer=HarfBuzz} in \LuaTeX{}.
 %
 %    These keys are also quite useful in combination with the previous
 %    \key{compare-with} key, to display only, for example, the Greek
@@ -555,6 +575,13 @@
 %    places, but for \TUB{} this is not practical, so we
 %    use black and gray.
 %
+%    Please note that this documentation was produced with
+%    \LuaTeX{}. If you reuse the examples with \XeTeX{}, you may have
+%    to specify the font names differently (i.e., following to the
+%    \pkg{fontspec} documentation for this engine).
+%
+%
+%
 % \subsection{Computer Modern Sans --- 7-bit font}
 %
 % Our first example is the original Computer Modern Sans, with 
@@ -573,12 +600,13 @@
 %
 %    This example shows the \TeX\ Gyre Heros 8-bit font,
 %    in the T1 encoding, with character codes $\le 255$.
-%    Command used:
+%    We used \key{hex-digits-row-format} to shorten the row titles on
+%    the left:
 %\begin{verbatim}
-%  \displayfonttable*[color=none]{ec-qhvr}
+%  \displayfonttable*[color=none,hex-digits-row-format=U+#1]{ec-qhvr}
 %\end{verbatim}
 %
-%\displayfonttable*[color=none]{ec-qhvr}
+%\displayfonttable*[color=none,hex-digits-row-format=U+#1]{ec-qhvr}
 %
 % \fi
 %
@@ -619,7 +647,7 @@
 % \fi
 %
 %
-% \IfImplementationShownTF{}{\newpage}
+% ^^A \IfImplementationShownTF{}{\newpage}
 %
 % \subsection{Latin Modern Math compared to New Computer Modern Math}
 %
@@ -805,6 +833,21 @@
     \fontspec{#2}[#3]
     \keys_set:nn{@@}{#1}
 %    \end{macrocode}
+%    If the \LuaTeX{} engine is used without HarfBuzz and the display
+%    range includes code points above \texttt{U+EFFFF} the output shows
+%    remappings and not what is in the font, so we issue a warning.
+% \changes{v1.0g}{2022/11/12}{Test for luatex without harfbuzz and
+%    private area A and warn (gh/8)}
+%    \begin{macrocode}
+    \bool_lazy_and:nnT
+        { \sys_if_engine_luatex_p: }
+        { \int_compare_p:nNn { "EFFFF } < { "\l_@@_range_end_tl } }
+        {
+          \directlua{token.put_next(token.create(font.getfont(font.current()).hb~
+                     and~ 'use_none:n'~  or~ 'use:n'))}
+            { \msg_warning:nn {unicodefonttable}{noharfbuzz} }
+        }
+%    \end{macrocode}
 %    If the user has asked for a comparsion to some other font we need to set this up:
 %    \begin{macrocode}
     \tl_if_empty:NTF \l_@@_compare_with_tl
@@ -814,6 +857,16 @@
          \cs_set_eq:NN \@@_handle_missing_glyph:n
                        \@@_handle_missing_glyph_compare:n
        }
+%    \end{macrocode}
+%    Typesetting the font tables in twocolumn mode makes little sense
+%    due to their width, and if \env{longtable} is used it will
+%    complain. However there is one case where it should work: in a
+%    page-wide float. To make this happen we claim that we are not in
+%    twocolumn mode if the display is inside a vertical box.
+% \changes{v1.0g}{2022/11/12}{Support use in twocolumn mode if inside
+%    a table* float (gh/7)}
+%    \begin{macrocode}
+    \if_mode_vertical: \if_mode_inner: \@twocolumnfalse \fi: \fi:
 %    \end{macrocode}
 %    Then we start the table with 17 columns. We use \texttt{longtable}
 %    if we produce a caption and \texttt{longtable*} if not (so that
@@ -842,8 +895,24 @@
 }
 %    \end{macrocode}
 %  \end{macro}
-
-
+%
+%
+%    \begin{macrocode}
+\msg_new:nnn {unicodefonttable}{noharfbuzz}
+    { You~ asked~ for~ displaying~ glyphs~ with~ code \iow_newline:
+      points~ above~ U+EFFFF~ \msg_line_context: ,~ i.e.,~ from~ the~
+      'Supplementary~ Private~ Use~ Area-A'\iow_newline:
+      without~ specifying~ '[Renderer=Harfbuzz]'~ when~
+      loading~ the~ font.
+      \iow_newline:\iow_newline:
+      With~ LuaLaTeX,~ this~ Unicode~ region~ is~ used~
+      for~ remappings~ (if~ the~ HarfBuzz~ engine~ is~ not~ used).~
+      Thus,~ the~ results~ shown~ do~ not~ reflect~ what~
+      is~ in~ the~ font!
+    }
+%    \end{macrocode}
+%
+%
 %
 %  \begin{macro}{\fonttableglyphcount}
 %  \begin{macro}{\g_@@_glyph_int,\g_@@_glyph_only_B_int,\g_@@_glyph_also_B_int}
@@ -1044,6 +1113,15 @@
       ,hex-digits-font  .tl_set:N  = \l_@@_hex_digits_font_tl
       ,hex-digits-font  .initial:n = \ttfamily \scriptsize
 %    \end{macrocode}
+%    Customizing the row header (on the left) can be done with this
+%    key. Defaults for font, fontsize, and color is set on the outside, but can, of
+%    course, be overwritten inside if that is desired.
+% \changes{v1.0g}{2022/11/12}{Add key hex-digits-row-format to allow
+%    customizing the row title on the left (gh/3)}
+%    \begin{macrocode}
+       ,hex-digits-row-format  .cs_set:Np = \@@_format_row_hex_digits:n #1
+       ,hex-digits-row-format  .initial:n = U+#1 0 \, - \, #1 F
+%    \end{macrocode}
 %    The \key{color} key is used in  most places that get colored; some
 %    have their own key but default to the main color.         
 %    \begin{macrocode}
@@ -1130,9 +1208,11 @@
 %    And here we have the default text. There is only space for a
 %    single line. If more text is needed one needs to provide some
 %    explicit \cs{parbox}.
+% \changes{v1.0g}{2022/11/12}{Change default text so that it makes
+%    more sense if only a portion of the font is displayed (gh/4)}
 %    \begin{macrocode}
     ,statistics-format  .cs_set:Np = \@@_format_stats:nn #1#2
-    ,statistics-format  .initial:n = Total~ number~ of~ glyphs~ in~ #1:~#2 
+    ,statistics-format  .initial:n = Total~ number~ of~ glyphs~ shown~ from~ #1:~#2 
   }
 %    \end{macrocode}
 %  \end{macro}
@@ -1461,12 +1541,14 @@
 %    \end{macrocode}
 %    If we run a comparison we show different statistics that have
 %    their own key.
+% \changes{v1.0g}{2022/11/12}{Change default text so that it makes
+%    more sense if only a portion of the font is displayed (gh/4)}
 %    \begin{macrocode}
        ,statistics-compare-format  .cs_set:Np
              = \@@_format_compare_stats:nnnnnn #1#2#3#4#5#6
        ,statistics-compare-format  .initial:n
              = \parbox{\linewidth}{
-                   Total~ number~ of~ glyphs~ in~ \texttt{#1}:~#2\\
+                   Total~ number~ of~ glyphs~ shown~ from~ \texttt{#1}:~#2\\
                    Comparison~ font~ \texttt{#3}~ has~ #5~ missing~ and~ #6~
                    extra~ glyphs}
      }
@@ -1602,9 +1684,11 @@
 %
 %  \begin{macro}{\@@_format_row_title:n}
 %    The function to format the row title on the left, as used above.
+% \changes{v1.0g}{2022/11/12}{Add key hex-digits-row-format to allow
+%    customizing the row title on the left (gh/3)}
 %    \begin{macrocode}
 \cs_new:Npn \@@_format_row_title:n #1 {
-  \texttt { \footnotesize \l_@@_color_tl U+#1 0 \, - \, #1 F }
+  \texttt { \footnotesize \l_@@_color_tl \@@_format_row_hex_digits:n {#1} }
 }
 %    \end{macrocode}
 %  \end{macro}
@@ -1782,8 +1866,8 @@
 }
 %    \end{macrocode}
 %  \end{macro}
-
-
+%
+%
 %
 %
 % \subsection{Handling block titles}
@@ -2102,7 +2186,6 @@
        ,display-block .initial:n  = titles
   }
 %    \end{macrocode}
-%
 %
 %    That's all of the programming using the L3 layer.
 %    \begin{macrocode}

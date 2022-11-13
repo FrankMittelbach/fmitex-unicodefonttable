@@ -1,0 +1,21 @@
+% broken test for now
+
+\documentclass[twocolumn]{article}
+
+\input{regression-test}
+
+\usepackage{unicodefonttable,kantlipsum}
+
+\begin{document}
+
+\START
+
+\kant[1-3]
+
+\begin{table*}
+\displayfonttable*{cmr10}
+\end{table*}
+
+\kant[4-7]
+
+\end{document}

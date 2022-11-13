@@ -1,3 +1,19 @@
+2022-11-12  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
+
+	* unicodefonttable.dtx (subsection{The overall table layout}):
+	Change default statistics text so that it makes
+	more sense if only a portion of the font is displayed (gh/4)
+
+	(subsection{User interface commands}):
+	Test for luatex without harfbuzz and display of private area-A
+	and warn that this gives strange results (gh/8)
+
+	Support use in twocolumn mode if inside a table* float (gh/7)
+
+	(subsection{Handling a single row}):
+	Add key hex-digits-row-format to allow customizing the row title
+	on the left (gh/3)}
+
 2021-10-29  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
 
 	* unicodefonttable.dtx (subsection{The overall table layout}):

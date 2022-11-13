@@ -1,0 +1,24 @@
+% This test needs the Code2000 font installed on the system
+% In luatex when used without HarfBuzz it shows rubbish data in the Supplementary Private Use Area-A
+
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{unicodefonttable}
+
+\showoutput
+
+\begin{document}
+
+\START
+
+\displayfonttable[range-start=FFFF,range-end=F002F]
+                 {Code2000}
+%		 [Renderer=Harfbuzz]
+
+\displayfonttable[range-start=FFFF,range-end=F002F]
+                 {Code2000}
+		 [Renderer=Harfbuzz]
+
+\end{document}
