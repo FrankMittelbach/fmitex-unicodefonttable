@@ -1,7 +1,6 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-luaotfload | aux : font no 19 (nil) does not define feature smcp for script latn
- with language dflt
+luaotfload | aux : font no 19 (nil) does not define feature smcp for script latn with language dflt
 Package fontspec Info: Font family 'lmsans10-regular.otf(0)' created for font
 (fontspec)             'lmsans10-regular.otf' with options [].
 (fontspec)              
@@ -142,7 +141,7 @@ Completed box being shipped out [1]
 .......\glue 0.0 minus 1.0fill
 ......\glue 0.0 plus 1.0fil
 ......\hbox(0.0+0.0)x0.0, direction TLT
-......\write1{\@writefile{lot}{\protect \contentsline {table}{\protect \numberline \ETC.}
+......\write1{\@writefile{lot}{\protect \contentsline {table}{\protect \numberline {1}{\ignorespaces lmsans10-regular.otf\relax }}{\thepage }{}\protected@file@percent }}
 ......\rule(0.0+9.60004)x0.0
 .....\glue(\tabskip) 0.0
 .....\hbox(0.0+0.0)x12.00002, direction TLT

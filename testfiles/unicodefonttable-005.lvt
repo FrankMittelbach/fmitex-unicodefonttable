@@ -1,4 +1,4 @@
-% broken test for now
+% broken test for now (twocolumn and longtable)
 
 \documentclass[twocolumn]{article}
 
