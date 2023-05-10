@@ -1,3 +1,8 @@
+2023-05-10  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
+
+	* unicodefonttable.dtx (subsection{Handling block titles}):
+	corrected name: Malayalm -> Malayalam  (gh/10)
+
 2022-11-12  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
 
 	* unicodefonttable.dtx (subsection{The overall table layout}):
