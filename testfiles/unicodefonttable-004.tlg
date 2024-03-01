@@ -1,47 +1,30 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 luaotfload | cache : Lookup cache loaded from ../luaotfload-lookup-cache.luc.
-Package fontspec Info: Could not resolve font "Code2000/BI" (it probably
-(fontspec)             doesn't exist).
-Package fontspec Info: Could not resolve font "Code2000/B" (it probably
-(fontspec)             doesn't exist).
-Package fontspec Info: Could not resolve font "Code2000/I" (it probably
-(fontspec)             doesn't exist).
+Package fontspec Info: Could not resolve font "Code2000/BI" (it probably doesn't exist).
+Package fontspec Info: Could not resolve font "Code2000/B" (it probably doesn't exist).
+Package fontspec Info: Could not resolve font "Code2000/I" (it probably doesn't exist).
 luaotfload | aux : font no 20 (nil) does not define feature smcp for script latn with language dflt
-Package fontspec Info: Font family 'Code2000(0)' created for font 'Code2000'
-(fontspec)             with options [].
+Package fontspec Info: Font family 'Code2000(0)' created for font 'Code2000' with options [].
 (fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
+(fontspec)              This font family consists of the following NFSS series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"Code2000:mode=node;script=latn;language=dflt;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"name:Code2000:mode=node;script=latn;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 Package unicodefonttable Warning: You asked for displaying glyphs with code
-(unicodefonttable)                points above U+EFFFF on line ..., i.e., from
-(unicodefonttable)                the 'Supplementary Private Use Area-A'
-(unicodefonttable)                without specifying '[Renderer=Harfbuzz]'
-(unicodefonttable)                when loading the font.
+(unicodefonttable)                points above U+EFFFF on line ..., i.e., from the 'Supplementary Private Use Area-A'
+(unicodefonttable)                without specifying '[Renderer=Harfbuzz]' when loading the font.
 (unicodefonttable)                
-(unicodefonttable)                With LuaLaTeX, this Unicode region is used
-(unicodefonttable)                for remappings (if the HarfBuzz engine is
-(unicodefonttable)                not used). Thus, the results shown do not
-(unicodefonttable)                reflect what is in the font!
+(unicodefonttable)                With LuaLaTeX, this Unicode region is used for remappings (if the HarfBuzz engine is not used). Thus, the results shown do not reflect what is in the font!
 Processing Supplementary Private Use Area-A
-Package fontspec Info: Could not resolve font "Code2000/BI" (it probably
-(fontspec)             doesn't exist).
-Package fontspec Info: Could not resolve font "Code2000/B" (it probably
-(fontspec)             doesn't exist).
-Package fontspec Info: Could not resolve font "Code2000/I" (it probably
-(fontspec)             doesn't exist).
-Package fontspec Info: Font family 'Code2000(1)' created for font 'Code2000'
-(fontspec)             with options [Renderer=Harfbuzz].
+Package fontspec Info: Could not resolve font "Code2000/BI" (it probably doesn't exist).
+Package fontspec Info: Could not resolve font "Code2000/B" (it probably doesn't exist).
+Package fontspec Info: Could not resolve font "Code2000/I" (it probably doesn't exist).
+Package fontspec Info: Font family 'Code2000(1)' created for font 'Code2000' with options [Renderer=Harfbuzz].
 (fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
+(fontspec)              This font family consists of the following NFSS series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"Code2000:mode=harf;script=latn;language=dflt;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"name:Code2000:mode=harf;script=latn;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 Completed box being shipped out [1]
 \vbox(633.0+0.0)x407.0, direction TLT
@@ -137,7 +120,7 @@ Completed box being shipped out [1]
 .......\glue 0.0 minus 1.0fill
 ......\glue 0.0 plus 1.0fil
 ......\hbox(0.0+0.0)x0.0, direction TLT
-......\write1{\@writefile{lot}{\protect \contentsline {table}{\protect \numberline {1}{\ignorespaces Code2000\relax }}{\thepage }{}\protected@file@percent }}
+......\write1{\@writefile{lot}{\protect \contentsline {table}{\protect \numberline {1}{\ignorespaces Code2000}}{\thepage }{}\protected@file@percent }}
 ......\rule(0.0+9.60004)x0.0
 .....\glue(\tabskip) 0.0
 .....\hbox(0.0+0.0)x12.00002, direction TLT
@@ -1264,7 +1247,7 @@ Completed box being shipped out [1]
 .......\glue 0.0 minus 1.0fill
 ......\glue 0.0 plus 1.0fil
 ......\hbox(0.0+0.0)x0.0, direction TLT
-......\write1{\@writefile{lot}{\protect \contentsline {table}{\protect \numberline {2}{\ignorespaces Code2000 (features: \protect \texttt  {\protect \small  Renderer=Harfbuzz})\relax }}{\thepage }{}\protected@file@percent }}
+......\write1{\@writefile{lot}{\protect \contentsline {table}{\protect \numberline {2}{\ignorespaces Code2000 (features: \protect \texttt  {\protect \small  Renderer=Harfbuzz})}}{\thepage }{}\protected@file@percent }}
 ......\rule(0.0+9.60004)x0.0
 .....\glue(\tabskip) 0.0
 .....\hbox(0.0+0.0)x9.71701, direction TLT

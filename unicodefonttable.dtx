@@ -1,6 +1,6 @@
 %%%%% \iffalse meta-comment
 %
-%% File: unicodefonttable.dtx (C) Copyright 2019-2023 Frank Mittelbach
+%% File: unicodefonttable.dtx (C) Copyright 2019-2024 Frank Mittelbach
 %
 % It may be distributed and/or modified under the conditions of the
 % LaTeX Project Public License (LPPL), either version 1.3c of this
@@ -17,7 +17,7 @@
 % for those people who are interested or want to report an issue.
 %
 
-\def\unicodefonttabledate   {2023/05/10}
+\def\unicodefonttabledate   {2024/03/01}
 \def\unicodefonttableversion{1.0h}
 
 
@@ -326,8 +326,9 @@
 %    from \texttt{0A30} to \texttt{0A3F}. The default formatting is
 %    \underline{\ttfamily U+\#10\cs{,}-\cs{,}\#1F} and without further
 %    adjustments it is automaticaly set
-%    in \cs{footnotesize} \cs{ttfamily} and in the color
+%    in  \cs{ttfamily}\cs{footnotesize} and in the color
 %    specified by the \key{color} key.
+%    A suitable value that takes up less space would be \texttt{U+\#1x}.
 %
 %
 %
@@ -495,7 +496,8 @@
 % \subsection{A standalone interactive version}
 %
 %     If you want to quickly display a single font, you can run
-%    \texttt{unicodefont.tex} through \LuaTeX{} (or \XeTeX{}). Similar to
+%    \texttt{unicodefont.tex} through \LaTeX{} using \LuaTeX{} (or \XeTeX{})
+%    as the engine. Similar to
 %    \texttt{nfssfont.tex} (which is for 8-bit fonts with \pdfTeX) it
 %    asks you a few questions and then generates the font table for
 %    you. There are fewer configuration options available,

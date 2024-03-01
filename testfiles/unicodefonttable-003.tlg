@@ -2,24 +2,17 @@ This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 luaotfload | aux : font no 18 (nil) defines no feature for script latn
 luaotfload | aux : font no 18 (nil) defines no feature for script dflt
-Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
-(fontspec)             'latinmodern-math.otf' with options [].
+Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font 'latinmodern-math.otf' with options [].
 (fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
+(fontspec)              This font family consists of the following NFSS series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[latinmodern-math.otf]:mode=node;language=dflt;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[latinmodern-math.otf]:mode=node;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-Package fontspec Info: Font family 'NewCMMath-Regular.otf(0)' created for font
-(fontspec)             'NewCMMath-Regular.otf' with options
-(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={}].
+Package fontspec Info: Font family 'NewCMMath-Regular.otf(0)' created for font 'NewCMMath-Regular.otf' with options [BoldFont={},ItalicFont={},SmallCapsFont={}].
 (fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
+(fontspec)              This font family consists of the following NFSS series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[NewCMMath-Regular.otf]:mode=node;script=latn;language=dflt;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[NewCMMath-Regular.otf]:mode=node;script=latn;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 Processing Supplemental Mathematical Operators
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -136,7 +129,7 @@ Completed box being shipped out [1]
 .......\glue 0.0 minus 1.0fill
 ......\glue 0.0 plus 1.0fil
 ......\hbox(0.0+0.0)x0.0, direction TLT
-......\write1{\@writefile{lot}{\protect \contentsline {table}{\protect \numberline {1}{\ignorespaces latinmodern-math.otf\relax }}{\thepage }{}\protected@file@percent }}
+......\write1{\@writefile{lot}{\protect \contentsline {table}{\protect \numberline {1}{\ignorespaces latinmodern-math.otf}}{\thepage }{}\protected@file@percent }}
 ......\rule(0.0+9.60004)x0.0
 .....\glue(\tabskip) 0.0
 .....\hbox(0.0+0.0)x12.00002, direction TLT

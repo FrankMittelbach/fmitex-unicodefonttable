@@ -1,19 +1,15 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-Package fontspec Info: Could not resolve font "cmr10/BI" (it probably doesn't
-(fontspec)             exist).
-Package fontspec Info: Could not resolve font "cmr10/B" (it probably doesn't
-(fontspec)             exist).
-Package fontspec Info: Could not resolve font "cmr10/I" (it probably doesn't
-(fontspec)             exist).
-Package fontspec Info: Font family 'cmr10(0)' created for font 'cmr10' with
-(fontspec)             options [].
+luaotfload | cache : Lookup cache loaded from ../luaotfload-lookup-cache.luc.
+luaotfload | db : Reload initiated (formats: otf,ttf,ttc); reason: Font "cmr10" not found.
+Package fontspec Info: Could not resolve font "cmr10/BI" (it probably doesn't exist).
+Package fontspec Info: Could not resolve font "cmr10/B" (it probably doesn't exist).
+Package fontspec Info: Could not resolve font "cmr10/I" (it probably doesn't exist).
+Package fontspec Info: Font family 'cmr10(0)' created for font 'cmr10' with options [].
 (fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
+(fontspec)              This font family consists of the following NFSS series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"cmr10:mode=node;language=dflt;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"name:cmr10:mode=node;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 Processing Basic Latin
 [1
@@ -517,7 +513,7 @@ Underfull \vbox (badness 2698) has occurred while \output is active
 ..\TU/lmr/m/n/10 a
 ..\TU/lmr/m/n/10 t
 ..\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
-..\TU/lmr/m/n/10 ﬁ (ligature fi)
+..\TU/lmr/m/n/10 ﬁ
 ..\TU/lmr/m/n/10 r
 ..\TU/lmr/m/n/10 s
 ..\TU/lmr/m/n/10 t
@@ -686,7 +682,7 @@ Underfull \vbox (badness 2698) has occurred while \output is active
 ..\TU/lmr/m/n/10 a
 ..\TU/lmr/m/n/10 t
 ..\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
-..\TU/lmr/m/n/10 ﬁ (ligature fi)
+..\TU/lmr/m/n/10 ﬁ
 ..\TU/lmr/m/n/10 r
 ..\TU/lmr/m/n/10 s
 ..\TU/lmr/m/n/10 t
@@ -1809,7 +1805,7 @@ Underfull \vbox (badness 2698) has occurred while \output is active
 ..\TU/lmr/m/n/10 a
 ..\TU/lmr/m/n/10 t
 ..\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
-..\TU/lmr/m/n/10 ﬁ (ligature fi)
+..\TU/lmr/m/n/10 ﬁ
 ..\TU/lmr/m/n/10 r
 ..\TU/lmr/m/n/10 s
 ..\TU/lmr/m/n/10 t

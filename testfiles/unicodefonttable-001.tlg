@@ -1,14 +1,11 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 luaotfload | aux : font no 19 (nil) does not define feature smcp for script latn with language dflt
-Package fontspec Info: Font family 'lmsans10-regular.otf(0)' created for font
-(fontspec)             'lmsans10-regular.otf' with options [].
+Package fontspec Info: Font family 'lmsans10-regular.otf(0)' created for font 'lmsans10-regular.otf' with options [].
 (fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
+(fontspec)              This font family consists of the following NFSS series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[lmsans10-regular.otf]:mode=node;script=latn;language=dflt;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[lmsans10-regular.otf]:mode=node;script=latn;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 Processing Basic Latin
 Processing Latin-1 Supplement
@@ -141,7 +138,7 @@ Completed box being shipped out [1]
 .......\glue 0.0 minus 1.0fill
 ......\glue 0.0 plus 1.0fil
 ......\hbox(0.0+0.0)x0.0, direction TLT
-......\write1{\@writefile{lot}{\protect \contentsline {table}{\protect \numberline {1}{\ignorespaces lmsans10-regular.otf\relax }}{\thepage }{}\protected@file@percent }}
+......\write1{\@writefile{lot}{\protect \contentsline {table}{\protect \numberline {1}{\ignorespaces lmsans10-regular.otf}}{\thepage }{}\protected@file@percent }}
 ......\rule(0.0+9.60004)x0.0
 .....\glue(\tabskip) 0.0
 .....\hbox(0.0+0.0)x12.00002, direction TLT
@@ -1845,10 +1842,9 @@ Completed box being shipped out [1]
 .....\glue 6.0
 .....\glue 0.0 plus 1.0fil
 .....\glue 0.00002
-.....\hbox(0.0+0.0)x6.0, glue set 3.0fil, direction TLT
+.....\hbox(2.51+0.0)x6.0, glue set 1.335fil, direction TLT
 ......\glue 0.0 plus 1.0fil minus 1.0fil
-......\TU/lmsans10-regular.otf(0)/m/n/10  
-......\kern-3.33 (font)
+......\TU/lmsans10-regular.otf(0)/m/n/10 ^^ad
 ......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\glue 0.0 plus 1.0fil
 .....\glue 6.0
@@ -7670,7 +7666,7 @@ Completed box being shipped out [2]
 .....\TU/lmr/bx/n/10 i
 .....\discretionary (penalty 50)
 ......< \TU/lmr/bx/n/10 -
-.....\TU/lmr/bx/n/10 ﬁ (ligature fi)
+.....\TU/lmr/bx/n/10 ﬁ
 .....\TU/lmr/bx/n/10 e
 .....\TU/lmr/bx/n/10 r
 .....\glue(\spaceskip) 3.83 plus 1.915 minus 1.27667

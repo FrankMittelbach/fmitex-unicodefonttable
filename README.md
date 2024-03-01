@@ -22,7 +22,7 @@ For version information see the .dtx file.
 
 -----
 
-Copyright (C) Frank Mittelbach (for copyright date see the .dtx file)<br />
+Copyright (C) Frank Mittelbach (for the copyright date see the .dtx file)<br />
 <https://latex-project.org/> <br />
 All rights reserved.
 
