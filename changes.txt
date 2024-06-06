@@ -1,3 +1,11 @@
+2024-06-06  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
+
+	* unicodefonttable.dtx:
+	provide updated class file for documentation
+
+	(subsection{User interface commands}):
+	Temp fix for problem with lttagging.dtx
+
 2023-05-10  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
 
 	* unicodefonttable.dtx (subsection{Handling block titles}):
