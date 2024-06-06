@@ -2,18 +2,22 @@ This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 luaotfload | aux : font no 18 (nil) defines no feature for script latn
 luaotfload | aux : font no 18 (nil) defines no feature for script dflt
-Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font 'latinmodern-math.otf' with options [].
+luaotfload | aux : font no 18 (nil) does not define feature smcp for script latn with language dflt
+luaotfload | aux : font no 18 (nil) does not define feature smcp for script dflt with language dflt
+luaotfload | aux : font no 18 (nil) does not define feature smcp for script latn with language dflt
+luaotfload | aux : font no 18 (nil) does not define feature smcp for script dflt with language dflt
+Package fontspec Info: 
+(fontspec)             Font family 'latinmodern-math.otf(0)' created for font 'latinmodern-math.otf' with options [].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[latinmodern-math.otf]:mode=node;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-Package fontspec Info: Font family 'NewCMMath-Regular.otf(0)' created for font 'NewCMMath-Regular.otf' with options [BoldFont={},ItalicFont={},SmallCapsFont={}].
+Package fontspec Info: 
+(fontspec)             Font family 'NewCMMath-Regular.otf(0)' created for font 'NewCMMath-Regular.otf' with options [BoldFont={},ItalicFont={},SmallCapsFont={}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[NewCMMath-Regular.otf]:mode=node;script=latn;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 Processing Supplemental Mathematical Operators
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line ....
@@ -43,6 +47,7 @@ Completed box being shipped out [1]
 ..\vbox(550.0+0.0)x345.0, glue set 180.82372fil, direction TLT
 ...\write-{}
 ...\pdfcolorstack 0 push {0 g 0 G}
+...\special{}
 ...\glue(\topskip) 0.0
 ...\vbox(30.39996+3.60004)x345.0, direction TLT
 ....\hbox(8.39996+13.60004)x345.0, glue set 4.80249fill, direction TLT
@@ -7079,4 +7084,4 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ...\pdfcolorstack 0 pop
 .\kern0.0
-(unicodefonttable-003.aux)
+Non-PDF special ignored! (unicodefonttable-003.aux)

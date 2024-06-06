@@ -7,7 +7,7 @@
 
 module = "unicodefonttable"
 
-sourcefiles = {"*.dtx", "*.ins", "*-????-??-??.sty", "*-doc.tex", "*-code.tex", "l3doc-TUB.cls"}
+sourcefiles = {"*.dtx", "*.ins", "*-????-??-??.sty", "*-doc.tex", "*-code.tex", "l3doc-TUB2024.cls"}
 
 installfiles = {"*.sty", ".cls", "unicodefont.tex"}
 
@@ -24,7 +24,7 @@ checkruns     = 2
 
 uploadconfig = {
  pkg = "unicodefonttable",
- version = "v1.0h 2024-03-01",
+ version = "v1.0i 2024-06-06",
  author = "Frank Mittelbach",
  license = "lppl1.3c",
  summary = "A Unicode font table generator",

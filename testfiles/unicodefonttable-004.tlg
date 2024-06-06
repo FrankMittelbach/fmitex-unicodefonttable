@@ -1,31 +1,42 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 luaotfload | cache : Lookup cache loaded from ../luaotfload-lookup-cache.luc.
-Package fontspec Info: Could not resolve font "Code2000/BI" (it probably doesn't exist).
-Package fontspec Info: Could not resolve font "Code2000/B" (it probably doesn't exist).
-Package fontspec Info: Could not resolve font "Code2000/I" (it probably doesn't exist).
+Package fontspec Info: 
+(fontspec)             Could not resolve font "Code2000/BI" (it probably doesn't exist).
+Package fontspec Info: 
+(fontspec)             Could not resolve font "Code2000/B" (it probably doesn't exist).
+Package fontspec Info: 
+(fontspec)             Could not resolve font "Code2000/I" (it probably doesn't exist).
 luaotfload | aux : font no 20 (nil) does not define feature smcp for script latn with language dflt
-Package fontspec Info: Font family 'Code2000(0)' created for font 'Code2000' with options [].
+luaotfload | aux : font no 20 (nil) does not define feature smcp for script latn with language dflt
+luaotfload | aux : font no 20 (nil) does not define feature smcp for script dflt with language dflt
+luaotfload | aux : font no 20 (nil) does not define feature smcp for script latn with language dflt
+luaotfload | aux : font no 20 (nil) does not define feature smcp for script latn with language dflt
+luaotfload | aux : font no 20 (nil) does not define feature smcp for script dflt with language dflt
+Package fontspec Info: 
+(fontspec)             Font family 'Code2000(0)' created for font 'Code2000' with options [].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.: <->"name:Code2000:mode=node;script=latn;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 Package unicodefonttable Warning: You asked for displaying glyphs with code
 (unicodefonttable)                points above U+EFFFF on line ..., i.e., from the 'Supplementary Private Use Area-A'
 (unicodefonttable)                without specifying '[Renderer=Harfbuzz]' when loading the font.
 (unicodefonttable)                
 (unicodefonttable)                With LuaLaTeX, this Unicode region is used for remappings (if the HarfBuzz engine is not used). Thus, the results shown do not reflect what is in the font!
 Processing Supplementary Private Use Area-A
-Package fontspec Info: Could not resolve font "Code2000/BI" (it probably doesn't exist).
-Package fontspec Info: Could not resolve font "Code2000/B" (it probably doesn't exist).
-Package fontspec Info: Could not resolve font "Code2000/I" (it probably doesn't exist).
-Package fontspec Info: Font family 'Code2000(1)' created for font 'Code2000' with options [Renderer=Harfbuzz].
+Package fontspec Info: 
+(fontspec)             Could not resolve font "Code2000/BI" (it probably doesn't exist).
+Package fontspec Info: 
+(fontspec)             Could not resolve font "Code2000/B" (it probably doesn't exist).
+Package fontspec Info: 
+(fontspec)             Could not resolve font "Code2000/I" (it probably doesn't exist).
+Package fontspec Info: 
+(fontspec)             Font family 'Code2000(1)' created for font 'Code2000' with options [Renderer=Harfbuzz].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.: <->"name:Code2000:mode=harf;script=latn;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 Completed box being shipped out [1]
 \vbox(633.0+0.0)x407.0, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -48,6 +59,7 @@ Completed box being shipped out [1]
 ..\vbox(550.0+0.0)x345.0, glue set 326.29718fil, direction TLT
 ...\write-{}
 ...\pdfcolorstack 0 push {0 g 0 G}
+...\special{}
 ...\glue(\topskip) 0.0
 ...\vbox(30.39996+3.60004)x345.0, direction TLT
 ....\hbox(8.39996+13.60004)x345.0, glue set 0.55449fill, direction TLT
@@ -1141,6 +1153,7 @@ Completed box being shipped out [1]
 ...\glue 12.0 plus 4.0 minus 4.0
 ...\penalty 0
 ...\glue 12.0 plus 4.0 minus 4.0
+...\special{}
 ...\glue(\lineskip) 0.0
 ...\vbox(30.39996+3.60004)x345.0, direction TLT
 ....\hbox(8.39996+13.60004)x345.0, glue set 47.76392fill, direction TLT
@@ -1587,4 +1600,5 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ...\pdfcolorstack 0 pop
 .\kern0.0
-(unicodefonttable-004.aux)
+Non-PDF special ignored!
+Non-PDF special ignored! (unicodefonttable-004.aux)

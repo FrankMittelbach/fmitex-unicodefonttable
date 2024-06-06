@@ -2,15 +2,18 @@ This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 luaotfload | cache : Lookup cache loaded from ../luaotfload-lookup-cache.luc.
 luaotfload | db : Reload initiated (formats: otf,ttf,ttc); reason: Font "cmr10" not found.
-Package fontspec Info: Could not resolve font "cmr10/BI" (it probably doesn't exist).
-Package fontspec Info: Could not resolve font "cmr10/B" (it probably doesn't exist).
-Package fontspec Info: Could not resolve font "cmr10/I" (it probably doesn't exist).
-Package fontspec Info: Font family 'cmr10(0)' created for font 'cmr10' with options [].
+Package fontspec Info: 
+(fontspec)             Could not resolve font "cmr10/BI" (it probably doesn't exist).
+Package fontspec Info: 
+(fontspec)             Could not resolve font "cmr10/B" (it probably doesn't exist).
+Package fontspec Info: 
+(fontspec)             Could not resolve font "cmr10/I" (it probably doesn't exist).
+Package fontspec Info: 
+(fontspec)             Font family 'cmr10(0)' created for font 'cmr10' with options [].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.: <->"name:cmr10:mode=node;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 Processing Basic Latin
 Completed box being shipped out [1]
 \vbox(633.0+0.0)x407.0, direction TLT
@@ -34,6 +37,7 @@ Completed box being shipped out [1]
 ..\vbox(550.0+0.0)x345.0, glue set 411.55609fil, direction TLT
 ...\write-{}
 ...\pdfcolorstack 0 push {0 g 0 G}
+...\special{}
 ...\glue(\topskip) 0.0
 ...\vbox(30.39996+3.60004)x345.0, direction TLT
 ....\hbox(8.39996+13.60004)x345.0, glue set 4.80249fill, direction TLT
@@ -1907,4 +1911,4 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ...\pdfcolorstack 0 pop
 .\kern0.0
-(unicodefonttable-002.aux)
+Non-PDF special ignored! (unicodefonttable-002.aux)

@@ -2,15 +2,18 @@ This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 luaotfload | cache : Lookup cache loaded from ../luaotfload-lookup-cache.luc.
 luaotfload | db : Reload initiated (formats: otf,ttf,ttc); reason: Font "cmr10" not found.
-Package fontspec Info: Could not resolve font "cmr10/BI" (it probably doesn't exist).
-Package fontspec Info: Could not resolve font "cmr10/B" (it probably doesn't exist).
-Package fontspec Info: Could not resolve font "cmr10/I" (it probably doesn't exist).
-Package fontspec Info: Font family 'cmr10(0)' created for font 'cmr10' with options [].
+Package fontspec Info: 
+(fontspec)             Could not resolve font "cmr10/BI" (it probably doesn't exist).
+Package fontspec Info: 
+(fontspec)             Could not resolve font "cmr10/B" (it probably doesn't exist).
+Package fontspec Info: 
+(fontspec)             Could not resolve font "cmr10/I" (it probably doesn't exist).
+Package fontspec Info: 
+(fontspec)             Font family 'cmr10(0)' created for font 'cmr10' with options [].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.: <->"name:cmr10:mode=node;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 Processing Basic Latin
 [1
 ]
@@ -2076,4 +2079,5 @@ Underfull \vbox (badness 2698) has occurred while \output is active
 ..\discretionary (penalty 50)
 ..\glue(\rightskip) 0.0
 .\glue -2.06
-[2] (unicodefonttable-005.aux)
+[2
+Non-PDF special ignored!] (unicodefonttable-005.aux)

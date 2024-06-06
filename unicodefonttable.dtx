@@ -17,12 +17,12 @@
 % for those people who are interested or want to report an issue.
 %
 
-\def\unicodefonttabledate   {2024/03/01}
-\def\unicodefonttableversion{1.0h}
+\def\unicodefonttabledate   {2024/06/06}
+\def\unicodefonttableversion{1.0i}
 
 
 %<*driver>
-\documentclass{l3doc-TUB}
+\documentclass{l3doc-TUB2024}
 
 % some fixes local to this documentation
 
@@ -238,10 +238,7 @@
 %    In the lists below the default settings are indicated by an
 %    underline.
 %
-%  \begin{variable}{
-%     header, noheader,
-%     title-format, title-format-cont,
-%  }
+%  \begin{variable}{header,noheader,title-format,title-format-cont}
 %    The first set of keys is concerned with the overall look and
 %    feel of the generated table.
 % \begin{description}
@@ -267,11 +264,7 @@
 % \end{variable}
 %
 %
-%  \begin{variable}{
-%     display-block,
-%     hex-digits, hex-digits-font,hex-digits-row-format,
-%     color,
-%  }
+%  \begin{variable}{display-block,hex-digits, hex-digits-font,hex-digits-row-format,color}
 %    These keys handle the inner parts of the table.
 %
 % \begin{description}
@@ -343,10 +336,7 @@
 % \end{variable}
 %
 %
-%  \begin{variable}{
-%     statistics, nostatistics,
-%     statistics-font,statistics-format,
-%  }
+%  \begin{variable}{statistics, nostatistics,statistics-font,statistics-format}
 %    The next set of keys allows altering the statistics that are produced.
 % \begin{description}
 %
@@ -371,10 +361,7 @@
 %
 %
 %
-%  \begin{variable}{
-%     glyph-width,
-%     missing-glyph, missing-glyph-font,  missing-glyph-color, 
-%  }
+%  \begin{variable}{glyph-width,missing-glyph, missing-glyph-font,  missing-glyph-color}
 %    Another set of keys deals with customization on the glyph level.
 % \begin{description}
 % \item[\key{glyph-width}]
@@ -409,9 +396,7 @@
 % \end{variable}
 %
 %
-%  \begin{variable}{
-%     compare-with,compare-color, compare-bgcolor,statistics-compare-format
-%  }
+%  \begin{variable}{compare-with,compare-color, compare-bgcolor,statistics-compare-format}
 %
 %    You can make comparisons between two fonts, which is useful, for
 %    example when dealing with incomplete math fonts and you need to
@@ -453,9 +438,7 @@
 % \end{variable}
 %
 %
-%  \begin{variable}{
-%     range-start, range-end,
-%  }
+%  \begin{variable}{range-start, range-end}
 %    Finally there are two keys for restricting the display range.
 % \begin{description}
 % \item[\key{range-start}, \key{range-end}]
@@ -756,6 +739,18 @@
                     {\unicodefonttabledate}
                     {\unicodefonttableversion}
                     {Producing font tables for Unicode and other fonts}
+%    \end{macrocode}
+%    
+%    This is a tmp fix for code in \texttt{lttabbing.dtx} until that
+%    is corrected there (probably 2024/11).
+%    \begin{macrocode}
+\cs_set:Npn \tbl_crcr:n #1 {
+     \int_compare:nNnT \g__tbl_col_int > 0
+         {
+           \tbl_count_missing_cells:n {#1}
+         }
+     \crcr
+   }
 %    \end{macrocode}
 %
 %  \newcommand\hex[1]{$\langle\textit{hex}_{#1}\rangle$}
