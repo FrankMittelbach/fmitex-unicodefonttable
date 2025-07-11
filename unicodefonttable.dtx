@@ -17,8 +17,8 @@
 % for those people who are interested or want to report an issue.
 %
 
-\def\unicodefonttabledate   {2024/06/06}
-\def\unicodefonttableversion{1.0i}
+\def\unicodefonttabledate   {2025/07/11}
+\def\unicodefonttableversion{1.0k}
 
 
 %<*driver>
@@ -137,7 +137,7 @@
 %    characters at the left of each table row,
 %    e.g., \texttt{U+0040 -
 %    004F}, followed by the sixteen glyphs in the range. Thus that
-% \IfImplementationShownTF{}{\pagebreak}\ignorespaces
+% ^^A \IfImplementationShownTF{}{\pagebreak}\ignorespaces
 %    particular table row from the ``Basic Latin'' block would show
 %    something like
 %
@@ -741,17 +741,6 @@
                     {Producing font tables for Unicode and other fonts}
 %    \end{macrocode}
 %    
-%    This is a tmp fix for code in \texttt{lttabbing.dtx} until that
-%    is corrected there (probably 2024/11).
-%    \begin{macrocode}
-\cs_set:Npn \tbl_crcr:n #1 {
-     \int_compare:nNnT \g__tbl_col_int > 0
-         {
-           \tbl_count_missing_cells:n {#1}
-         }
-     \crcr
-   }
-%    \end{macrocode}
 %
 %  \newcommand\hex[1]{$\langle\textit{hex}_{#1}\rangle$}
 %
@@ -796,14 +785,27 @@
 %    sense (as the fonts do not conform to the Unicode layout and
 %    since they have at most 265 glyphs). It is therefore also unnecessary to
 %    loop over the whole Unicode range of the first plane.
-%    If necessary all of them can still be overwritten in the optional argument.       
+%    If necessary all of them can still be overwritten in the optional
+%    argument.
+%       
+%    Some font names contain special character, e.g., \verb=_= or
+%    \verb=&=.   We therefore turn the font name into a string before
+%    passing it on but we allow for the possibility that the font name
+%    was given in a macro, so we do this with \cs{tl_to_str:o} (tough
+%    if the font name starts out with a special character then
+%    you have to use \cs{string} or something to prevent the special
+%    character from causing issues).
+% \changes{v1.0k}{2025/07/11}{Allow special chars in font names but
+%    not as the first character (gh/12)}
 %    \begin{macrocode}
+       \exp_args:Nne
        \@@_display_fonttable:nnn
           {nostatistics,display-block=none,hex-digits=head,range-end=FF,#2}
-          {#3}{#4}
+          { \tl_to_str:o {#3} } {#4}
      }
      {
-       \@@_display_fonttable:nnn {#2}{#3}{#4}
+       \exp_args:Nne
+       \@@_display_fonttable:nnn {#2}{ \tl_to_str:o {#3} }{#4}
      }
 }
 %    \end{macrocode}

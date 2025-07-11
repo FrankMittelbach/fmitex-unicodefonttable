@@ -24,7 +24,7 @@ checkruns     = 2
 
 uploadconfig = {
  pkg = "unicodefonttable",
- version = "v1.0i 2024-06-06",
+ version = "v1.0k 2025-07-11",
  author = "Frank Mittelbach",
  license = "lppl1.3c",
  summary = "A Unicode font table generator",

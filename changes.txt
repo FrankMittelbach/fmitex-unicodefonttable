@@ -1,7 +1,17 @@
+2025-07-11  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
+
+	* unicodefonttable.dtx (subsection{User interface commands}):
+	Allow special chars in font names but not as the first
+	character (gh/12)
+
+2024-06-10  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
+
+	* unicodefonttable.dtx: take out patch for lttagging again
+
 2024-06-06  Frank Mittelbach  <Frank.Mittelbach@latex-project.org>
 
 	* unicodefonttable.dtx:
-	provide updated class file for documentation
+	Provide updated class file for documentation
 
 	(subsection{User interface commands}):
 	Temp fix for problem with lttagging.dtx

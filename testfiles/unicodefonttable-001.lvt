@@ -12,4 +12,9 @@
 
 \displayfonttable{lmsans10-regular.otf}  % use font not family name for xetex
 
+
+% try special chars in font names (this one exists in TeXLive)
+
+\displayfonttable{Gotu_Regular.ttf}
+
 \end{document}
